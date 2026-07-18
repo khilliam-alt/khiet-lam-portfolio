@@ -1,0 +1,168 @@
+media:
+  input: media
+  output: /khiet-lam-portfolio/media
+  rename: safe
+  categories: [image]
+
+content:
+  - name: portfolio
+    label: Portfolio content
+    type: file
+    path: data/content.json
+    format: json
+    fields:
+      - name: site
+        label: Personal information and introduction
+        type: object
+        fields:
+          - name: name
+            label: Display name
+            type: string
+            required: true
+          - name: eyebrow
+            label: Short location line
+            type: string
+          - name: headline
+            label: Main headline
+            type: string
+          - name: intro
+            label: Introduction
+            type: text
+          - name: about
+            label: About paragraph
+            type: text
+          - name: location
+            label: Location
+            type: string
+          - name: email
+            label: Email
+            type: string
+          - name: phone
+            label: Phone
+            type: string
+          - name: linkedin
+            label: LinkedIn URL
+            type: string
+          - name: archiveUrl
+            label: Google Drive archive URL
+            type: string
+          - name: cvUrl
+            label: CV URL
+            type: string
+
+      - name: metrics
+        label: Selected achievements
+        type: object
+        list:
+          max: 4
+          collapsible:
+            collapsed: false
+            summary: "{value} {label}"
+        fields:
+          - name: value
+            label: Number
+            type: string
+          - name: label
+            label: Description
+            type: string
+
+      - name: projects
+        label: Projects and selected work
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title} / {category}"
+        fields:
+          - name: id
+            label: Unique ID
+            type: string
+            required: true
+          - name: title
+            label: Project title
+            type: string
+            required: true
+          - name: category
+            label: Category
+            type: select
+            required: true
+            options:
+              values:
+                - name: curation
+                  label: Cultural Programmes
+                - name: copywriting
+                  label: Copywriting and Brand
+                - name: publishing
+                  label: Publishing and Writing
+                - name: interviews
+                  label: Talks and Interviews
+                - name: board-game
+                  label: Board Game Design
+          - name: client
+            label: Organisation or client
+            type: string
+          - name: period
+            label: Period
+            type: string
+          - name: role
+            label: Your role
+            type: string
+          - name: summary
+            label: Short description
+            type: text
+          - name: outcome
+            label: Achievement or outcome
+            type: text
+          - name: image
+            label: Cover image
+            type: image
+            options:
+              path: projects
+              rename: safe
+          - name: imageAlt
+            label: Image description
+            type: string
+          - name: evidenceUrl
+            label: Evidence URL
+            type: string
+          - name: tags
+            label: Tags
+            type: string
+            list: true
+          - name: featured
+            label: Show in featured section
+            type: boolean
+            default: false
+          - name: published
+            label: Visible on website
+            type: boolean
+            default: true
+
+      - name: timeline
+        label: Experience timeline
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{organisation} / {role}"
+        fields:
+          - name: period
+            label: Period
+            type: string
+          - name: role
+            label: Role
+            type: string
+          - name: organisation
+            label: Organisation
+            type: string
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: app
+    templates:
+      create: "Create {path} via portfolio editor"
+      update: "Update {path} via portfolio editor"
+      delete: "Delete {path} via portfolio editor"
+      rename: "Rename {oldPath} to {newPath} via portfolio editor"
