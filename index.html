@@ -1,50 +1,471 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Khiet Lam — editor, senior copywriter and cultural event curator in Ho Chi Minh City.">
-<title>Khiet Lam — Editorial Practice & Cultural Programmes</title>
-<style>
-:root{--paper:#f1e8d8;--light:#f8f1e5;--ink:#252321;--red:#7a2432;--green:#214c3a;--brass:#a17f49;--rule:rgba(37,35,33,.34);--serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,sans-serif;--mono:"Courier New",monospace}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background-color:var(--paper);background-image:radial-gradient(rgba(79,58,36,.055) .7px,transparent .7px),radial-gradient(rgba(255,255,255,.45) .7px,transparent .7px);background-position:0 0,4px 5px;background-size:8px 8px,11px 11px;color:var(--ink);font-family:var(--sans);overflow-x:hidden}a{color:inherit;text-decoration:none}img{display:block;width:100%}.mono{font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase}
-header{align-items:center;border-bottom:1px solid var(--rule);display:flex;height:86px;justify-content:space-between;padding:0 4.2vw}.wordmark{font:400 clamp(1.7rem,2.7vw,2.45rem) var(--serif);letter-spacing:.05em;text-transform:uppercase}nav{display:flex;gap:clamp(1.4rem,3.8vw,4.4rem);font-size:.94rem}nav a{padding:1rem 0 .7rem;position:relative}nav a:after{background:var(--red);bottom:0;content:"";height:2px;left:0;position:absolute;transform:scaleX(0);transform-origin:right;transition:.2s;width:100%}nav a:hover:after{transform:scaleX(1);transform-origin:left}
-.frame{border-bottom:1px solid var(--rule);position:relative}.frame:before,.frame:after{content:"+";font:1.35rem var(--mono);opacity:.4;position:absolute;top:-.72rem}.frame:before{left:-.4rem}.frame:after{right:-.4rem}
-.hero{display:grid;grid-template-columns:9rem minmax(20rem,27rem) minmax(30rem,1fr);min-height:690px;padding:4rem 3.2vw 3.4rem}.rail{display:flex;flex-direction:column;justify-content:space-between;padding:1rem 1.5rem 1.3rem 0}.eyebrow{font-size:.66rem;line-height:1.4;white-space:nowrap}.rail ol{list-style:none;margin:0;padding:0}.rail li{margin-top:1.35rem}.rail li span{color:var(--red);display:block;font:1rem var(--serif);margin-bottom:.25rem}.rail li a{color:var(--green);font-size:.78rem}.rail li:not(:last-child):after{color:var(--brass);content:"+";display:block;font:1.5rem var(--serif);margin-top:.45rem}
-.hero-copy{align-self:center;padding-right:2.6rem;position:relative;z-index:2}.hero h1{font:400 clamp(3.7rem,5.8vw,6.5rem)/.84 var(--serif);letter-spacing:-.055em;margin:0}.hero h1 i{font-weight:400}.mark{color:#5d8c50;font:italic 4rem var(--serif);position:absolute;right:1rem;top:42%;transform:rotate(-14deg)}.intro{font:1.35rem/1.42 var(--serif);margin:2rem 0 1.8rem;max-width:22rem}.cta{align-items:center;background:var(--red);color:var(--light);display:inline-flex;font-size:.9rem;gap:2rem;padding:1.1rem 1.35rem;transition:.2s}.cta:hover{background:var(--green);transform:translateY(-2px)}
-.feature{align-self:center;min-width:0;position:relative}.feature-image{height:505px;overflow:hidden}.feature-image img{height:100%;object-fit:cover;object-position:center 42%;transition:.8s}.feature:hover img{transform:scale(1.025)}.feature-card{align-items:end;background:rgba(248,241,229,.96);border:1px solid var(--rule);bottom:-1.55rem;display:grid;gap:2rem;grid-template-columns:1fr auto;left:-1.5rem;padding:1.2rem 1.5rem;position:absolute;width:min(92%,760px)}.feature-card h2{font:400 clamp(2rem,3.4vw,3.7rem)/.95 var(--serif);letter-spacing:-.035em;margin:0}.meta{font-size:.63rem;margin:.85rem 0}.tags{display:flex;flex-wrap:wrap;gap:.42rem}.tags span{border:1px solid var(--green);color:var(--green);font:.58rem var(--mono);padding:.35rem .6rem;text-transform:uppercase}.open{align-items:center;display:flex;font-family:var(--serif);gap:.8rem;white-space:nowrap}.open b{align-items:center;background:var(--red);border-radius:50%;color:#fff;display:flex;font-weight:400;height:3rem;justify-content:center;width:3rem}
-.practice{display:grid;grid-template-columns:repeat(3,1fr);padding:2.4rem 2.8vw}.practice a{align-items:center;border-right:1px solid var(--rule);display:grid;gap:.8rem;grid-template-columns:auto 1fr auto;min-height:4rem;padding:0 2rem}.practice a:last-child{border:0}.practice small{color:var(--red);font:.68rem var(--mono)}.practice strong{color:var(--green);font:400 1.55rem var(--serif)}.practice em{font:.58rem var(--mono);font-style:normal;text-transform:uppercase}
-.section{padding:7rem 4.2vw}.heading{align-items:end;display:grid;gap:2rem;grid-template-columns:1fr 2fr;margin-bottom:4rem}.heading p{color:var(--red);font-size:.68rem}.heading h2,.writing h2,.about h2{font:400 clamp(2.8rem,5.2vw,5.8rem)/.95 var(--serif);letter-spacing:-.045em;margin:0}
-.projects{display:grid;gap:6rem}.project{display:grid;gap:1.5rem;grid-template-columns:2fr 1fr;scroll-margin-top:2rem}.project:nth-child(even){grid-template-columns:1fr 2fr}.project:nth-child(even) .project-image{order:2}.project-image{height:520px;overflow:hidden;position:relative}.project-image img{height:100%;object-fit:cover;transition:.7s}.project-image:hover img{transform:scale(1.02)}.project-copy{align-self:end;border-top:1px solid var(--ink);display:grid;gap:1rem;grid-template-columns:2rem 1fr;padding-top:1rem}.project-copy>span{color:var(--red);font:.68rem var(--mono)}.project h3{font:400 2.25rem/1 var(--serif);margin:0}.project .meta{color:var(--green);line-height:1.5}.project-copy p:last-of-type{font:1.03rem/1.55 var(--serif)}
-.writing{background:var(--green);color:var(--light);padding:6rem 4.2vw}.writing-top{display:grid;gap:3rem;grid-template-columns:2fr 1fr;margin:3rem 0 5rem}.writing-top p{align-self:end;font:1.25rem/1.55 var(--serif)}.ledger{border-top:1px solid rgba(255,255,255,.5);display:grid;grid-template-columns:repeat(3,1fr)}.ledger article{border-right:1px solid rgba(255,255,255,.35);padding:2rem}.ledger article:first-child{padding-left:0}.ledger article:last-child{border:0}.ledger span{color:#d9c49a;font-size:.62rem}.ledger h3{font:400 1.65rem var(--serif)}.ledger p{font-size:.84rem;line-height:1.5;opacity:.82}
-.media{display:grid;gap:4rem;grid-template-columns:1fr 1.5fr}.media-copy>p:first-child{color:var(--red);font-size:.65rem}.media-copy h2{font:400 clamp(3rem,5vw,5.5rem)/.95 var(--serif);letter-spacing:-.045em;margin:1.5rem 0}.media-copy p{font:1.15rem/1.55 var(--serif)}.stats{display:flex;gap:3rem;margin-top:3rem}.stats b{color:var(--red);font:400 2.7rem var(--serif)}.media-art{align-items:center;background:linear-gradient(135deg,rgba(33,76,58,.82),rgba(122,36,50,.82)),url("https://drive.google.com/thumbnail?id=1doe0rgf9yXiC-1CN8R_s6h9l-lj892c-&sz=w1600") center/cover;display:flex;justify-content:center;min-height:430px}.play{align-items:center;border:1px solid #fff;border-radius:50%;color:#fff;display:flex;height:5rem;justify-content:center;width:5rem}
-.about{display:grid;gap:4rem;grid-template-columns:.55fr 1.6fr .65fr}.about>p{color:var(--red);font-size:.65rem}.about h2{font-size:clamp(2.6rem,4.2vw,4.8rem)}.about-copy p{font:1.15rem/1.55 var(--serif);max-width:38rem}.contact{align-self:end;display:flex;flex-direction:column;font-size:.8rem;gap:1rem}.contact a{border-bottom:1px solid var(--rule);padding-bottom:.55rem}.contact a:hover{color:var(--red)}footer{align-items:center;border-top:1px solid var(--rule);display:flex;font-size:.7rem;justify-content:space-between;padding:2rem 4.2vw}
-@media(max-width:1020px){.hero{grid-template-columns:minmax(19rem,.9fr) minmax(27rem,1.2fr)}.rail{display:none}.feature-card{width:calc(100% + 1rem)}.practice em{display:none}}
-@media(max-width:760px){header{height:auto;padding:1.2rem}.wordmark{font-size:1.4rem}nav{gap:1rem}nav a{font-size:.7rem}nav a:nth-child(3),nav a:nth-child(4){display:none}.hero{display:flex;flex-direction:column;min-height:0;padding:3rem 1.2rem 4.5rem}.hero-copy{padding:0}.hero h1{font-size:clamp(3.45rem,15vw,5rem)}.mark{right:0}.intro{font-size:1.15rem}.feature{margin-top:3rem}.feature-image{height:420px}.feature-card{bottom:auto;display:block;left:0;position:relative;width:100%}.feature-card h2{font-size:2.2rem}.tags{display:none}.open{margin-top:1rem}.practice{grid-template-columns:1fr;padding:0 1.2rem}.practice a{border-bottom:1px solid var(--rule);border-right:0;padding:1.2rem 0}.section,.writing{padding:5rem 1.2rem}.heading,.writing-top{display:block}.heading p{margin-bottom:1.5rem}.heading h2,.writing h2,.about h2{font-size:3rem}.project,.project:nth-child(even){display:flex;flex-direction:column}.project:nth-child(even) .project-image{order:0}.project-image{height:400px}.ledger{grid-template-columns:1fr}.ledger article,.ledger article:first-child{border-bottom:1px solid rgba(255,255,255,.35);border-right:0;padding:1.5rem 0}.media,.about{grid-template-columns:1fr}.media-art{min-height:340px}.about{gap:2rem}footer{align-items:flex-start;flex-direction:column;gap:.8rem;padding:2rem 1.2rem}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Khiet Lam is an editor, senior copywriter and cultural event curator based in Ho Chi Minh City.">
+  <meta name="theme-color" content="#efe6d5">
+  <title>Khiet Lam | Editorial, Copywriting and Cultural Practice</title>
+  <style>
+    :root {
+      --paper: #efe6d5;
+      --paper-light: #f8f2e7;
+      --ink: #242321;
+      --muted: #676159;
+      --red: #7b2534;
+      --green: #214d3a;
+      --brass: #a17e45;
+      --line: rgba(36, 35, 33, .28);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+      --mono: "Courier New", monospace;
+      --max: 1500px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background-color: var(--paper);
+      background-image:
+        radial-gradient(rgba(83, 62, 38, .055) .7px, transparent .7px),
+        radial-gradient(rgba(255, 255, 255, .44) .7px, transparent .7px);
+      background-position: 0 0, 4px 5px;
+      background-size: 8px 8px, 11px 11px;
+      font-family: var(--sans);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { color: inherit; font: inherit; }
+    img { display: block; width: 100%; }
+    .mono { font-family: var(--mono); letter-spacing: .055em; text-transform: uppercase; }
+    .shell { margin: 0 auto; max-width: var(--max); }
+    .rule { border-bottom: 1px solid var(--line); }
+
+    .site-header {
+      align-items: center;
+      backdrop-filter: blur(12px);
+      background: rgba(239, 230, 213, .88);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      height: 78px;
+      justify-content: space-between;
+      padding: 0 clamp(1.2rem, 4vw, 4.5rem);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .wordmark {
+      font: 400 clamp(1.45rem, 2.2vw, 2.15rem) var(--serif);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .nav { align-items: center; display: flex; gap: clamp(.9rem, 2.8vw, 3.4rem); }
+    .nav a { border-bottom: 1px solid transparent; font-size: .82rem; padding: .45rem 0; }
+    .nav a:hover { border-color: var(--red); color: var(--red); }
+    .owner-link { color: var(--green); font-family: var(--mono); font-size: .66rem !important; text-transform: uppercase; }
+
+    .hero {
+      display: grid;
+      gap: clamp(2rem, 5vw, 6rem);
+      grid-template-columns: minmax(0, 1.03fr) minmax(360px, .97fr);
+      min-height: 690px;
+      padding: clamp(4rem, 8vw, 8rem) clamp(1.2rem, 4vw, 4.5rem) 4rem;
+    }
+
+    .hero-copy { align-self: center; }
+    .eyebrow { color: var(--red); font-size: .67rem; margin: 0 0 1.8rem; }
+    .hero h1 {
+      font: 400 clamp(3.7rem, 7.4vw, 8rem)/.86 var(--serif);
+      letter-spacing: -.06em;
+      margin: 0;
+      max-width: 13ch;
+    }
+
+    .hero h1 em { color: var(--green); font-weight: 400; }
+    .hero-intro { font: 1.2rem/1.55 var(--serif); margin: 2.1rem 0 2rem; max-width: 36rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+    .button {
+      align-items: center;
+      background: var(--red);
+      border: 1px solid var(--red);
+      color: var(--paper-light);
+      display: inline-flex;
+      font-size: .82rem;
+      gap: 2rem;
+      min-height: 48px;
+      padding: .8rem 1.1rem;
+      transition: .2s ease;
+    }
+
+    .button:hover { background: var(--green); border-color: var(--green); transform: translateY(-2px); }
+    .button.secondary { background: transparent; border-color: var(--line); color: var(--ink); }
+    .button.secondary:hover { background: var(--paper-light); border-color: var(--ink); }
+
+    .hero-index { align-self: center; border-left: 1px solid var(--line); padding-left: clamp(1.5rem, 4vw, 4rem); }
+    .hero-index-head { align-items: end; display: flex; justify-content: space-between; margin-bottom: 1.2rem; }
+    .hero-index-head p { color: var(--green); font-size: .66rem; margin: 0; }
+    .hero-index-head span { color: var(--muted); font: italic 1.1rem var(--serif); }
+    .discipline-list { border-top: 1px solid var(--line); }
+    .discipline {
+      align-items: baseline;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 2rem 1fr auto;
+      padding: 1.15rem 0;
+    }
+
+    .discipline span { color: var(--red); font: .66rem var(--mono); }
+    .discipline strong { font: 400 clamp(1.35rem, 2vw, 2rem) var(--serif); }
+    .discipline small { color: var(--muted); font-size: .7rem; }
+
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .metric { border-right: 1px solid var(--line); min-height: 142px; padding: 2rem clamp(1rem, 3vw, 3rem); }
+    .metric:last-child { border: 0; }
+    .metric strong { color: var(--red); display: block; font: 400 clamp(2.5rem, 5vw, 5.3rem)/.9 var(--serif); }
+    .metric span { display: block; font-size: .69rem; line-height: 1.4; margin-top: .8rem; max-width: 14rem; text-transform: uppercase; }
+
+    .section { padding: clamp(5rem, 9vw, 9rem) clamp(1.2rem, 4vw, 4.5rem); }
+    .section-heading { align-items: end; display: grid; gap: 2rem; grid-template-columns: .55fr 1.45fr; margin-bottom: 3.5rem; }
+    .section-heading p { color: var(--red); font-size: .66rem; margin: 0; }
+    .section-heading h2 { font: 400 clamp(3rem, 6vw, 6.8rem)/.9 var(--serif); letter-spacing: -.05em; margin: 0; max-width: 13ch; }
+    .section-heading h2 em { color: var(--green); font-weight: 400; }
+
+    .featured-grid { display: grid; gap: 1px; grid-template-columns: repeat(4, 1fr); background: var(--line); border: 1px solid var(--line); }
+    .featured-card { background: var(--paper); min-width: 0; }
+    .featured-card:nth-child(1), .featured-card:nth-child(6) { grid-column: span 2; }
+    .featured-media { aspect-ratio: 1.24/1; background: var(--green); overflow: hidden; position: relative; }
+    .featured-media img { height: 100%; object-fit: cover; transition: transform .7s ease; }
+    .featured-card:hover img { transform: scale(1.025); }
+    .featured-card.image-failed .featured-media { background: linear-gradient(135deg, var(--green), var(--red)); }
+    .featured-card.image-failed img { display: none; }
+    .category-label { background: var(--paper-light); left: .75rem; padding: .4rem .55rem; position: absolute; top: .75rem; font-size: .58rem; }
+    .featured-body { min-height: 246px; padding: 1.35rem; }
+    .card-meta { color: var(--green); font-size: .59rem; line-height: 1.5; margin: 0 0 .8rem; }
+    .featured-body h3 { font: 400 clamp(1.55rem, 2.4vw, 2.7rem)/1 var(--serif); margin: 0 0 1rem; }
+    .featured-body > p:not(.card-meta) { color: var(--muted); font: .98rem/1.52 var(--serif); margin: 0; }
+    .card-foot { align-items: center; display: flex; gap: 1rem; justify-content: space-between; margin-top: 1.3rem; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .tag { border: 1px solid var(--line); font: .55rem var(--mono); padding: .28rem .4rem; text-transform: uppercase; }
+    .evidence { border-bottom: 1px solid var(--red); color: var(--red); font-size: .68rem; white-space: nowrap; }
+
+    .archive { background: var(--green); color: var(--paper-light); }
+    .archive .section-heading p { color: #d7bf93; }
+    .archive .section-heading h2 em { color: #d7bf93; }
+    .filters { display: flex; flex-wrap: wrap; gap: .55rem; margin: 0 0 2.2rem; }
+    .filter {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, .35);
+      color: var(--paper-light);
+      cursor: pointer;
+      font: .64rem var(--mono);
+      padding: .65rem .8rem;
+      text-transform: uppercase;
+    }
+
+    .filter:hover, .filter.active { background: var(--paper-light); color: var(--green); }
+    .archive-grid { border-top: 1px solid rgba(255, 255, 255, .36); }
+    .archive-card {
+      align-items: start;
+      border-bottom: 1px solid rgba(255, 255, 255, .28);
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 3.4rem minmax(13rem, .8fr) minmax(16rem, 1.15fr) auto;
+      padding: 1.6rem 0;
+    }
+
+    .archive-card[hidden] { display: none; }
+    .archive-number { color: #d7bf93; font: .7rem var(--mono); }
+    .archive-title h3 { font: 400 clamp(1.35rem, 2vw, 2.1rem)/1.05 var(--serif); margin: 0 0 .5rem; }
+    .archive-title p { color: #d7bf93; font-size: .57rem; line-height: 1.5; margin: 0; }
+    .archive-copy { font: .95rem/1.55 var(--serif); margin: 0; max-width: 45rem; opacity: .86; }
+    .archive-actions { align-items: end; display: flex; flex-direction: column; gap: .8rem; }
+    .archive .evidence { border-color: #d7bf93; color: #d7bf93; }
+
+    .timeline-layout { display: grid; gap: clamp(3rem, 7vw, 8rem); grid-template-columns: .8fr 1.2fr; }
+    .timeline-intro h2 { font: 400 clamp(3rem, 5vw, 5.7rem)/.92 var(--serif); letter-spacing: -.045em; margin: 1.4rem 0; }
+    .timeline-intro p:last-child { color: var(--muted); font: 1.05rem/1.55 var(--serif); max-width: 32rem; }
+    .timeline { border-top: 1px solid var(--line); }
+    .timeline-item { border-bottom: 1px solid var(--line); display: grid; gap: 1.5rem; grid-template-columns: 8rem 1fr; padding: 1.3rem 0; }
+    .timeline-item time { color: var(--red); font: .6rem/1.5 var(--mono); text-transform: uppercase; }
+    .timeline-item h3 { font: 400 1.45rem var(--serif); margin: 0 0 .35rem; }
+    .timeline-item p { color: var(--green); font-size: .72rem; margin: 0; text-transform: uppercase; }
+
+    .contact-section { background: var(--red); color: var(--paper-light); }
+    .contact-layout { align-items: end; display: grid; gap: 3rem; grid-template-columns: 1.35fr .65fr; }
+    .contact-layout h2 { font: 400 clamp(3.2rem, 6.6vw, 7.6rem)/.86 var(--serif); letter-spacing: -.055em; margin: 0; max-width: 12ch; }
+    .contact-links { display: flex; flex-direction: column; gap: .85rem; }
+    .contact-links a { border-bottom: 1px solid rgba(255, 255, 255, .4); display: flex; font-size: .78rem; justify-content: space-between; padding: .8rem 0; }
+    .contact-links a:hover { color: #e1ca9e; }
+
+    footer { align-items: center; display: flex; font-size: .68rem; justify-content: space-between; padding: 2rem clamp(1.2rem, 4vw, 4.5rem); }
+    .loading, .error-message { font: 1rem/1.5 var(--serif); padding: 2rem 0; }
+    .error-message { color: var(--red); }
+
+    @media (max-width: 1100px) {
+      .featured-grid { grid-template-columns: repeat(2, 1fr); }
+      .featured-card:nth-child(1), .featured-card:nth-child(6) { grid-column: span 1; }
+      .archive-card { grid-template-columns: 2.5rem minmax(13rem, .8fr) 1.2fr; }
+      .archive-actions { grid-column: 2 / -1; align-items: center; flex-direction: row; }
+    }
+
+    @media (max-width: 820px) {
+      .site-header { height: 70px; }
+      .nav a:nth-child(2), .nav a:nth-child(3) { display: none; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-index { border-left: 0; border-top: 1px solid var(--line); padding: 2rem 0 0; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      .metric:nth-child(2) { border-right: 0; }
+      .metric:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .section-heading, .timeline-layout, .contact-layout { grid-template-columns: 1fr; }
+      .section-heading h2 { max-width: 15ch; }
+      .contact-links { max-width: 32rem; }
+    }
+
+    @media (max-width: 620px) {
+      .site-header { padding-inline: 1rem; }
+      .owner-link { display: none !important; }
+      .hero { padding-top: 4rem; }
+      .hero h1 { font-size: clamp(3.3rem, 17vw, 5.2rem); }
+      .discipline { grid-template-columns: 1.6rem 1fr auto; }
+      .discipline strong { font-size: 1.2rem; }
+      .featured-grid { grid-template-columns: 1fr; }
+      .featured-body { min-height: auto; }
+      .archive-card { grid-template-columns: 2rem 1fr; }
+      .archive-copy, .archive-actions { grid-column: 2; }
+      .timeline-item { grid-template-columns: 1fr; gap: .5rem; }
+      footer { align-items: flex-start; flex-direction: column; gap: .7rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
 </head>
 <body>
-<header><a class="wordmark" href="#top">Khiet Lam</a><nav aria-label="Primary navigation"><a href="#top">Index</a><a href="#projects">Projects</a><a href="#writing">Writing</a><a href="#media">Media</a><a href="#about">About</a></nav></header>
-<main>
-<section class="hero frame" id="top">
-<aside class="rail"><p class="mono eyebrow">Independent editorial archive / 2018–2026</p><ol><li><span>01</span><a href="#writing">Writing</a></li><li><span>02</span><a href="#projects">Programmes</a></li><li><span>03</span><a href="#media">Interviews</a></li><li><span>04</span><a href="#media">Audio + Video</a></li></ol></aside>
-<div class="hero-copy"><h1>Editorial Practice <i>&amp;</i><br>Cultural Programmes</h1><span class="mark">≈</span><p class="intro">Writing, publishing and cultural encounters shaped into lasting records.</p><a class="cta" href="#projects">Explore the index <span>→</span></a></div>
-<article class="feature"><div class="feature-image"><img src="https://drive.google.com/thumbnail?id=1lR7pqz-zhYa_uq6u3y2qDhJE8xLmAm3W&sz=w2000" alt="Hát Bội performance on the Saigon River"></div><div class="feature-card"><div><h2>Hát Bội Saigon Art Cruise</h2><p class="mono meta">Featured record / Ngay Xua Asia / 2025</p><div class="tags"><span>Curation</span><span>Script</span><span>Research</span></div></div><a class="open" href="#hat-boi"><b>→</b> Open project</a></div></article>
-</section>
-<section class="practice"><a href="#writing"><small>01</small><strong>Selected Writing</strong><em>Essays, columns & reports</em></a><a href="#projects"><small>02</small><strong>Cultural Programmes</strong><em>Events & exhibitions</em></a><a href="#media"><small>03</small><strong>Conversations</strong><em>Interviews & dialogues</em></a></section>
-<section class="section frame" id="projects"><div class="heading"><p class="mono">Selected archive / Cultural work</p><h2>Programmes as living editorial forms.</h2></div><div class="projects">
-<article class="project" id="hat-boi"><a class="project-image" href="#hat-boi"><img src="https://drive.google.com/thumbnail?id=1lR7pqz-zhYa_uq6u3y2qDhJE8xLmAm3W&sz=w2000" alt="Hát Bội Saigon Art Cruise"></a><div class="project-copy"><span>01</span><div><h3>Hát Bội Saigon Art Cruise</h3><p class="mono meta">Cultural programme / Ngay Xua Asia / 2025</p><p>A floating encounter with Southern Vietnamese classical theatre, shaped through archival research, dramaturgy and contemporary audience context.</p><div class="tags"><span>Curation</span><span>Script</span><span>Research</span></div></div></div></article>
-<article class="project" id="long-buom"><a class="project-image" href="#long-buom"><img src="https://drive.google.com/thumbnail?id=1YINjwcc92ZX2ZzPunX32pbsOom0-GkiD&sz=w1600" alt="Lọng Bướm exhibition"></a><div class="project-copy"><span>02</span><div><h3>Lọng Bướm</h3><p class="mono meta">Exhibition / Ngay Xua Asia / 2025</p><p>An exhibition tracing memory, intricate craft and the transformation of butterfly parasols through contemporary storytelling.</p><div class="tags"><span>Curatorial concept</span><span>Copywriting</span><span>Interview</span></div></div></div></article>
-<article class="project" id="vang-son"><a class="project-image" href="#vang-son"><img src="https://drive.google.com/thumbnail?id=1TUDPT2ST4TOORPFQ7KaHJgqpvE9FkCDC&sz=w1600" alt="Vàng Sơn Một Thuở exhibition"></a><div class="project-copy"><span>03</span><div><h3>Vàng Sơn Một Thuở</h3><p class="mono meta">Exhibition / Toong / 2025</p><p>A cultural programme bringing lacquer memory, material knowledge and the voices of makers into a shared contemporary space.</p><div class="tags"><span>Programme</span><span>Editorial</span><span>Communications</span></div></div></div></article>
-<article class="project" id="hoa-giay"><a class="project-image" href="#hoa-giay"><img src="https://drive.google.com/thumbnail?id=1y9qZaLZPV6rnDVEzqKbf5BJNPu2-qaQS&sz=w1600" alt="Người Đơm Hoa Giấy exhibition"></a><div class="project-copy"><span>04</span><div><h3>Người Đơm Hoa Giấy</h3><p class="mono meta">Exhibition / Toong / 2024</p><p>A documentary exhibition about paper-flower makers and the quiet persistence of handcraft in the contemporary city.</p><div class="tags"><span>Research</span><span>Interview</span><span>Exhibition copy</span></div></div></div></article>
-<article class="project" id="my-cam"><a class="project-image" href="#my-cam"><img src="https://drive.google.com/thumbnail?id=1_2ZZL3JyW1mi9FEgc7hUNq93eUR3dtJe&sz=w1600" alt="Khơi Gợi Mỹ Cảm cultural series"></a><div class="project-copy"><span>05</span><div><h3>Khơi Gợi Mỹ Cảm</h3><p class="mono meta">Cultural series / Toong / 2024</p><p>An atelier series creating accessible points of entry into aesthetic attention, material culture and everyday acts of looking.</p><div class="tags"><span>Series concept</span><span>Copywriting</span><span>Audience development</span></div></div></div></article>
-<article class="project" id="thi-sach"><a class="project-image" href="#thi-sach"><img src="https://drive.google.com/thumbnail?id=1v0O37U5uJ90DnSck6yugkTd3I9pZ8IVO&sz=w1600" alt="Toong Thi Sách launch"></a><div class="project-copy"><span>06</span><div><h3>Toong Thi Sách Launch</h3><p class="mono meta">Brand editorial / Toong / 2024</p><p>A place-led launch narrative spanning social content, internal communications, email marketing and a 65-page sales brochure.</p><div class="tags"><span>Copywriting</span><span>Launch</span><span>Email marketing</span></div></div></div></article>
-</div></section>
-<section class="writing" id="writing"><p class="mono eyebrow">Writing / 2018–present</p><div class="writing-top"><h2>Stories with cultural memory, people and place at their centre.</h2><p>Essays and reported features for Tatler Vietnam and Lela Journal, alongside editorial work across books, magazines and digital fiction.</p></div><div class="ledger"><article><span class="mono">01 / Tatler Vietnam</span><h3>Culture, design and contemporary life</h3><p>10+ long-form essays and features since 2024.</p></article><article><span class="mono">02 / Lela Journal</span><h3>People shaping the city</h3><p>100+ interviews, profiles and cultural reports.</p></article><article><span class="mono">03 / Publishing</span><h3>Books and serial narratives</h3><p>120+ edited novels and 20+ print publications.</p></article></div></section>
-<section class="section media frame" id="media"><div class="media-copy"><p class="mono">Audio archive / 2024</p><h2>Hidden Champion Show</h2><p>Research-led podcast scripts turning founder journeys and business insight into precise, human conversations.</p><div class="stats"><div><span class="mono eyebrow">Episodes</span><br><b>10+</b></div><div><span class="mono eyebrow">Views</span><br><b>100K+</b></div></div></div><div class="media-art" aria-label="Selected video and audio work"><span class="play">▶</span></div></section>
-<section class="section about" id="about"><p class="mono">About / Contact</p><div class="about-copy"><h2>Khiet Lam is an editor, senior copywriter and cultural event curator based in Ho Chi Minh City.</h2><p>His practice moves between editorial research, publishing, brand language and public programmes, connecting cultural knowledge with contemporary audiences.</p></div><div class="contact"><a href="mailto:letankhang@gmail.com">letankhang@gmail.com</a><a href="https://www.linkedin.com/in/khangle3003/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div></section>
-</main>
-<footer><span>© 2026 Khiet Lam</span><span class="mono">Editorial practice / Cultural programmes</span><a href="#top">Back to top ↑</a></footer>
+  <header class="site-header">
+    <a class="wordmark" href="#top" data-site-name>Khiet Lam</a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#featured">Featured</a>
+      <a href="#archive">Full archive</a>
+      <a href="#timeline">Experience</a>
+      <a href="#contact">Contact</a>
+      <a class="owner-link" href="https://app.pagescms.org" target="_blank" rel="noreferrer">Owner edit ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell rule">
+      <div class="hero-copy">
+        <p class="eyebrow mono" data-eyebrow>Independent portfolio / Ho Chi Minh City</p>
+        <h1>Editorial thinking across <em>culture</em>, brands and publishing.</h1>
+        <p class="hero-intro" data-intro>Research, writing, editing and curation shaped into lasting records.</p>
+        <div class="hero-actions">
+          <a class="button" href="#archive">Explore the complete archive <span>→</span></a>
+          <a class="button secondary" data-cv-link href="#">View CV <span>↗</span></a>
+        </div>
+      </div>
+      <aside class="hero-index" aria-label="Practice areas">
+        <div class="hero-index-head">
+          <p class="mono">Practice index</p>
+          <span>Five connected fields</span>
+        </div>
+        <div class="discipline-list" id="discipline-list"></div>
+      </aside>
+    </section>
+
+    <section class="metrics shell rule" id="metrics" aria-label="Selected achievements"></section>
+
+    <section class="section shell rule" id="featured">
+      <div class="section-heading">
+        <p class="mono">Selected work / Across disciplines</p>
+        <h2>Not only events. A broader <em>editorial practice.</em></h2>
+      </div>
+      <div class="featured-grid" id="featured-grid"><p class="loading">Loading selected work…</p></div>
+    </section>
+
+    <section class="section archive" id="archive">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="mono">Drive archive / 2018 to present</p>
+          <h2>Every field, in one <em>working index.</em></h2>
+        </div>
+        <div class="filters" id="filters" aria-label="Filter projects"></div>
+        <div class="archive-grid" id="archive-grid"><p class="loading">Loading the full archive…</p></div>
+      </div>
+    </section>
+
+    <section class="section shell rule" id="timeline">
+      <div class="timeline-layout">
+        <div class="timeline-intro">
+          <p class="eyebrow mono">Experience / Most recent first</p>
+          <h2>Roles that connect the archive.</h2>
+          <p data-about>Editorial research, publishing, brand language, interviews and public programmes are treated as one connected practice.</p>
+        </div>
+        <div class="timeline" id="timeline-list"></div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="shell contact-layout">
+        <h2>Let’s make the next story precise and memorable.</h2>
+        <div class="contact-links">
+          <a data-email-link href="#"><span data-email>letankhang@gmail.com</span><span>↗</span></a>
+          <a data-phone-link href="#"><span data-phone>+84 83 88 99 204</span><span>↗</span></a>
+          <a data-linkedin-link href="#" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>↗</span></a>
+          <a data-archive-link href="#" target="_blank" rel="noreferrer"><span>Complete evidence archive</span><span>↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <span>© 2026 <span data-site-name>Khiet Lam</span></span>
+    <span class="mono">Editorial / Copywriting / Cultural practice</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script>
+    const categoryMap = {
+      curation: { label: "Cultural Programmes", short: "Curation" },
+      copywriting: { label: "Copywriting and Brand", short: "Copywriting" },
+      publishing: { label: "Publishing and Writing", short: "Publishing" },
+      interviews: { label: "Talks and Interviews", short: "Interviews" },
+      "board-game": { label: "Board Game Design", short: "Board game" }
+    };
+
+    const escapeHTML = value => String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+    const imageFailure = event => event.currentTarget.closest("article")?.classList.add("image-failed");
+
+    function tagsMarkup(tags = []) {
+      return `<div class="tag-row">${tags.slice(0, 3).map(tag => `<span class="tag">${escapeHTML(tag)}</span>`).join("")}</div>`;
+    }
+
+    function featuredCard(project) {
+      const category = categoryMap[project.category]?.label || project.category;
+      return `
+        <article class="featured-card" data-category="${escapeHTML(project.category)}">
+          <div class="featured-media">
+            <img src="${escapeHTML(project.image)}" alt="${escapeHTML(project.imageAlt || project.title)}" loading="lazy" onerror="imageFailure(event)">
+            <span class="category-label mono">${escapeHTML(category)}</span>
+          </div>
+          <div class="featured-body">
+            <p class="card-meta mono">${escapeHTML(project.role)} / ${escapeHTML(project.client)} / ${escapeHTML(project.period)}</p>
+            <h3>${escapeHTML(project.title)}</h3>
+            <p>${escapeHTML(project.summary)}</p>
+            <div class="card-foot">
+              ${tagsMarkup(project.tags)}
+              <a class="evidence" href="${escapeHTML(project.evidenceUrl)}" target="_blank" rel="noreferrer">Evidence ↗</a>
+            </div>
+          </div>
+        </article>`;
+    }
+
+    function archiveCard(project, index) {
+      const category = categoryMap[project.category]?.short || project.category;
+      return `
+        <article class="archive-card" data-category="${escapeHTML(project.category)}">
+          <span class="archive-number">${String(index + 1).padStart(2, "0")}</span>
+          <div class="archive-title">
+            <h3>${escapeHTML(project.title)}</h3>
+            <p class="mono">${escapeHTML(category)} / ${escapeHTML(project.client)} / ${escapeHTML(project.period)}</p>
+          </div>
+          <p class="archive-copy"><strong>${escapeHTML(project.role)}.</strong> ${escapeHTML(project.summary)} ${escapeHTML(project.outcome)}</p>
+          <div class="archive-actions">
+            ${tagsMarkup(project.tags)}
+            <a class="evidence" href="${escapeHTML(project.evidenceUrl)}" target="_blank" rel="noreferrer">Open evidence ↗</a>
+          </div>
+        </article>`;
+    }
+
+    function renderSite(data) {
+      const { site, metrics, timeline } = data;
+      const projects = data.projects.filter(project => project.published !== false);
+
+      document.querySelectorAll("[data-site-name]").forEach(node => node.textContent = site.name);
+      document.querySelector("[data-eyebrow]").textContent = site.eyebrow;
+      document.querySelector("[data-intro]").textContent = site.intro;
+      document.querySelector("[data-about]").textContent = site.about;
+      document.querySelector("[data-cv-link]").href = site.cvUrl;
+      document.querySelector("[data-email]").textContent = site.email;
+      document.querySelector("[data-email-link]").href = `mailto:${site.email}`;
+      document.querySelector("[data-phone]").textContent = site.phone;
+      document.querySelector("[data-phone-link]").href = `tel:${site.phone.replace(/\s/g, "")}`;
+      document.querySelector("[data-linkedin-link]").href = site.linkedin;
+      document.querySelector("[data-archive-link]").href = site.archiveUrl;
+
+      const counts = projects.reduce((result, project) => {
+        result[project.category] = (result[project.category] || 0) + 1;
+        return result;
+      }, {});
+
+      document.querySelector("#discipline-list").innerHTML = Object.entries(categoryMap).map(([key, category], index) => `
+        <a class="discipline" href="#archive" data-filter-link="${key}">
+          <span>${String(index + 1).padStart(2, "0")}</span>
+          <strong>${escapeHTML(category.label)}</strong>
+          <small>${counts[key] || 0} records</small>
+        </a>`).join("");
+
+      document.querySelector("#metrics").innerHTML = metrics.map(metric => `
+        <div class="metric"><strong>${escapeHTML(metric.value)}</strong><span>${escapeHTML(metric.label)}</span></div>`).join("");
+
+      const featured = projects.filter(project => project.featured).slice(0, 8);
+      document.querySelector("#featured-grid").innerHTML = featured.map(featuredCard).join("");
+      document.querySelector("#archive-grid").innerHTML = projects.map(archiveCard).join("");
+
+      const filters = [{ key: "all", label: `All work (${projects.length})` }, ...Object.entries(categoryMap).map(([key, value]) => ({ key, label: `${value.short} (${counts[key] || 0})` }))];
+      document.querySelector("#filters").innerHTML = filters.map((filter, index) => `
+        <button class="filter${index === 0 ? " active" : ""}" type="button" data-filter="${filter.key}" aria-pressed="${index === 0}">${escapeHTML(filter.label)}</button>`).join("");
+
+      document.querySelector("#timeline-list").innerHTML = timeline.map(item => `
+        <article class="timeline-item">
+          <time>${escapeHTML(item.period)}</time>
+          <div><h3>${escapeHTML(item.role)}</h3><p>${escapeHTML(item.organisation)}</p></div>
+        </article>`).join("");
+
+      bindFilters();
+    }
+
+    function applyFilter(filter) {
+      document.querySelectorAll(".archive-card").forEach(card => {
+        card.hidden = filter !== "all" && card.dataset.category !== filter;
+      });
+      document.querySelectorAll(".filter").forEach(button => {
+        const active = button.dataset.filter === filter;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+    }
+
+    function bindFilters() {
+      document.querySelectorAll(".filter").forEach(button => button.addEventListener("click", () => applyFilter(button.dataset.filter)));
+      document.querySelectorAll("[data-filter-link]").forEach(link => link.addEventListener("click", () => applyFilter(link.dataset.filterLink)));
+    }
+
+    fetch(`data/content.json?v=${Date.now()}`)
+      .then(response => {
+        if (!response.ok) throw new Error(`Content request failed: ${response.status}`);
+        return response.json();
+      })
+      .then(renderSite)
+      .catch(error => {
+        console.error(error);
+        document.querySelector("#featured-grid").innerHTML = '<p class="error-message">The portfolio data could not be loaded. Please refresh the page.</p>';
+        document.querySelector("#archive-grid").innerHTML = '<p class="error-message">The archive is temporarily unavailable.</p>';
+      });
+  </script>
 </body>
 </html>
