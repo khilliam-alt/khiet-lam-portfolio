@@ -265,7 +265,7 @@
     <section class="hero shell rule">
       <div class="hero-copy">
         <p class="eyebrow mono" data-eyebrow>Independent portfolio / Ho Chi Minh City</p>
-        <h1>Editorial thinking across <em>culture</em>, brands and publishing.</h1>
+        <h1 data-headline>Editorial thinking across culture, brands and publishing.</h1>
         <p class="hero-intro" data-intro>Research, writing, editing and curation shaped into lasting records.</p>
         <div class="hero-actions">
           <a class="button" href="#archive">Explore the complete archive <span>→</span></a>
@@ -397,6 +397,7 @@
 
       document.querySelectorAll("[data-site-name]").forEach(node => node.textContent = site.name);
       document.querySelector("[data-eyebrow]").textContent = site.eyebrow;
+      document.querySelector("[data-headline]").textContent = site.headline;
       document.querySelector("[data-intro]").textContent = site.intro;
       document.querySelector("[data-about]").textContent = site.about;
       document.querySelector("[data-cv-link]").href = site.cvUrl;
