@@ -156,6 +156,40 @@ content:
             label: Organisation
             type: string
 
+  - name: project-media
+    label: Project galleries and media
+    type: file
+    path: data/project-media.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: Project ID
+        type: string
+        required: true
+      - name: title
+        label: Project title
+        type: string
+      - name: article
+        label: Detail page article
+        type: text
+      - name: gallery
+        label: Image gallery
+        type: image
+        options:
+          multiple: true
+          path: projects
+          rename: safe
+      - name: youtubeUrl
+        label: YouTube video or playlist URL
+        type: string
+      - name: youtubeThumbnail
+        label: YouTube thumbnail
+        type: image
+        options:
+          path: youtube
+          rename: safe
+
 settings:
   content:
     merge: true
