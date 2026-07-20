@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1eadf">
+  <meta name="description" content="Selected work by Khiet Lam.">
+  <title>Selected Work | Khiet Lam</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Noto+Serif:ital,wght@0,400;0,500;1,400&display=swap');
+
+    :root {
+      --paper: #f1eadf;
+      --paper-light: #faf6ef;
+      --ink: #242321;
+      --muted: #6f6960;
+      --red: #762b38;
+      --green: #234c3a;
+      --gold: #b19260;
+      --line: rgba(36, 35, 33, .24);
+      --serif: "Noto Serif", "Times New Roman", serif;
+      --sans: "Be Vietnam Pro", Arial, sans-serif;
+      --mono: "Courier New", monospace;
+      --max: 1480px;
+    }
+
+    * { box-sizing: border-box; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--sans); margin: 0; text-rendering: optimizeLegibility; }
+    a { color: inherit; text-decoration: none; }
+    button { color: inherit; font: inherit; }
+    img { display: block; width: 100%; }
+    .shell { margin: 0 auto; max-width: var(--max); }
+    .mono { font-family: var(--mono); letter-spacing: .055em; text-transform: uppercase; }
+    .eyebrow { color: var(--red); font-size: .64rem; line-height: 1.5; margin: 0; }
+
+    .site-header {
+      align-items: center;
+      backdrop-filter: blur(14px);
+      background: rgba(241, 234, 223, .92);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      height: 72px;
+      justify-content: space-between;
+      padding: 0 clamp(1.1rem, 4vw, 4.5rem);
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+
+    .wordmark { font: 500 clamp(1.35rem, 2vw, 1.9rem) var(--serif); letter-spacing: .045em; text-transform: uppercase; }
+    .header-links { display: flex; gap: clamp(1rem, 3vw, 3rem); }
+    .header-links a { border-bottom: 1px solid transparent; font-size: .72rem; padding: .4rem 0; }
+    .header-links a:hover { border-color: var(--red); color: var(--red); }
+
+    .project-hero {
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      gap: clamp(2.5rem, 7vw, 8rem);
+      grid-template-columns: minmax(0, .88fr) minmax(420px, 1.12fr);
+      min-height: 670px;
+      padding: clamp(4rem, 8vw, 8rem) clamp(1.1rem, 4vw, 4.5rem) 4rem;
+    }
+
+    .hero-copy { align-self: center; }
+    .back-link { color: var(--green); display: inline-block; font-size: .68rem; margin-bottom: 2rem; }
+    .hero-copy h1 { font: 400 clamp(3.2rem, 6.5vw, 7rem)/.9 var(--serif); letter-spacing: -.055em; margin: 1.2rem 0; }
+    .hero-summary { color: var(--muted); font: 1.08rem/1.7 var(--serif); margin: 0 0 2rem; max-width: 38rem; }
+    .hero-media { align-self: center; aspect-ratio: 1.2 / 1; background: var(--green); overflow: hidden; }
+    .hero-media img { height: 100%; object-fit: cover; }
+    .hero-media.image-failed { background: linear-gradient(135deg, var(--green), var(--red)); }
+    .hero-media.image-failed img { display: none; }
+
+    .facts { border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(3, 1fr); }
+    .fact { border-right: 1px solid var(--line); padding: 1.1rem 1rem 0 0; }
+    .fact:last-child { border: 0; padding-left: 1rem; }
+    .fact:nth-child(2) { padding-left: 1rem; }
+    .fact span { color: var(--red); display: block; font: .56rem var(--mono); margin-bottom: .45rem; text-transform: uppercase; }
+    .fact strong { font: 400 .82rem/1.45 var(--sans); }
+
+    .section { border-bottom: 1px solid var(--line); padding: clamp(5rem, 9vw, 9rem) clamp(1.1rem, 4vw, 4.5rem); }
+    .content-layout { display: grid; gap: clamp(3rem, 8vw, 9rem); grid-template-columns: .55fr 1.45fr; }
+    .content-layout h2, .media-heading h2 { font: 400 clamp(2.4rem, 4.8vw, 5.2rem)/.98 var(--serif); letter-spacing: -.04em; margin: 1.2rem 0 0; }
+    .article { max-width: 49rem; }
+    .article p { font: 1.08rem/1.8 var(--serif); margin: 0 0 1.45rem; }
+    .outcome { border-left: 3px solid var(--red); color: var(--green); font: 500 1rem/1.65 var(--serif); margin-top: 2.5rem; padding-left: 1.3rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: .42rem; margin-top: 2rem; }
+    .tag { border: 1px solid var(--line); font: .56rem var(--mono); padding: .38rem .5rem; text-transform: uppercase; }
+    .evidence { align-items: center; background: var(--red); color: white; display: inline-flex; font-size: .72rem; gap: 2rem; margin-top: 2rem; padding: .9rem 1.05rem; }
+    .evidence:hover { background: var(--green); }
+
+    .media-section { background: var(--green); color: var(--paper-light); }
+    .media-heading { align-items: end; display: flex; justify-content: space-between; margin-bottom: 3rem; }
+    .media-heading .eyebrow { color: #d7bf95; }
+    .media-count { color: #d7bf95; font: italic 1rem var(--serif); }
+    .video-shell { margin-bottom: 3rem; max-width: 1080px; }
+    .video-poster { aspect-ratio: 16 / 9; background: #111; border: 0; cursor: pointer; overflow: hidden; padding: 0; position: relative; width: 100%; }
+    .video-poster img { height: 100%; object-fit: cover; opacity: .78; }
+    .play { align-items: center; background: var(--red); border-radius: 50%; color: white; display: flex; font-size: 1.3rem; height: 4.6rem; justify-content: center; left: 50%; padding-left: .25rem; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 4.6rem; }
+    .video-poster span:last-child { bottom: 1rem; color: white; font-size: .7rem; left: 1rem; position: absolute; }
+    .video-frame { aspect-ratio: 16 / 9; border: 0; width: 100%; }
+
+    .gallery { display: grid; gap: .85rem; grid-auto-flow: dense; grid-template-columns: repeat(3, 1fr); }
+    .gallery-item { background: rgba(255, 255, 255, .08); min-height: 280px; overflow: hidden; }
+    .gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
+    .gallery-item img { height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .gallery-item:hover img { transform: scale(1.02); }
+
+    .project-nav { display: grid; gap: 1px; grid-template-columns: repeat(2, 1fr); padding: 0; }
+    .project-nav a { background: var(--paper-light); min-height: 160px; padding: 2rem clamp(1.1rem, 4vw, 4rem); }
+    .project-nav a:last-child { text-align: right; }
+    .project-nav span { color: var(--red); display: block; font: .58rem var(--mono); margin-bottom: .7rem; text-transform: uppercase; }
+    .project-nav strong { font: 400 clamp(1.25rem, 2.4vw, 2.2rem) var(--serif); }
+    .project-nav a:hover strong { color: var(--red); }
+
+    footer { align-items: center; display: flex; font-size: .65rem; gap: 2rem; justify-content: space-between; padding: 2rem clamp(1.1rem, 4vw, 4.5rem); }
+    .not-found { min-height: 70vh; padding: 8rem clamp(1.1rem, 4vw, 4.5rem); }
+    .not-found h1 { font: 400 clamp(3rem, 7vw, 7rem) var(--serif); margin: 1rem 0; }
+
+    @media (max-width: 900px) {
+      .project-hero, .content-layout { grid-template-columns: 1fr; }
+      .project-hero { min-height: 0; }
+      .hero-media { width: 100%; }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 620px) {
+      .site-header { height: 66px; padding-inline: 1rem; }
+      .header-links a:nth-child(2) { display: none; }
+      .project-hero { padding-top: 3.5rem; }
+      .hero-copy h1 { font-size: clamp(3rem, 14vw, 4.7rem); }
+      .facts { grid-template-columns: 1fr; }
+      .fact, .fact:nth-child(2), .fact:last-child { border-bottom: 1px solid var(--line); border-right: 0; padding: .85rem 0; }
+      .media-heading { align-items: flex-start; flex-direction: column; gap: 1rem; }
+      .gallery { grid-template-columns: 1fr; }
+      .gallery-item, .gallery-item:first-child { grid-column: auto; grid-row: auto; min-height: 300px; }
+      .project-nav { grid-template-columns: 1fr; }
+      .project-nav a:last-child { text-align: left; }
+      footer { align-items: flex-start; flex-direction: column; gap: .7rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="index.html">Khiet Lam</a>
+    <nav class="header-links" aria-label="Project navigation">
+      <a href="index.html#archive">All work</a>
+      <a href="https://app.pagescms.org" target="_blank" rel="noreferrer">Owner edit ↗</a>
+    </nav>
+  </header>
+
+  <main id="app">
+    <section class="not-found"><p class="eyebrow mono">Loading</p><h1>Opening project…</h1></section>
+  </main>
+
+  <footer class="shell">
+    <span>© 2026 Khiet Lam</span>
+    <span class="mono">Selected work / Project record</span>
+    <a href="index.html">Portfolio index ↑</a>
+  </footer>
+
+  <script>
+    const categories = {
+      curation: "Cultural Programmes",
+      copywriting: "Copywriting and Brand",
+      publishing: "Publishing and Writing",
+      interviews: "Talks and Interviews",
+      "board-game": "Board Game Design"
+    };
+
+    const escapeHTML = value => String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+    function youtubeEmbed(url) {
+      if (!url) return "";
+      try {
+        const parsed = new URL(url);
+        const playlist = parsed.searchParams.get("list");
+        if (playlist) return `https://www.youtube-nocookie.com/embed/videoseries?list=${encodeURIComponent(playlist)}`;
+        let id = parsed.searchParams.get("v");
+        if (!id && parsed.hostname.includes("youtu.be")) id = parsed.pathname.slice(1).split("/")[0];
+        if (!id && /\/shorts\//.test(parsed.pathname)) id = parsed.pathname.split("/shorts/")[1].split("/")[0];
+        if (!id && /\/embed\//.test(parsed.pathname)) id = parsed.pathname.split("/embed/")[1].split("/")[0];
+        return id ? `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}` : "";
+      } catch (_) {
+        return "";
+      }
+    }
+
+    function paragraphs(text, fallback) {
+      return String(text || fallback || "")
+        .split(/\n\s*\n/)
+        .filter(Boolean)
+        .map(value => `<p>${escapeHTML(value)}</p>`)
+        .join("");
+    }
+
+    function render(projects, mediaEntries) {
+      const id = new URLSearchParams(location.search).get("id");
+      const visible = projects.filter(project => project.published !== false);
+      const index = visible.findIndex(project => project.id === id);
+      const project = visible[index];
+      if (!project) {
+        document.querySelector("#app").innerHTML = `
+          <section class="not-found shell">
+            <p class="eyebrow mono">Project not found</p>
+            <h1>This record is not available.</h1>
+            <a class="evidence" href="index.html#archive">Return to archive →</a>
+          </section>`;
+        return;
+      }
+
+      const media = mediaEntries.find(entry => entry.id === project.id) || {};
+      const gallery = media.gallery?.length ? media.gallery : [project.image];
+      const embed = youtubeEmbed(media.youtubeUrl);
+      const previous = visible[(index - 1 + visible.length) % visible.length];
+      const next = visible[(index + 1) % visible.length];
+
+      document.title = `${project.title} | Khiet Lam`;
+      document.querySelector('meta[name="description"]').setAttribute("content", project.summary);
+
+      const video = embed ? `
+        <div class="video-shell">
+          <button class="video-poster" type="button" data-video-embed="${escapeHTML(embed)}" aria-label="Play YouTube video">
+            <img src="${escapeHTML(media.youtubeThumbnail || project.image)}" alt="YouTube thumbnail for ${escapeHTML(project.title)}">
+            <span class="play">▶</span>
+            <span class="mono">Play official YouTube archive</span>
+          </button>
+        </div>` : "";
+
+      document.querySelector("#app").innerHTML = `
+        <section class="project-hero shell">
+          <div class="hero-copy">
+            <a class="back-link" href="index.html#archive">← Back to portfolio index</a>
+            <p class="eyebrow mono">${escapeHTML(categories[project.category])} / ${escapeHTML(project.period)}</p>
+            <h1>${escapeHTML(project.title)}</h1>
+            <p class="hero-summary">${escapeHTML(project.summary)}</p>
+            <div class="facts">
+              <div class="fact"><span>Role</span><strong>${escapeHTML(project.role)}</strong></div>
+              <div class="fact"><span>Organisation</span><strong>${escapeHTML(project.client)}</strong></div>
+              <div class="fact"><span>Period</span><strong>${escapeHTML(project.period)}</strong></div>
+            </div>
+          </div>
+          <div class="hero-media"><img src="${escapeHTML(project.image)}" alt="${escapeHTML(project.imageAlt || project.title)}" onerror="this.parentElement.classList.add('image-failed')"></div>
+        </section>
+
+        <section class="section shell">
+          <div class="content-layout">
+            <div>
+              <p class="eyebrow mono">Project record / Context and contribution</p>
+              <h2>About the work</h2>
+            </div>
+            <article class="article">
+              ${paragraphs(media.article, project.summary)}
+              <p class="outcome">${escapeHTML(project.outcome)}</p>
+              <div class="tags">${(project.tags || []).map(tag => `<span class="tag">${escapeHTML(tag)}</span>`).join("")}</div>
+              <a class="evidence" href="${escapeHTML(project.evidenceUrl)}" target="_blank" rel="noreferrer">Open source evidence <span>↗</span></a>
+            </article>
+          </div>
+        </section>
+
+        <section class="section media-section">
+          <div class="shell">
+            <div class="media-heading">
+              <div><p class="eyebrow mono">Media collection</p><h2>Images${embed ? " and video" : ""}</h2></div>
+              <span class="media-count">${gallery.length} selected records</span>
+            </div>
+            ${video}
+            <div class="gallery">
+              ${gallery.map((url, imageIndex) => `
+                <a class="gallery-item" href="${escapeHTML(url)}" target="_blank" rel="noreferrer">
+                  <img src="${escapeHTML(url)}" alt="${escapeHTML(project.title)} image ${imageIndex + 1}" loading="lazy">
+                </a>`).join("")}
+            </div>
+          </div>
+        </section>
+
+        <nav class="project-nav shell" aria-label="Previous and next project">
+          <a href="project.html?id=${encodeURIComponent(previous.id)}"><span>Previous project</span><strong>← ${escapeHTML(previous.title)}</strong></a>
+          <a href="project.html?id=${encodeURIComponent(next.id)}"><span>Next project</span><strong>${escapeHTML(next.title)} →</strong></a>
+        </nav>`;
+
+      const poster = document.querySelector("[data-video-embed]");
+      poster?.addEventListener("click", () => {
+        const iframe = document.createElement("iframe");
+        iframe.className = "video-frame";
+        iframe.src = `${poster.dataset.videoEmbed}${poster.dataset.videoEmbed.includes("?") ? "&" : "?"}autoplay=1`;
+        iframe.title = `YouTube video for ${project.title}`;
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.allowFullscreen = true;
+        poster.replaceWith(iframe);
+      });
+    }
+
+    Promise.all([
+      fetch(`data/content.json?v=${Date.now()}`).then(response => response.json()),
+      fetch(`data/project-media.json?v=${Date.now()}`).then(response => response.json())
+    ])
+      .then(([content, media]) => render(content.projects, media))
+      .catch(error => {
+        console.error(error);
+        document.querySelector("#app").innerHTML = `
+          <section class="not-found shell"><p class="eyebrow mono">Loading error</p><h1>This project could not be opened.</h1><a class="evidence" href="index.html#archive">Return to archive →</a></section>`;
+      });
+  </script>
+</body>
+</html>
