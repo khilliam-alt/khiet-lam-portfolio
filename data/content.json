@@ -108,7 +108,7 @@
       "imageAlt": "Selected Lela Journal article",
       "evidenceUrl": "https://drive.google.com/drive/folders/1Nyx21aHgIrYO_tcTcLFB2f02chwtT_at",
       "tags": ["Journalism", "Profiles", "Editorial"],
-      "featured": true,
+      "featured": false,
       "published": true
     },
     {
@@ -124,7 +124,7 @@
       "imageAlt": "NovelToon editorial work",
       "evidenceUrl": "https://drive.google.com/drive/folders/1-Fj-YTKKHWb3fhMQDlrZ_x53vM4i-ORt",
       "tags": ["Fiction editing", "Community", "Training"],
-      "featured": true,
+      "featured": false,
       "published": true
     },
     {
@@ -140,7 +140,7 @@
       "imageAlt": "Selected edited book cover",
       "evidenceUrl": "https://drive.google.com/drive/folders/1Xb241q-w6uxFJXEGYDrlf2Sn47UAAAiY",
       "tags": ["Book editing", "Print", "Translation"],
-      "featured": true,
+      "featured": false,
       "published": true
     },
     {
