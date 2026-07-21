@@ -305,7 +305,13 @@
           <a data-archive-link href="#" target="_blank" rel="noreferrer"><span>Evidence archive</span><span>↗</span></a>
         </div>
       </div>
+      <div class="profile-library" id="profile-library" aria-label="CV, degree, portfolio and rate card"></div>
     </section>
+
+    <dialog class="media-dialog profile-viewer-dialog" aria-label="Document preview">
+      <div class="dialog-bar"><span class="dialog-title" data-profile-viewer-title>Document</span><button class="dialog-close" type="button" data-profile-dialog-close aria-label="Close document viewer">×</button></div>
+      <iframe class="viewer-frame" data-profile-frame title="Document preview" allow="fullscreen" allowfullscreen></iframe>
+    </dialog>
   </main>
 
   <footer class="shell">

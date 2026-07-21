@@ -133,6 +133,12 @@ content:
           - name: imageAlt
             label: Cover description
             type: string
+          - name: youtubeUrl
+            label: YouTube URL (optional)
+            type: string
+          - name: youtubeThumbnail
+            label: YouTube thumbnail URL (optional)
+            type: string
           - name: summary
             label: Short description
             type: text
@@ -192,6 +198,30 @@ content:
               - name: thumbnail
                 label: Drive thumbnail URL
                 type: string
+
+      - name: profileDocuments
+        label: About me documents
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label} / {title}"
+        fields:
+          - name: title
+            label: Document title
+            type: string
+          - name: label
+            label: Short label
+            type: string
+          - name: sourceUrl
+            label: Open in Drive URL
+            type: string
+          - name: previewUrl
+            label: Embedded Drive Preview URL
+            type: string
+          - name: thumbnail
+            label: Cover image URL
+            type: string
 
 settings:
   content:

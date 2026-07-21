@@ -24,7 +24,7 @@ function collectionMarkup(category, projects, categoryIndex) {
         <div class="collection-track">
           ${projects.map(project => `
             <article class="collection-card">
-              <a class="collection-media" href="${projectHref(project.id)}" aria-label="Open ${esc(project.title)}">
+              <a class="collection-media media-fallback" data-fallback-label="${esc(project.title)}" href="${projectHref(project.id)}" aria-label="Open ${esc(project.title)}">
                 <img src="${esc(project.cover)}" alt="${esc(project.imageAlt || project.title)}" loading="lazy">
               </a>
               <div class="collection-body">
@@ -47,7 +47,7 @@ function archiveMarkup(project, index, categories) {
   return `
     <article class="archive-row reveal" data-category="${esc(project.category)}">
       <span class="archive-number">${String(index + 1).padStart(2, "0")}</span>
-      <a class="archive-thumb" href="${projectHref(project.id)}" aria-label="Open ${esc(project.title)}">
+      <a class="archive-thumb media-fallback" data-fallback-label="${esc(project.title)}" href="${projectHref(project.id)}" aria-label="Open ${esc(project.title)}">
         <img src="${esc(project.cover)}" alt="" loading="lazy">
       </a>
       <div class="archive-title">
@@ -108,6 +108,9 @@ function setupReveal() {
 }
 
 function setupChrome() {
+  addEventListener("error", event => {
+    if (event.target instanceof HTMLImageElement) event.target.closest("a, button, div")?.classList.add("image-failed");
+  }, true);
   if (!document.querySelector(".scroll-progress")) document.body.insertAdjacentHTML("afterbegin", '<div class="scroll-progress" aria-hidden="true"></div>');
   const hero = document.querySelector(".hero");
   const progress = document.querySelector(".scroll-progress");
@@ -139,6 +142,36 @@ function applyFilter(filter) {
   });
 }
 
+function profileDocumentMarkup(item, index) {
+  return `
+    <article class="profile-document reveal">
+      <button class="profile-document-cover media-fallback" data-fallback-label="${esc(item.title)}" type="button" data-profile-preview="${esc(item.previewUrl)}" data-profile-title="${esc(item.title)}" aria-label="Preview ${esc(item.title)}">
+        <img src="${esc(item.thumbnail)}" alt="Cover of ${esc(item.title)}" loading="lazy">
+        <span>Preview</span>
+      </button>
+      <div>
+        <p>${String(index + 1).padStart(2, "0")} / ${esc(item.label)}</p>
+        <h3>${esc(item.title)}</h3>
+        <a href="${esc(item.sourceUrl)}" target="_blank" rel="noreferrer">Open in Drive ↗</a>
+      </div>
+    </article>`;
+}
+
+function setupProfileViewer() {
+  const dialog = document.querySelector(".profile-viewer-dialog");
+  const frame = dialog?.querySelector("[data-profile-frame]");
+  const title = dialog?.querySelector("[data-profile-viewer-title]");
+  if (!dialog || !frame || !title) return;
+  document.querySelectorAll("[data-profile-preview]").forEach(button => button.addEventListener("click", () => {
+    title.textContent = button.dataset.profileTitle;
+    frame.src = button.dataset.profilePreview;
+    dialog.showModal();
+  }));
+  dialog.querySelector("[data-profile-dialog-close]")?.addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", event => { if (event.target === dialog) dialog.close(); });
+  dialog.addEventListener("close", () => frame.src = "about:blank");
+}
+
 function render(siteData, portfolio) {
   const site = siteData.site;
   const {categories, projects} = portfolio;
@@ -157,6 +190,9 @@ function render(siteData, portfolio) {
   document.querySelector("[data-linkedin-link]").href = site.linkedin;
   document.querySelector("[data-archive-link]").href = site.archiveUrl;
 
+  const profileLibrary = document.querySelector("#profile-library");
+  if (profileLibrary) profileLibrary.innerHTML = (portfolio.profileDocuments || []).map(profileDocumentMarkup).join("");
+
   const practiceNote = document.querySelector(".practice-head span");
   if (practiceNote) practiceNote.textContent = "fields";
   document.querySelector("#discipline-list").innerHTML = categories.map((category, index) => `
@@ -173,10 +209,11 @@ function render(siteData, portfolio) {
   const filterItems = [{id:"all",label:`All (${projects.length})`}, ...categories.map(category => ({id:category.id,label:`${category.short} (${counts[category.id]})`}))];
   document.querySelector("#filters").innerHTML = filterItems.map((item, index) => `<button class="filter${index === 0 ? " active" : ""}" type="button" data-filter="${esc(item.id)}" aria-pressed="${index === 0}">${esc(item.label)}</button>`).join("");
 
-  document.querySelectorAll("img").forEach(image => image.addEventListener("error", () => image.closest("a, div")?.classList.add("image-failed"), {once:true}));
+  document.querySelectorAll("img").forEach(image => image.addEventListener("error", () => image.closest("a, button, div")?.classList.add("image-failed"), {once:true}));
   document.querySelectorAll(".filter").forEach(button => button.addEventListener("click", () => applyFilter(button.dataset.filter)));
   document.querySelectorAll("[data-filter-link]").forEach(link => link.addEventListener("click", () => applyFilter(link.dataset.filterLink)));
   setupCollections();
+  setupProfileViewer();
   setupReveal();
   requestAnimationFrame(() => document.body.classList.add("ready"));
 }

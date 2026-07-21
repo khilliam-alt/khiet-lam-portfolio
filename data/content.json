@@ -4,7 +4,7 @@
     "eyebrow": "Independent portfolio / Ho Chi Minh City",
     "headline": "Editorial thinking across culture, brands and publishing.",
     "intro": "I research, write, edit and curate stories that connect cultural knowledge, contemporary audiences and distinctive brand voices.",
-    "about": "Khiet Lam is an editor, senior copywriter and cultural event curator based in Ho Chi Minh City. His practice moves between editorial research, publishing, brand language, interviews and public programmes.",
+    "about": "I am an editor, senior copywriter and cultural event curator based in Ho Chi Minh City. My practice moves between editorial research, publishing, brand language, interviews and public programmes. I am especially interested in making cultural knowledge and complex ideas clear, engaging and relevant to contemporary audiences.",
     "location": "Ho Chi Minh City, Vietnam",
     "email": "letankhang@gmail.com",
     "phone": "+84 83 88 99 204",
@@ -43,7 +43,11 @@
       "image": "https://drive.google.com/thumbnail?id=1lR7pqz-zhYa_uq6u3y2qDhJE8xLmAm3W&sz=w2000",
       "imageAlt": "Hát Bội performance aboard the Saigon Art Cruise",
       "evidenceUrl": "https://drive.google.com/drive/folders/1p_icPZ1g8P6Uu2Cki3RoNhfvhhaDHdwp",
-      "tags": ["Curation", "Research", "Script"],
+      "tags": [
+        "Curation",
+        "Research",
+        "Script"
+      ],
       "featured": true,
       "published": true
     },
@@ -59,7 +63,11 @@
       "image": "https://drive.google.com/thumbnail?id=15Doxzp3ZL5ykFN33vXJOaBcpv5RbZFB-&sz=w1600",
       "imageAlt": "Selected Tatler Vietnam article",
       "evidenceUrl": "https://drive.google.com/drive/folders/1vLtndaAR3XmDJ7wsLfsT4SEz7s3Dl8fa",
-      "tags": ["Long form", "Art writing", "Reporting"],
+      "tags": [
+        "Long form",
+        "Art writing",
+        "Reporting"
+      ],
       "featured": true,
       "published": true
     },
@@ -75,7 +83,11 @@
       "image": "https://drive.google.com/thumbnail?id=1gdAQz54y4XAD5F70T_z-OUz0QRncBXRP&sz=w1600",
       "imageAlt": "Toong Thi Sách English factsheet",
       "evidenceUrl": "https://drive.google.com/drive/folders/1WVKafOrZ6z6ZkMmFBJjfWGOk1xDCVOep",
-      "tags": ["Social", "Internal communication", "Email marketing"],
+      "tags": [
+        "Social",
+        "Internal communication",
+        "Email marketing"
+      ],
       "featured": true,
       "published": true
     },
@@ -91,7 +103,11 @@
       "image": "https://drive.google.com/thumbnail?id=1doe0rgf9yXiC-1CN8R_s6h9l-lj892c-&sz=w1600",
       "imageAlt": "Hidden Champions podcast production",
       "evidenceUrl": "https://drive.google.com/drive/folders/16Nu_ZC0oyKB3jV2x9UYrwp5iRQAKNYDA",
-      "tags": ["Podcast", "Research", "Interview script"],
+      "tags": [
+        "Podcast",
+        "Research",
+        "Interview script"
+      ],
       "featured": true,
       "published": true
     },
@@ -107,7 +123,11 @@
       "image": "https://drive.google.com/thumbnail?id=1u6pJi1R5PryZIEcpHae2tcV9eeSUHc0V&sz=w1600",
       "imageAlt": "Selected Lela Journal article",
       "evidenceUrl": "https://drive.google.com/drive/folders/1Nyx21aHgIrYO_tcTcLFB2f02chwtT_at",
-      "tags": ["Journalism", "Profiles", "Editorial"],
+      "tags": [
+        "Journalism",
+        "Profiles",
+        "Editorial"
+      ],
       "featured": false,
       "published": true
     },
@@ -123,7 +143,11 @@
       "image": "https://drive.google.com/thumbnail?id=11wge3i2CUiBLem2D1giQpv81ueTr-28W&sz=w1600",
       "imageAlt": "NovelToon editorial work",
       "evidenceUrl": "https://drive.google.com/drive/folders/1-Fj-YTKKHWb3fhMQDlrZ_x53vM4i-ORt",
-      "tags": ["Fiction editing", "Community", "Training"],
+      "tags": [
+        "Fiction editing",
+        "Community",
+        "Training"
+      ],
       "featured": false,
       "published": true
     },
@@ -139,7 +163,11 @@
       "image": "https://drive.google.com/thumbnail?id=1uiz2zIaU38fiDS7aVKrchqaQIUQctJCA&sz=w1200",
       "imageAlt": "Selected edited book cover",
       "evidenceUrl": "https://drive.google.com/drive/folders/1Xb241q-w6uxFJXEGYDrlf2Sn47UAAAiY",
-      "tags": ["Book editing", "Print", "Translation"],
+      "tags": [
+        "Book editing",
+        "Print",
+        "Translation"
+      ],
       "featured": false,
       "published": true
     },
@@ -155,7 +183,11 @@
       "image": "https://drive.google.com/thumbnail?id=1zwguVQLtYJ5iP8eSVIr-kZX-9eX8NV-4&sz=w1600",
       "imageAlt": "Race board for Cuộc Đua Đầu Thai",
       "evidenceUrl": "https://drive.google.com/drive/folders/1CUaJgRthAoHyqlT0nr22lqHrc3CYHkCg",
-      "tags": ["Game concept", "Folklore", "Narrative design"],
+      "tags": [
+        "Game concept",
+        "Folklore",
+        "Narrative design"
+      ],
       "featured": true,
       "published": true
     },
@@ -171,7 +203,11 @@
       "image": "https://drive.google.com/thumbnail?id=1YINjwcc92ZX2ZzPunX32pbsOom0-GkiD&sz=w1600",
       "imageAlt": "Lọng Bướm exhibition key visual",
       "evidenceUrl": "https://drive.google.com/drive/folders/1fZzAVAmbg0NjQibe1LuM88uDO8m1vbGA",
-      "tags": ["Exhibition", "Interview", "Copywriting"],
+      "tags": [
+        "Exhibition",
+        "Interview",
+        "Copywriting"
+      ],
       "featured": false,
       "published": true
     },
@@ -187,7 +223,11 @@
       "image": "https://drive.google.com/thumbnail?id=1TUDPT2ST4TOORPFQ7KaHJgqpvE9FkCDC&sz=w1600",
       "imageAlt": "Vàng Sơn Một Thuở key visual",
       "evidenceUrl": "https://drive.google.com/drive/folders/1Lqjdz3h1u74IxgjZ7MVXznSFQCBus9W0",
-      "tags": ["Exhibition", "Lacquer", "Programme"],
+      "tags": [
+        "Exhibition",
+        "Lacquer",
+        "Programme"
+      ],
       "featured": false,
       "published": true
     },
@@ -203,7 +243,11 @@
       "image": "https://drive.google.com/thumbnail?id=1y9qZaLZPV6rnDVEzqKbf5BJNPu2-qaQS&sz=w1600",
       "imageAlt": "Người Đơm Hoa Giấy exhibition documentation",
       "evidenceUrl": "https://drive.google.com/drive/folders/1eNyoEUfIg8vmXci-D45ZfYOgKnhPyspN",
-      "tags": ["Research", "Interview", "Exhibition copy"],
+      "tags": [
+        "Research",
+        "Interview",
+        "Exhibition copy"
+      ],
       "featured": false,
       "published": true
     },
@@ -219,7 +263,11 @@
       "image": "https://drive.google.com/thumbnail?id=1_2ZZL3JyW1mi9FEgc7hUNq93eUR3dtJe&sz=w1600",
       "imageAlt": "Khơi Gợi Mỹ Cảm programme visual",
       "evidenceUrl": "https://drive.google.com/drive/folders/1Ry0nHta3N_EKjF0S82iod9J0ohCE4Bri",
-      "tags": ["Art education", "Workshop", "Curation"],
+      "tags": [
+        "Art education",
+        "Workshop",
+        "Curation"
+      ],
       "featured": false,
       "published": true
     },
@@ -235,7 +283,11 @@
       "image": "https://drive.google.com/thumbnail?id=1jI1tGqjZJSwAjoweWtg60qYhf_p5Oczr&sz=w1600",
       "imageAlt": "Đờn Ca Tài Tử culture class",
       "evidenceUrl": "https://drive.google.com/drive/folders/1SX0DIhzIgNnOBHO2kwz0AKp0dDktrBdu",
-      "tags": ["Culture class", "Education", "Programme"],
+      "tags": [
+        "Culture class",
+        "Education",
+        "Programme"
+      ],
       "featured": false,
       "published": true
     },
@@ -251,7 +303,11 @@
       "image": "https://drive.google.com/thumbnail?id=1foDRAu5IwCfhKobb5z7ApFggdKEKqIhC&sz=w1600",
       "imageAlt": "Improv Kịch Ứng Tác event",
       "evidenceUrl": "https://drive.google.com/drive/folders/1hfrb0-uU_sY3RRxDhYBHUaKVKCVlUqs3",
-      "tags": ["Performance", "Landing page", "Event"],
+      "tags": [
+        "Performance",
+        "Landing page",
+        "Event"
+      ],
       "featured": false,
       "published": true
     },
@@ -267,7 +323,11 @@
       "image": "https://drive.google.com/thumbnail?id=1xDw4bzsKcVEnZwjyeVAZTQGkreUxCpK5&sz=w1600",
       "imageAlt": "Tranh Gói Vải culture class visual",
       "evidenceUrl": "https://drive.google.com/drive/folders/1Cch97QWezphTO0On2ac-A9l58rQ1CTKu",
-      "tags": ["Workshop", "Material culture", "Curation"],
+      "tags": [
+        "Workshop",
+        "Material culture",
+        "Curation"
+      ],
       "featured": false,
       "published": true
     },
@@ -283,7 +343,11 @@
       "image": "https://drive.google.com/thumbnail?id=1v0O37U5uJ90DnSck6yugkTd3I9pZ8IVO&sz=w1600",
       "imageAlt": "Toong Thi Sách launch",
       "evidenceUrl": "https://drive.google.com/file/d/1pP3GTjgAcGjJ8ImMii7oG1vuPYgbvAx6/view",
-      "tags": ["Launch", "Social", "Email marketing"],
+      "tags": [
+        "Launch",
+        "Social",
+        "Email marketing"
+      ],
       "featured": false,
       "published": true
     },
@@ -299,7 +363,11 @@
       "image": "https://drive.google.com/thumbnail?id=1pwSnoOFeswZI4ufFBXZUFb5pjHbkQlhR&sz=w1600",
       "imageAlt": "Toong The Global City English factsheet",
       "evidenceUrl": "https://drive.google.com/file/d/1MRIQfzFi34LE9B_b7M5SzqyZV_XUZOSZ/view",
-      "tags": ["TVC", "Launch copy", "Sales material"],
+      "tags": [
+        "TVC",
+        "Launch copy",
+        "Sales material"
+      ],
       "featured": false,
       "published": true
     },
@@ -315,7 +383,11 @@
       "image": "https://drive.google.com/thumbnail?id=1if-orSkMyfuluxb8PjJk7RyPMN961R_t&sz=w1600",
       "imageAlt": "Toong client interview documentation",
       "evidenceUrl": "https://drive.google.com/drive/folders/1Ad05nAZ8q_COz7KejpWyrQC2kB6FGcXQ",
-      "tags": ["B2B interview", "Customer story", "Script"],
+      "tags": [
+        "B2B interview",
+        "Customer story",
+        "Script"
+      ],
       "featured": false,
       "published": true
     },
@@ -331,7 +403,11 @@
       "image": "https://drive.google.com/thumbnail?id=1MAv8q0oxqk97SR_4xM_YtHegPZ1Kpkm-&sz=w1600",
       "imageAlt": "Mybest.vn search result documentation",
       "evidenceUrl": "https://drive.google.com/drive/folders/1jjJSMkK6DKbJclTfEj9S7YFliaSJPUEX",
-      "tags": ["SEO", "Product guide", "Research"],
+      "tags": [
+        "SEO",
+        "Product guide",
+        "Research"
+      ],
       "featured": false,
       "published": true
     },
@@ -347,7 +423,11 @@
       "image": "https://drive.google.com/thumbnail?id=1IMm71JyfRZoUbXdt0uuB_0CnY_XKEr0D&sz=w1600",
       "imageAlt": "Selected Toong visual direction work",
       "evidenceUrl": "https://drive.google.com/drive/folders/1KWq8f7LE7Nj-fhSp4finwJxu_E_GSp7V",
-      "tags": ["Concept", "Place narrative", "Campaign"],
+      "tags": [
+        "Concept",
+        "Place narrative",
+        "Campaign"
+      ],
       "featured": false,
       "published": true
     },
@@ -363,7 +443,11 @@
       "image": "https://drive.google.com/thumbnail?id=1qLVb-vo2v4sY6YBqS72sTuh3ZqiNJ1C5&sz=w1200",
       "imageAlt": "Selected translated book cover",
       "evidenceUrl": "https://drive.google.com/drive/folders/1zTPb-WkzsaM97i8dxAFWBaVFWH-bN6Bd",
-      "tags": ["Translation", "Editing", "Books"],
+      "tags": [
+        "Translation",
+        "Editing",
+        "Books"
+      ],
       "featured": false,
       "published": true
     },
@@ -379,7 +463,11 @@
       "image": "https://drive.google.com/thumbnail?id=1IxJo-9yQleHVFLDvsTP_pn72y-gAOx64&sz=w1600",
       "imageAlt": "Selected film criticism article",
       "evidenceUrl": "https://drive.google.com/drive/folders/101SSWOUCq39-01yrzdTwqaBxUyZu-Asd",
-      "tags": ["Criticism", "Cinema", "Essay"],
+      "tags": [
+        "Criticism",
+        "Cinema",
+        "Essay"
+      ],
       "featured": false,
       "published": true
     },
@@ -395,7 +483,11 @@
       "image": "https://drive.google.com/thumbnail?id=1S0277JUK7TRzvfPCJxiqdlQAn1ipjZd5&sz=w1600",
       "imageAlt": "Selected e magazine feature",
       "evidenceUrl": "https://drive.google.com/drive/folders/1Wfv0PpDPJqKO-WvQTGjZ4a05cEQx5-DF",
-      "tags": ["E magazine", "Feature", "Branded content"],
+      "tags": [
+        "E magazine",
+        "Feature",
+        "Branded content"
+      ],
       "featured": false,
       "published": true
     },
@@ -411,7 +503,11 @@
       "image": "https://drive.google.com/thumbnail?id=1wKEX8nVr-g1vKYKoCWvPtFHKikP-jgVU&sz=w1600",
       "imageAlt": "Selected communication proposal",
       "evidenceUrl": "https://drive.google.com/drive/folders/1Bn9UC_dbFyvP2AmEMR2sv2hnhbyic9iP",
-      "tags": ["Proposal", "Strategy", "Editorial"],
+      "tags": [
+        "Proposal",
+        "Strategy",
+        "Editorial"
+      ],
       "featured": false,
       "published": true
     },
@@ -427,7 +523,11 @@
       "image": "https://drive.google.com/thumbnail?id=1bqRE5j9XWMTEtaFttjYCDI4a9c5MMpp6&sz=w1600",
       "imageAlt": "Selected interview feature",
       "evidenceUrl": "https://drive.google.com/drive/folders/1JoRd6-WoxqU9kAPmLnvEqUj2hgdhx9gR",
-      "tags": ["Interview", "Profile", "Journalism"],
+      "tags": [
+        "Interview",
+        "Profile",
+        "Journalism"
+      ],
       "featured": false,
       "published": true
     },
@@ -443,7 +543,11 @@
       "image": "https://drive.google.com/thumbnail?id=1Af-SmC6ItXm6yeGPhuTknPNh1Pm15ZAP&sz=w1600",
       "imageAlt": "Artist interview documentation for Lọng Bướm",
       "evidenceUrl": "https://drive.google.com/drive/folders/1Pbs65EGoBX-42NlLXLam6pBFzz5EyzmI",
-      "tags": ["Artist interview", "Craft", "Cultural research"],
+      "tags": [
+        "Artist interview",
+        "Craft",
+        "Cultural research"
+      ],
       "featured": false,
       "published": true
     },
@@ -459,7 +563,11 @@
       "image": "https://drive.google.com/thumbnail?id=1qIamhbvKMR3yoZaZZn5rgmuxJDqUQFai&sz=w1600",
       "imageAlt": "NovelToon fiction development work",
       "evidenceUrl": "https://drive.google.com/drive/folders/1PQRjTfYndPxS4RmPlVda6nhJwiUXgV7w",
-      "tags": ["Adaptation", "Curriculum", "Fiction"],
+      "tags": [
+        "Adaptation",
+        "Curriculum",
+        "Fiction"
+      ],
       "featured": false,
       "published": true
     }
