@@ -138,6 +138,7 @@
       footer { align-items: flex-start; flex-direction: column; gap: .7rem; }
     }
   </style>
+  <link rel="stylesheet" href="assets/v2.css">
 </head>
 <body>
   <header class="site-header">
@@ -158,7 +159,7 @@
     <a href="index.html">Portfolio index ↑</a>
   </footer>
 
-  <script>
+  <script type="text/plain" id="legacy-project-script">
     const categories = {
       curation: "Cultural Programmes",
       copywriting: "Copywriting and Brand",
@@ -306,5 +307,6 @@
           <section class="not-found shell"><p class="eyebrow mono">Loading error</p><h1>This project could not be opened.</h1><a class="evidence" href="index.html#archive">Return to archive →</a></section>`;
       });
   </script>
+  <script src="assets/project-v2.js"></script>
 </body>
 </html>
