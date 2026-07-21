@@ -31,6 +31,7 @@ jobs:
         run: |
           mkdir -p _site
           cp *.html _site/
+          cp -R assets _site/assets
           cp -R data _site/data
           cp -R media _site/media
           touch _site/.nojekyll
