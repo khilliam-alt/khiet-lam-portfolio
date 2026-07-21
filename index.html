@@ -238,6 +238,7 @@
       * { transition: none !important; }
     }
   </style>
+  <link rel="stylesheet" href="assets/v2.css">
 </head>
 <body>
   <header class="site-header">
@@ -314,7 +315,7 @@
     <a href="#top">Back to top ↑</a>
   </footer>
 
-  <script>
+  <script type="text/plain" id="legacy-home-script">
     const categories = {
       curation: { label: "Cultural Programmes", short: "Curation" },
       copywriting: { label: "Copywriting and Brand", short: "Copywriting" },
@@ -428,5 +429,6 @@
         document.querySelector("#archive-list").innerHTML = '<p class="error">The archive is temporarily unavailable.</p>';
       });
   </script>
+  <script src="assets/home-v2.js"></script>
 </body>
 </html>
