@@ -5,14 +5,14 @@ media:
   categories: [image]
 
 content:
-  - name: portfolio
-    label: Portfolio content
+  - name: site-settings
+    label: Site introduction and contact
     type: file
     path: data/content.json
     format: json
     fields:
       - name: site
-        label: Personal information and introduction
+        label: Personal information
         type: object
         fields:
           - name: name
@@ -50,24 +50,36 @@ content:
             label: CV URL
             type: string
 
-      - name: metrics
-        label: Selected achievements
+  - name: portfolio-v2
+    label: Portfolio collections — edit here
+    type: file
+    path: data/portfolio.json
+    format: json
+    fields:
+      - name: categories
+        label: Six main fields
         type: object
         list:
-          max: 4
           collapsible:
-            collapsed: false
-            summary: "{value} {label}"
+            collapsed: true
+            summary: "{label}"
         fields:
-          - name: value
-            label: Number
+          - name: id
+            label: Category ID
             type: string
+            required: true
           - name: label
-            label: Description
+            label: Display title
             type: string
+          - name: short
+            label: Short label
+            type: string
+          - name: intro
+            label: Collection introduction
+            type: text
 
       - name: projects
-        label: Projects and selected work
+        label: Articles and Drive collections
         type: object
         list:
           collapsible:
@@ -75,29 +87,31 @@ content:
             summary: "{title} / {category}"
         fields:
           - name: id
-            label: Unique ID
-            type: string
-            required: true
-          - name: title
-            label: Project title
+            label: Unique project ID
             type: string
             required: true
           - name: category
-            label: Category
+            label: Main field
             type: select
             required: true
             options:
               values:
                 - name: curation
-                  label: Cultural Programmes
+                  label: Art Curator
                 - name: copywriting
-                  label: Copywriting and Brand
+                  label: Copywriting
                 - name: publishing
-                  label: Publishing and Writing
+                  label: Publishing
                 - name: interviews
-                  label: Talks and Interviews
+                  label: Talks & Interviews
+                - name: seo
+                  label: SEO Content
                 - name: board-game
                   label: Board Game Design
+          - name: title
+            label: Article title
+            type: string
+            required: true
           - name: client
             label: Organisation or client
             type: string
@@ -107,88 +121,77 @@ content:
           - name: role
             label: Your role
             type: string
+          - name: folderUrl
+            label: Complete Drive folder URL
+            type: string
+          - name: coverId
+            label: Cover Drive file ID
+            type: string
+          - name: cover
+            label: Cover thumbnail URL
+            type: string
+          - name: imageAlt
+            label: Cover description
+            type: string
           - name: summary
             label: Short description
             type: text
           - name: outcome
-            label: Achievement or outcome
+            label: Outcome
             type: text
-          - name: image
-            label: Cover image
-            type: image
-            options:
-              path: projects
-              rename: safe
-          - name: imageAlt
-            label: Image description
-            type: string
-          - name: evidenceUrl
-            label: Evidence URL
-            type: string
+          - name: article
+            label: Full article
+            type: text
           - name: tags
             label: Tags
             type: string
             list: true
-          - name: featured
-            label: Show in featured section
-            type: boolean
-            default: false
-          - name: published
-            label: Visible on website
-            type: boolean
-            default: true
-
-      - name: timeline
-        label: Experience timeline
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{organisation} / {role}"
-        fields:
-          - name: period
-            label: Period
-            type: string
-          - name: role
-            label: Role
-            type: string
-          - name: organisation
-            label: Organisation
-            type: string
-
-  - name: project-media
-    label: Project galleries and media
-    type: file
-    path: data/project-media.json
-    format: json
-    list: true
-    fields:
-      - name: id
-        label: Project ID
-        type: string
-        required: true
-      - name: title
-        label: Project title
-        type: string
-      - name: article
-        label: Detail page article
-        type: text
-      - name: gallery
-        label: Image gallery
-        type: image
-        options:
-          multiple: true
-          path: projects
-          rename: safe
-      - name: youtubeUrl
-        label: YouTube video or playlist URL
-        type: string
-      - name: youtubeThumbnail
-        label: YouTube thumbnail
-        type: image
-        options:
-          path: youtube
-          rename: safe
+          - name: media
+            label: Drive images, videos and documents
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title} / {type}"
+            fields:
+              - name: id
+                label: Drive file ID
+                type: string
+                required: true
+              - name: title
+                label: File title
+                type: string
+              - name: type
+                label: File type
+                type: select
+                options:
+                  values:
+                    - name: image
+                      label: Image
+                    - name: video
+                      label: Video
+                    - name: pdf
+                      label: PDF
+                    - name: document
+                      label: Document
+                    - name: presentation
+                      label: Presentation
+                    - name: link
+                      label: Drive shortcut or link
+                    - name: file
+                      label: Other file
+              - name: mime
+                label: MIME type
+                type: string
+              - name: sourceUrl
+                label: Open in Drive URL
+                type: string
+              - name: previewUrl
+                label: Embedded Drive Preview URL
+                type: string
+              - name: thumbnail
+                label: Drive thumbnail URL
+                type: string
 
 settings:
   content:
