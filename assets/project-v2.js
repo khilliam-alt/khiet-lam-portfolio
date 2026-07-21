@@ -137,7 +137,7 @@ function render(portfolio) {
                 ${images.map((item, index) => `
                   <figure class="gallery-slide">
                     <button class="gallery-button media-fallback" data-fallback-label="Image ${String(index + 1).padStart(2,"0")}" type="button" data-image-index="${index}" aria-label="Enlarge image ${index + 1}">
-                      <img src="${esc(item.thumbnail)}" alt="${esc(project.title)} image ${index + 1}" loading="${index < 2 ? "eager" : "lazy"}">
+                      <img src="${esc(item.thumbnail)}" alt="${esc(project.title)} image ${index + 1}" loading="${index < 8 ? "eager" : "lazy"}">
                     </button>
                     <figcaption class="gallery-caption"><span>${esc(item.title)}</span><span>${String(index + 1).padStart(2,"0")} / ${String(images.length).padStart(2,"0")}</span></figcaption>
                   </figure>`).join("")}
@@ -200,7 +200,7 @@ function render(portfolio) {
       if (galleryModeLabel) galleryModeLabel.textContent = "Slide view";
       return;
     }
-    const nodes = [...document.querySelectorAll(".gallery-button img")];
+    const nodes = [...document.querySelectorAll(".gallery-button img")].slice(0, 8);
     const ready = nodes.map(image => new Promise(resolve => {
       if (image.complete) resolve();
       else {
@@ -208,7 +208,7 @@ function render(portfolio) {
         image.addEventListener("error", resolve, {once:true});
       }
     }));
-    Promise.all(ready).then(() => {
+    Promise.race([Promise.all(ready), new Promise(resolve => setTimeout(resolve, 2600))]).then(() => {
       const ratios = nodes.filter(image => image.naturalWidth && image.naturalHeight).map(image => image.naturalWidth / image.naturalHeight);
       const mixedOrientation = ratios.some(ratio => ratio < .84) && ratios.some(ratio => ratio > 1.18);
       const spread = ratios.length ? Math.max(...ratios) / Math.max(.01, Math.min(...ratios)) : 1;
