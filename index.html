@@ -3,438 +3,102 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Khiet Lam is an editor, senior copywriter and cultural event curator based in Ho Chi Minh City.">
-  <meta name="theme-color" content="#f1eadf">
-  <title>Khiet Lam | Editorial, Copywriting and Cultural Practice</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Noto+Serif:ital,wght@0,400;0,500;1,400&display=swap');
-
-    :root {
-      --paper: #f1eadf;
-      --paper-light: #faf6ef;
-      --ink: #242321;
-      --muted: #6f6960;
-      --red: #762b38;
-      --green: #234c3a;
-      --gold: #b19260;
-      --line: rgba(36, 35, 33, .24);
-      --serif: "Noto Serif", "Times New Roman", serif;
-      --sans: "Be Vietnam Pro", Arial, sans-serif;
-      --mono: "Courier New", monospace;
-      --max: 1480px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--sans);
-      margin: 0;
-      overflow-x: hidden;
-      text-rendering: optimizeLegibility;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    button { color: inherit; font: inherit; }
-    img { display: block; width: 100%; }
-    .shell { margin: 0 auto; max-width: var(--max); }
-    .mono { font-family: var(--mono); letter-spacing: .055em; text-transform: uppercase; }
-    .eyebrow { color: var(--red); font-size: .66rem; line-height: 1.5; margin: 0; }
-
-    .site-header {
-      align-items: center;
-      backdrop-filter: blur(14px);
-      background: rgba(241, 234, 223, .9);
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      height: 72px;
-      justify-content: space-between;
-      padding: 0 clamp(1.1rem, 4vw, 4.5rem);
-      position: sticky;
-      top: 0;
-      z-index: 30;
-    }
-
-    .wordmark {
-      font: 500 clamp(1.35rem, 2vw, 1.9rem) var(--serif);
-      letter-spacing: .045em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .nav { align-items: center; display: flex; gap: clamp(1rem, 3vw, 3.2rem); }
-    .nav a { border-bottom: 1px solid transparent; font-size: .76rem; padding: .4rem 0; }
-    .nav a:hover { border-color: var(--red); color: var(--red); }
-    .owner-link { color: var(--green); font: .62rem var(--mono) !important; text-transform: uppercase; }
-
-    .hero {
-      border-bottom: 1px solid var(--line);
-      display: grid;
-      gap: clamp(3rem, 8vw, 9rem);
-      grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr);
-      min-height: 650px;
-      padding: clamp(5rem, 9vw, 9rem) clamp(1.1rem, 4vw, 4.5rem) 4rem;
-    }
-
-    .hero-copy { align-self: center; }
-    .hero h1 {
-      font: 400 clamp(3.7rem, 7vw, 7.6rem)/.9 var(--serif);
-      letter-spacing: -.055em;
-      margin: 1.35rem 0 0;
-      max-width: 12ch;
-    }
-
-    .hero-intro { color: var(--muted); font: 1.12rem/1.7 var(--serif); margin: 2rem 0; max-width: 39rem; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
-    .button {
-      align-items: center;
-      background: var(--red);
-      border: 1px solid var(--red);
-      color: var(--paper-light);
-      display: inline-flex;
-      font-size: .76rem;
-      gap: 2rem;
-      min-height: 48px;
-      padding: .85rem 1.05rem;
-      transition: .2s ease;
-    }
-
-    .button:hover { background: var(--green); border-color: var(--green); transform: translateY(-2px); }
-    .button.secondary { background: transparent; border-color: var(--line); color: var(--ink); }
-    .button.secondary:hover { background: var(--paper-light); border-color: var(--ink); }
-
-    .practice-index { align-self: center; border-top: 1px solid var(--line); }
-    .practice-head { align-items: baseline; display: flex; justify-content: space-between; padding: 0 0 1rem; }
-    .practice-head span { color: var(--muted); font: italic .9rem var(--serif); }
-    .discipline {
-      align-items: baseline;
-      border-bottom: 1px solid var(--line);
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 1.8rem 1fr auto;
-      padding: 1.05rem 0;
-      transition: .2s ease;
-    }
-
-    .discipline:hover { color: var(--red); padding-left: .45rem; }
-    .discipline span { color: var(--red); font: .62rem var(--mono); }
-    .discipline strong { font: 400 clamp(1.15rem, 1.7vw, 1.65rem) var(--serif); }
-    .discipline small { color: var(--muted); font-size: .65rem; }
-
-    .section { border-bottom: 1px solid var(--line); padding: clamp(5rem, 9vw, 9rem) clamp(1.1rem, 4vw, 4.5rem); }
-    .section-heading { align-items: end; display: grid; gap: 2rem; grid-template-columns: .48fr 1.52fr; margin-bottom: 3.5rem; }
-    .section-heading h2 {
-      font: 400 clamp(2.8rem, 5.5vw, 6rem)/.95 var(--serif);
-      letter-spacing: -.045em;
-      margin: 0;
-      max-width: 15ch;
-    }
-
-    .section-heading h2 em { color: var(--green); font-weight: 400; }
-
-    .featured-grid { display: grid; gap: 1.1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .featured-card {
-      background: var(--paper-light);
-      border: 1px solid var(--line);
-      display: grid;
-      grid-template-columns: minmax(0, 1.03fr) minmax(230px, .97fr);
-      min-height: 360px;
-      overflow: hidden;
-    }
-
-    .featured-card:first-child { grid-column: 1 / -1; grid-template-columns: 1.3fr .7fr; min-height: 480px; }
-    .featured-media { background: var(--green); min-height: 100%; overflow: hidden; }
-    .featured-media img { height: 100%; object-fit: cover; transition: transform .7s ease; }
-    .featured-card:hover img { transform: scale(1.025); }
-    .featured-card.image-failed .featured-media { background: linear-gradient(135deg, var(--green), var(--red)); }
-    .featured-card.image-failed img { display: none; }
-    .featured-body { align-content: end; display: grid; padding: clamp(1.4rem, 3vw, 2.6rem); }
-    .featured-body .meta { color: var(--green); font-size: .58rem; line-height: 1.55; margin: 0 0 .9rem; }
-    .featured-body h3 { font: 400 clamp(1.65rem, 2.8vw, 3.15rem)/1 var(--serif); margin: 0; }
-    .featured-body .summary { color: var(--muted); font: .94rem/1.6 var(--serif); margin: 1rem 0 1.4rem; }
-    .featured-link { align-items: center; color: var(--red); display: inline-flex; font-size: .72rem; gap: 1rem; width: fit-content; }
-    .featured-link span { border: 1px solid var(--red); border-radius: 50%; display: grid; height: 2rem; place-items: center; transition: .2s ease; width: 2rem; }
-    .featured-link:hover span { background: var(--red); color: white; }
-
-    .archive { background: var(--green); color: var(--paper-light); }
-    .archive .section-heading .eyebrow { color: #d7bf95; }
-    .archive .section-heading h2 em { color: #d7bf95; }
-    .filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2.2rem; }
-    .filter {
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, .34);
-      color: inherit;
-      cursor: pointer;
-      font: .61rem var(--mono);
-      padding: .62rem .78rem;
-      text-transform: uppercase;
-    }
-
-    .filter:hover, .filter.active { background: var(--paper-light); color: var(--green); }
-    .archive-list { border-top: 1px solid rgba(255, 255, 255, .35); }
-    .archive-row {
-      align-items: start;
-      border-bottom: 1px solid rgba(255, 255, 255, .25);
-      display: grid;
-      gap: 1.3rem;
-      grid-template-columns: 3rem minmax(210px, .8fr) minmax(280px, 1.2fr) auto;
-      padding: 1.45rem 0;
-    }
-
-    .archive-row[hidden] { display: none; }
-    .archive-number { color: #d7bf95; font: .66rem var(--mono); }
-    .archive-title h3 { font: 400 clamp(1.25rem, 2vw, 1.85rem)/1.1 var(--serif); margin: 0 0 .45rem; }
-    .archive-title p { color: #d7bf95; font-size: .56rem; line-height: 1.5; margin: 0; }
-    .archive-summary { font: .9rem/1.55 var(--serif); margin: 0; opacity: .82; }
-    .archive-links { align-items: flex-end; display: flex; flex-direction: column; gap: .75rem; white-space: nowrap; }
-    .archive-links a { border-bottom: 1px solid rgba(255, 255, 255, .45); font-size: .65rem; padding-bottom: .25rem; }
-    .archive-links a:first-child { color: #d7bf95; }
-
-    .about { display: grid; gap: clamp(3rem, 8vw, 9rem); grid-template-columns: 1fr 1fr; }
-    .about h2 { font: 400 clamp(2.8rem, 5vw, 5.2rem)/.98 var(--serif); letter-spacing: -.04em; margin: 1.3rem 0 0; }
-    .about-copy { align-self: end; }
-    .about-copy > p { color: var(--muted); font: 1.05rem/1.7 var(--serif); margin: 0 0 1.5rem; max-width: 39rem; }
-    .contact-links { display: grid; gap: .65rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .contact-links a { border-bottom: 1px solid var(--line); display: flex; font-size: .7rem; justify-content: space-between; padding: .75rem 0; }
-    .contact-links a:hover { color: var(--red); }
-
-    footer { align-items: center; display: flex; font-size: .65rem; gap: 2rem; justify-content: space-between; padding: 2rem clamp(1.1rem, 4vw, 4.5rem); }
-    .loading, .error { font: 1rem/1.6 var(--serif); padding: 2rem 0; }
-    .error { color: var(--red); }
-
-    @media (max-width: 1080px) {
-      .featured-card, .featured-card:first-child { grid-template-columns: 1fr; min-height: 0; }
-      .featured-media { aspect-ratio: 1.45 / 1; }
-      .archive-row { grid-template-columns: 2.4rem minmax(200px, .8fr) 1.2fr; }
-      .archive-links { align-items: center; flex-direction: row; grid-column: 2 / -1; }
-    }
-
-    @media (max-width: 820px) {
-      .nav a:nth-child(2) { display: none; }
-      .hero { grid-template-columns: 1fr; min-height: 0; }
-      .practice-index { margin-top: 1rem; }
-      .section-heading { grid-template-columns: 1fr; }
-      .featured-grid { grid-template-columns: 1fr; }
-      .featured-card:first-child { grid-column: auto; }
-      .about { grid-template-columns: 1fr; }
-      .about-copy { align-self: auto; }
-    }
-
-    @media (max-width: 620px) {
-      .site-header { height: 66px; padding-inline: 1rem; }
-      .nav a:nth-child(1), .nav a:nth-child(3), .owner-link { display: none; }
-      .hero { padding-top: 4rem; }
-      .hero h1 { font-size: clamp(3.25rem, 16vw, 5rem); }
-      .discipline { grid-template-columns: 1.4rem 1fr auto; }
-      .archive-row { grid-template-columns: 1.8rem 1fr; }
-      .archive-summary, .archive-links { grid-column: 2; }
-      .contact-links { grid-template-columns: 1fr; }
-      footer { align-items: flex-start; flex-direction: column; gap: .7rem; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      * { transition: none !important; }
-    }
-  </style>
-  <link rel="stylesheet" href="assets/v2.css">
+  <meta name="description" content="Khiet Lam — editor, senior copywriter and cultural event curator in Ho Chi Minh City.">
+  <meta name="theme-color" content="#f2ecdf">
+  <title>Khiet Lam | Editorial Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Noto+Serif:ital,wght@0,400;0,500;1,400&display=swap&subset=vietnamese" rel="stylesheet">
+  <link rel="stylesheet" href="assets/editorial-v3.css?v=20260723">
 </head>
 <body>
   <header class="site-header">
-    <a class="wordmark" href="#top" data-site-name>Khiet Lam</a>
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="#featured">Featured</a>
+    <a class="wordmark" href="#top"><span data-site-name>Khiet Lam</span><small>Editorial portfolio</small></a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#project-desks">Project desks</a>
       <a href="#archive">Archive</a>
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
       <a class="owner-link" href="https://app.pagescms.org" target="_blank" rel="noreferrer">Owner edit ↗</a>
     </nav>
   </header>
 
   <main id="top">
-    <section class="hero shell">
-      <div class="hero-copy">
-        <p class="eyebrow mono" data-eyebrow>Independent portfolio / Ho Chi Minh City</p>
-        <h1 data-headline>Editorial thinking across culture, brands and publishing.</h1>
-        <p class="hero-intro" data-intro>I research, write, edit and curate stories that connect cultural knowledge, contemporary audiences and distinctive brand voices.</p>
-        <div class="hero-actions">
-          <a class="button" href="#featured">View selected work <span>→</span></a>
-          <a class="button secondary" data-cv-link href="#" target="_blank" rel="noreferrer">View CV <span>↗</span></a>
-        </div>
+    <section class="home-hero">
+      <div class="home-hero__masthead reveal">
+        <p class="eyebrow mono" data-home-kicker>Independent portfolio / Ho Chi Minh City</p>
+        <h1 data-home-headline>Editorial thinking across culture, brands and publishing.</h1>
       </div>
-      <aside class="practice-index">
-        <div class="practice-head">
-          <p class="eyebrow mono">Practice index</p>
-          <span>Five fields</span>
+      <div class="home-hero__lower">
+        <div class="home-hero__note reveal">
+          <p data-home-intro>I research, write, edit and curate stories that connect cultural knowledge, contemporary audiences and distinctive brand voices.</p>
+          <div>
+            <a class="button-link" href="#project-desks">Enter the project desks <span>↓</span></a>
+            <a class="text-link" data-cv href="#" target="_blank" rel="noreferrer">View CV <span>↗</span></a>
+          </div>
         </div>
-        <div id="discipline-list"></div>
-      </aside>
+        <aside class="desk-index reveal">
+          <header><span class="mono">Five editorial desks</span><small>Every folder has its own project page</small></header>
+          <div id="group-index"></div>
+        </aside>
+      </div>
+      <div class="hero-ornament" aria-hidden="true"><span>Research</span><i>✦</i><span>Writing</span><i>✦</i><span>Curation</span><i>✦</i><span>Editing</span></div>
     </section>
 
-    <section class="section shell" id="featured">
-      <div class="section-heading">
-        <p class="eyebrow mono">Featured / One work from each field</p>
-        <h2>A concise selection, with room to <em>read deeper.</em></h2>
-      </div>
-      <div class="featured-grid" id="featured-grid"><p class="loading">Loading selected work…</p></div>
+    <section class="editions" id="project-desks">
+      <header class="section-intro section-intro--front reveal">
+        <p class="eyebrow mono">Portfolio editions / Five bodies of work</p>
+        <h2>Organised like a publication, <em>not a file tree.</em></h2>
+        <p>Each desk opens a complete overview. Lead stories sit beside columns, while nested folders become related project cards with their own evidence pages.</p>
+      </header>
+      <div id="editions"><p class="loading">Preparing the project desks…</p></div>
     </section>
 
-    <section class="section archive" id="archive">
-      <div class="shell">
-        <div class="section-heading">
-          <p class="eyebrow mono">Complete archive / 2018 to present</p>
-          <h2>The full practice, kept as a <em>working index.</em></h2>
+    <section class="archive-section" id="archive">
+      <header class="section-intro reveal">
+        <p class="eyebrow mono">Complete archive / Drive hierarchy translated</p>
+        <h2>Every folder, kept as a <em>project record.</em></h2>
+        <p>The archive preserves the full pyramid. Small thumbnails and level labels make the hierarchy legible without reproducing the Drive interface.</p>
+      </header>
+      <div class="archive-filters" id="archive-filters" aria-label="Filter archive"></div>
+      <div class="archive-list-v3" id="archive-list"></div>
+    </section>
+
+    <section class="about-section" id="about">
+      <header class="section-intro reveal">
+        <p class="eyebrow mono">About / First person</p>
+        <h2>I write, edit and curate with <em>attention to context.</em></h2>
+      </header>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p data-about>I am an editor, senior copywriter and cultural event curator based in Ho Chi Minh City.</p>
+          <div class="contact-ledger">
+            <a data-email href="#"><span>Email</span><span>↗</span></a>
+            <a data-phone href="#"><span>Phone</span><span>↗</span></a>
+            <a data-linkedin href="https://www.linkedin.com/in/khangle3003/" target="_blank" rel="noreferrer"><span>LinkedIn / Khang Le</span><span>↗</span></a>
+            <a data-drive href="#" target="_blank" rel="noreferrer"><span>Evidence archive</span><span>↗</span></a>
+          </div>
         </div>
-        <div class="filters" id="filters" aria-label="Filter projects"></div>
-        <div class="archive-list" id="archive-list"><p class="loading">Loading archive…</p></div>
+        <div class="about-monogram reveal" aria-hidden="true"><span>K</span><i>L</i></div>
       </div>
+      <div class="profile-documents" id="profile-documents"></div>
     </section>
 
-    <section class="section shell about" id="about">
-      <div>
-        <p class="eyebrow mono">About / Contact</p>
-        <h2>Writing and curating as connected forms of attention.</h2>
+    <dialog class="viewer-dialog" data-frame-dialog>
+      <div class="dialog-bar">
+        <span class="mono" data-frame-title>Viewer</span>
+        <button type="button" data-close-frame aria-label="Close viewer">×</button>
       </div>
-      <div class="about-copy" id="contact">
-        <p data-about>Khiet Lam is an editor, senior copywriter and cultural event curator based in Ho Chi Minh City.</p>
-        <div class="contact-links">
-          <a data-email-link href="#"><span data-email>Email</span><span>↗</span></a>
-          <a data-phone-link href="#"><span data-phone>Phone</span><span>↗</span></a>
-          <a data-linkedin-link href="#" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>↗</span></a>
-          <a data-archive-link href="#" target="_blank" rel="noreferrer"><span>Evidence archive</span><span>↗</span></a>
-        </div>
-      </div>
-      <div class="profile-library" id="profile-library" aria-label="CV, degree, portfolio and rate card"></div>
-    </section>
-
-    <dialog class="media-dialog profile-viewer-dialog" aria-label="Document preview">
-      <div class="dialog-bar"><span class="dialog-title" data-profile-viewer-title>Document</span><button class="dialog-close" type="button" data-profile-dialog-close aria-label="Close document viewer">×</button></div>
-      <iframe class="viewer-frame" data-profile-frame title="Document preview" allow="fullscreen" allowfullscreen></iframe>
+      <iframe data-frame title="Document viewer" allow="fullscreen" allowfullscreen></iframe>
     </dialog>
   </main>
 
-  <footer class="shell">
+  <footer>
     <span>© 2026 <span data-site-name>Khiet Lam</span></span>
     <span class="mono">Editorial / Copywriting / Cultural practice</span>
-    <a href="https://app.pagescms.org" target="_blank" rel="noreferrer">Owner edit ↗</a>
     <a href="#top">Back to top ↑</a>
   </footer>
 
-  <script type="text/plain" id="legacy-home-script">
-    const categories = {
-      curation: { label: "Cultural Programmes", short: "Curation" },
-      copywriting: { label: "Copywriting and Brand", short: "Copywriting" },
-      publishing: { label: "Publishing and Writing", short: "Publishing" },
-      interviews: { label: "Talks and Interviews", short: "Interviews" },
-      "board-game": { label: "Board Game Design", short: "Board game" }
-    };
-
-    const escapeHTML = value => String(value ?? "")
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-
-    const projectUrl = id => `project.html?id=${encodeURIComponent(id)}`;
-    const imageFailure = event => event.currentTarget.closest("article")?.classList.add("image-failed");
-
-    function featuredCard(project) {
-      return `
-        <article class="featured-card">
-          <a class="featured-media" href="${projectUrl(project.id)}" aria-label="Read ${escapeHTML(project.title)}">
-            <img src="${escapeHTML(project.image)}" alt="${escapeHTML(project.imageAlt || project.title)}" loading="lazy" onerror="imageFailure(event)">
-          </a>
-          <div class="featured-body">
-            <p class="meta mono">${escapeHTML(categories[project.category]?.label)} / ${escapeHTML(project.client)} / ${escapeHTML(project.period)}</p>
-            <h3><a href="${projectUrl(project.id)}">${escapeHTML(project.title)}</a></h3>
-            <p class="summary">${escapeHTML(project.summary)}</p>
-            <a class="featured-link" href="${projectUrl(project.id)}"><span>→</span> Read the case</a>
-          </div>
-        </article>`;
-    }
-
-    function archiveRow(project, index) {
-      const category = categories[project.category]?.short || project.category;
-      return `
-        <article class="archive-row" data-category="${escapeHTML(project.category)}">
-          <span class="archive-number">${String(index + 1).padStart(2, "0")}</span>
-          <div class="archive-title">
-            <h3><a href="${projectUrl(project.id)}">${escapeHTML(project.title)}</a></h3>
-            <p class="mono">${escapeHTML(category)} / ${escapeHTML(project.client)} / ${escapeHTML(project.period)}</p>
-          </div>
-          <p class="archive-summary"><strong>${escapeHTML(project.role)}.</strong> ${escapeHTML(project.summary)}</p>
-          <div class="archive-links">
-            <a href="${projectUrl(project.id)}">Read more →</a>
-            <a href="${escapeHTML(project.evidenceUrl)}" target="_blank" rel="noreferrer">Evidence ↗</a>
-          </div>
-        </article>`;
-    }
-
-    function applyFilter(filter) {
-      document.querySelectorAll(".archive-row").forEach(row => {
-        row.hidden = filter !== "all" && row.dataset.category !== filter;
-      });
-      document.querySelectorAll(".filter").forEach(button => {
-        const active = button.dataset.filter === filter;
-        button.classList.toggle("active", active);
-        button.setAttribute("aria-pressed", String(active));
-      });
-    }
-
-    function render(data) {
-      const site = data.site;
-      const projects = data.projects.filter(project => project.published !== false);
-      const counts = projects.reduce((result, project) => {
-        result[project.category] = (result[project.category] || 0) + 1;
-        return result;
-      }, {});
-
-      document.querySelectorAll("[data-site-name]").forEach(node => node.textContent = site.name);
-      document.querySelector("[data-eyebrow]").textContent = site.eyebrow;
-      document.querySelector("[data-headline]").textContent = site.headline;
-      document.querySelector("[data-intro]").textContent = site.intro;
-      document.querySelector("[data-about]").textContent = site.about;
-      document.querySelector("[data-cv-link]").href = site.cvUrl;
-      document.querySelector("[data-email]").textContent = site.email;
-      document.querySelector("[data-email-link]").href = `mailto:${site.email}`;
-      document.querySelector("[data-phone]").textContent = site.phone;
-      document.querySelector("[data-phone-link]").href = `tel:${site.phone.replace(/\s/g, "")}`;
-      document.querySelector("[data-linkedin-link]").href = site.linkedin;
-      document.querySelector("[data-archive-link]").href = site.archiveUrl;
-
-      document.querySelector("#discipline-list").innerHTML = Object.entries(categories).map(([key, category], index) => `
-        <a class="discipline" href="#archive" data-filter-link="${key}">
-          <span>${String(index + 1).padStart(2, "0")}</span>
-          <strong>${escapeHTML(category.label)}</strong>
-          <small>${counts[key] || 0}</small>
-        </a>`).join("");
-
-      const featured = projects.filter(project => project.featured).slice(0, 5);
-      document.querySelector("#featured-grid").innerHTML = featured.map(featuredCard).join("");
-      document.querySelector("#archive-list").innerHTML = projects.map(archiveRow).join("");
-
-      const filterItems = [{ key: "all", label: `All (${projects.length})` }, ...Object.entries(categories).map(([key, value]) => ({ key, label: `${value.short} (${counts[key] || 0})` }))];
-      document.querySelector("#filters").innerHTML = filterItems.map((item, index) => `
-        <button class="filter${index === 0 ? " active" : ""}" type="button" data-filter="${item.key}" aria-pressed="${index === 0}">${escapeHTML(item.label)}</button>`).join("");
-
-      document.querySelectorAll(".filter").forEach(button => button.addEventListener("click", () => applyFilter(button.dataset.filter)));
-      document.querySelectorAll("[data-filter-link]").forEach(link => link.addEventListener("click", () => applyFilter(link.dataset.filterLink)));
-    }
-
-    fetch(`data/content.json?v=${Date.now()}`)
-      .then(response => {
-        if (!response.ok) throw new Error(`Content request failed: ${response.status}`);
-        return response.json();
-      })
-      .then(render)
-      .catch(error => {
-        console.error(error);
-        document.querySelector("#featured-grid").innerHTML = '<p class="error">Selected work could not be loaded. Please refresh the page.</p>';
-        document.querySelector("#archive-list").innerHTML = '<p class="error">The archive is temporarily unavailable.</p>';
-      });
-  </script>
-  <script src="assets/home-v2.js"></script>
+  <script src="assets/common-v3.js?v=20260723"></script>
+  <script src="assets/home-v3.js?v=20260723"></script>
 </body>
 </html>

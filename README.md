@@ -2,18 +2,36 @@
 
 Public website: https://khilliam-alt.github.io/khiet-lam-portfolio/
 
-## Edit content without touching code
+## Edit without touching code
 
 1. Open https://app.pagescms.org and sign in with GitHub.
-2. Install the Pages CMS GitHub App for `khilliam-alt/khiet-lam-portfolio` when asked.
-3. Use **Site introduction and contact** to edit personal information.
-4. Use **Portfolio collections — edit here** to update articles, gallery items, Drive videos, PDFs and documents. Optional `YouTube URL` and `YouTube thumbnail` fields create an embedded preview on the project page.
-5. Press **Save**. The website deploys automatically after the GitHub commit finishes.
+2. Choose `khilliam-alt/khiet-lam-portfolio`.
+3. Use **About and contact** for personal information.
+4. Use **Five project desks — edit here** to update landing copy, hierarchy, articles, YouTube links, flipbooks, Drive previews, thumbnails and project media.
+5. Save. GitHub Pages publishes the update automatically.
 
-The homepage reads personal information from `data/content.json` and all collection data from `data/portfolio.json`. Each project record can link directly to Google Drive images, videos, PDFs, DOCX files and presentations.
+## Information architecture
 
-Image collections automatically use a slider when proportions are consistent and an uncropped collage when portrait and landscape media are mixed. Every image opens in a full screen viewer with zoom controls.
+The public interface has five editorial desks:
 
-## Evidence archive
+1. Art Curator
+2. Copywriting
+3. Publishing
+4. Talks & Interviews
+5. Board Game Design
 
-The portfolio content is based on the complete Google Drive archive, organised into Art Curator, Copywriting, Publishing, Talks and Interviews, SEO Content, and Board Game Design.
+`data/editorial.json` preserves every Drive folder as a separate project record. `parentId` and `level` maintain the full pyramid, while the homepage and group landing pages present it as features, cards, columns and related stories.
+
+SEO work is presented as a specialist desk inside Copywriting so the public navigation remains at five main groups.
+
+## Media behaviour
+
+- YouTube URLs render as embedded video.
+- Toong Brochure uses the supplied Heyzine flipbook.
+- The hormones ebook uses the supplied cover and the official Google Drive view-only preview.
+- PDFs and Drive files open in an in-page viewer when permissions allow.
+- Mixed portrait and landscape images use an uncropped editorial collage.
+- Consistent image sets use a full-frame slider.
+- Images open in a full-screen viewer with zoom controls.
+
+Google Drive access and download restrictions remain controlled by the file owner. The website does not bypass those restrictions.
