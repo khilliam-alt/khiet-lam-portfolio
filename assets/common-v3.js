@@ -47,11 +47,11 @@
 
   async function loadPortfolio() {
     const [editorial, content] = await Promise.all([
-      fetch(`data/editorial.json?v=20260723`).then(response => {
+      fetch(`data/editorial.json?v=20260724`).then(response => {
         if (!response.ok) throw new Error("Editorial data unavailable");
         return response.json();
       }),
-      fetch(`data/content.json?v=20260723`).then(response => {
+      fetch(`data/content.json?v=20260724`).then(response => {
         if (!response.ok) throw new Error("Site content unavailable");
         return response.json();
       })

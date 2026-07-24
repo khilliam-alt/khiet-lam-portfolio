@@ -5,7 +5,6 @@ const {
   projectCard,
   projectHref,
   setupChrome,
-  setupFrameDialog,
   setupReveal
 } = window.PortfolioUI;
 
@@ -73,49 +72,31 @@ function archiveRow(project, index, groups) {
     </article>`;
 }
 
-function profileDocument(item, index) {
-  return `
-    <article class="document-tile reveal">
-      <button class="document-tile__cover media-fallback" type="button" data-open-frame="${esc(item.previewUrl)}" data-frame-title="${esc(item.title)}" data-fallback-label="${esc(item.title)}">
-        <img src="${esc(item.thumbnail)}" alt="Cover of ${esc(item.title)}" loading="lazy">
-        <span class="mono">Preview here</span>
-      </button>
-      <div>
-        <p class="mono">${String(index + 1).padStart(2, "0")} / ${esc(item.label)}</p>
-        <h3>${esc(item.title)}</h3>
-        <a class="text-link" href="${esc(item.sourceUrl)}" target="_blank" rel="noreferrer">Open in Drive <span>↗</span></a>
-      </div>
-    </article>`;
+function applyArchiveFilter(selected) {
+  document.querySelectorAll("[data-archive-filter]").forEach(item => {
+    const active = item.dataset.archiveFilter === selected;
+    item.classList.toggle("active", active);
+    item.setAttribute("aria-pressed", String(active));
+  });
+  document.querySelectorAll("[data-archive-group]").forEach(row => {
+    row.hidden = selected !== "all" && row.dataset.archiveGroup !== selected;
+  });
 }
 
-function setupArchiveFilters() {
+function setupArchiveFilters(defaultGroup) {
   document.querySelectorAll("[data-archive-filter]").forEach(button => button.addEventListener("click", () => {
-    const selected = button.dataset.archiveFilter;
-    document.querySelectorAll("[data-archive-filter]").forEach(item => {
-      const active = item === button;
-      item.classList.toggle("active", active);
-      item.setAttribute("aria-pressed", String(active));
-    });
-    document.querySelectorAll("[data-archive-group]").forEach(row => {
-      row.hidden = selected !== "all" && row.dataset.archiveGroup !== selected;
-    });
+    applyArchiveFilter(button.dataset.archiveFilter);
   }));
+  applyArchiveFilter(defaultGroup);
 }
 
 function render(data) {
-  const { groups, projects, profileDocuments, site } = data;
+  const { groups, projects, site } = data;
   document.querySelectorAll("[data-site-name]").forEach(node => node.textContent = site.name);
   document.querySelector("[data-home-kicker]").textContent = site.eyebrow;
   document.querySelector("[data-home-headline]").textContent = site.headline;
   document.querySelector("[data-home-intro]").textContent = site.intro;
-  document.querySelector("[data-about]").textContent = site.about;
   document.querySelector("[data-cv]").href = site.cvUrl;
-  document.querySelector("[data-email]").href = `mailto:${site.email}`;
-  document.querySelector("[data-email] span:first-child").textContent = site.email;
-  document.querySelector("[data-phone]").href = `tel:${site.phone.replace(/\s/g, "")}`;
-  document.querySelector("[data-phone] span:first-child").textContent = site.phone;
-  document.querySelector("[data-linkedin]").href = site.linkedin;
-  document.querySelector("[data-drive]").href = site.archiveUrl;
 
   document.querySelector("#group-index").innerHTML = groups.map(group => {
     const count = projects.filter(project => project.group === group.id).length;
@@ -128,15 +109,14 @@ function render(data) {
   }).join("");
 
   document.querySelector("#editions").innerHTML = groups.map((group, index) => groupEdition(group, projects, index)).join("");
+  const defaultArchiveGroup = groups[0]?.id || "all";
   document.querySelector("#archive-filters").innerHTML = [
-    `<button class="active" type="button" data-archive-filter="all" aria-pressed="true">All / ${projects.length}</button>`,
+    `<button type="button" data-archive-filter="all" aria-pressed="false">All / ${projects.length}</button>`,
     ...groups.map(group => `<button type="button" data-archive-filter="${esc(group.id)}" aria-pressed="false">${esc(group.short)} / ${projects.filter(project => project.group === group.id).length}</button>`)
   ].join("");
   document.querySelector("#archive-list").innerHTML = projects.map((project, index) => archiveRow(project, index, groups)).join("");
-  document.querySelector("#profile-documents").innerHTML = profileDocuments.map(profileDocument).join("");
 
-  setupArchiveFilters();
-  setupFrameDialog();
+  setupArchiveFilters(defaultArchiveGroup);
   setupReveal();
   document.body.classList.add("is-ready");
 }

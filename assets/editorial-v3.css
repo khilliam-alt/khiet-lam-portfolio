@@ -306,6 +306,57 @@ em { color: var(--group-accent, var(--green)); font-weight: 400; }
 .document-tile p { color: var(--red); font-size: .52rem; margin: 0 0 .6rem; }
 .document-tile h3 { font: 400 1.2rem/1.2 var(--serif); margin: 0 0 .8rem; }
 
+/* Standalone About page */
+.about-page-hero {
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: clamp(3rem, 7vw, 8rem);
+  grid-template-columns: minmax(0, .78fr) minmax(480px, 1.22fr);
+  min-height: calc(100dvh - 76px);
+  padding: clamp(4rem, 8vw, 8rem) max(calc((100vw - 1500px) / 2), clamp(1rem, 4vw, 4.5rem));
+}
+.about-page-hero__copy { align-self: center; }
+.about-page-hero h1 {
+  font: 400 clamp(3.7rem, 7vw, 7.5rem)/.9 var(--serif);
+  letter-spacing: -.058em;
+  margin: 1.2rem 0 2.2rem;
+  max-width: 10ch;
+}
+.about-page-hero__copy > p:last-of-type {
+  color: var(--muted);
+  font: clamp(1.15rem, 1.7vw, 1.45rem)/1.65 var(--serif);
+  margin: 0 0 2.5rem;
+  max-width: 42rem;
+}
+.about-portraits {
+  align-self: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(150px, .44fr);
+  position: relative;
+}
+.about-portrait { background: var(--green); margin: 0; overflow: hidden; position: relative; }
+.about-portrait img { height: 100%; object-fit: cover; object-position: center top; }
+.about-portrait--primary { aspect-ratio: .76 / 1; }
+.about-portrait--secondary {
+  align-self: end;
+  aspect-ratio: .66 / 1;
+  border: .65rem solid var(--paper);
+  margin: 0 0 -2rem -1.5rem;
+  z-index: 1;
+}
+.about-portrait figcaption {
+  background: var(--paper);
+  bottom: 0;
+  font-size: .53rem;
+  left: 0;
+  padding: .65rem .8rem;
+  position: absolute;
+}
+.about-documents-section {
+  border-bottom: 1px solid var(--line);
+  padding: clamp(5rem, 9vw, 9rem) max(calc((100vw - 1500px) / 2), clamp(1rem, 4vw, 4.5rem));
+}
+
 footer {
   align-items: center;
   display: flex;
@@ -581,6 +632,8 @@ footer {
   .edition__columns { display: grid; grid-template-columns: repeat(2, 1fr); }
   .edition__all { margin-top: 0; }
   .group-hero, .project-hero-v3 { grid-template-columns: 1fr; }
+  .about-page-hero { grid-template-columns: 1fr; }
+  .about-portraits { margin: 0 auto; max-width: 760px; width: 100%; }
   .group-hero__image, .project-cover { width: 100%; }
   .group-switcher { grid-template-columns: repeat(3, 1fr); }
   .showcase-grid { grid-template-columns: repeat(2, 1fr); }
@@ -605,7 +658,7 @@ footer {
   .hero-ornament { gap: .8rem; }
   .section-intro { grid-template-columns: 1fr; }
   .section-intro > p:last-child { grid-column: 1; }
-  .editions, .archive-section, .about-section, .showcase-section, .desk-section, .group-index-section, .project-children, .project-embeds, .project-media { padding-inline: 1rem; }
+  .editions, .archive-section, .about-section, .about-documents-section, .showcase-section, .desk-section, .group-index-section, .project-children, .project-embeds, .project-media { padding-inline: 1rem; }
   .edition__header { grid-template-columns: 2.4rem 1fr; }
   .edition__intro { grid-column: 1 / -1; }
   .lead-story__copy { grid-template-columns: 1fr; }
@@ -613,6 +666,10 @@ footer {
   .edition__columns { grid-template-columns: 1fr; }
   .story-card--compact { grid-template-columns: 105px 1fr; }
   .about-grid { grid-template-columns: 1fr; }
+  .about-page-hero { min-height: 0; padding: 4.5rem 1rem; }
+  .about-page-hero h1 { font-size: clamp(3.4rem, 15vw, 5.7rem); }
+  .about-portraits { grid-template-columns: minmax(0, 1fr) minmax(110px, .42fr); }
+  .about-portrait--secondary { margin-bottom: -1rem; margin-left: -1rem; }
   .about-monogram { min-height: 260px; }
   .contact-ledger { grid-template-columns: 1fr; }
   .contact-ledger a:nth-child(odd) { margin-right: 0; }

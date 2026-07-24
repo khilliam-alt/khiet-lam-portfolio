@@ -86,7 +86,7 @@
           "title": "Tatler Vietnam — selected article",
           "projectId": "tatler-vietnam",
           "fileId": "15Doxzp3ZL5ykFN33vXJOaBcpv5RbZFB-",
-          "cover": "media/covers/tatler-vietnam-cover.jpg"
+          "cover": "media/covers/tatler-vietnam-logo.png"
         },
         {
           "type": "project",
@@ -154,19 +154,14 @@
   "projects": [
     {
       "id": "hat-boi-saigon-art-cruise",
-      "group": "curation",
       "category": "curation",
-      "level": 1,
       "title": "Saigon Art Cruise",
-      "editorialLabel": "Lead feature",
       "client": "Ngay Xua Asia",
       "period": "2025 to present",
       "role": "Art Event Curator",
-      "folderId": "1p_icPZ1g8P6Uu2Cki3RoNhfvhhaDHdwp",
       "folderUrl": "https://drive.google.com/drive/folders/1p_icPZ1g8P6Uu2Cki3RoNhfvhhaDHdwp",
-      "cover": "https://drive.google.com/thumbnail?id=1lR7pqz-zhYa_uq6u3y2qDhJE8xLmAm3W&sz=w2000",
-      "imageAlt": "Hát Bội Saigon Art Cruise project collection",
-      "youtubeUrl": "https://youtu.be/5uwuvQ3tbpQ",
+      "recursive": true,
+      "coverId": "1lR7pqz-zhYa_uq6u3y2qDhJE8xLmAm3W",
       "summary": "A floating cultural programme that introduces Southern Vietnamese Hát Bội through research, dramaturgy and an audience friendly live narrative.",
       "outcome": "A layered public experience that connects Hát Bội research, live performance and accessible interpretation.",
       "article": "Developed for Saigon Art Cruise, the programme brings classical theatre into a contemporary river journey. I shaped the curatorial framing, script and communication materials so that visual codes, character types and performance conventions could be followed by new audiences.\n\nThe collection includes visual direction, scripts, performance information, social content, video and event records.",
@@ -176,8 +171,8 @@
         "Live programme",
         "Saigon Art Cruise"
       ],
-      "featured": true,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1lR7pqz-zhYa_uq6u3y2qDhJE8xLmAm3W&sz=w2000",
+      "imageAlt": "Hát Bội Saigon Art Cruise project collection",
       "media": [
         {
           "id": "1XMkb2SljdoZ9lvwAUKNSZzcTVt_jhswL",
@@ -746,30 +741,45 @@
           "previewUrl": "https://drive.google.com/file/d/1qDhdk8s7xVVZpgZyibrrckHE8UrscWEX/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1qDhdk8s7xVVZpgZyibrrckHE8UrscWEX&sz=w1200"
         }
-      ]
+      ],
+      "group": "curation",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1p_icPZ1g8P6Uu2Cki3RoNhfvhhaDHdwp",
+      "image": "https://drive.google.com/thumbnail?id=1lR7pqz-zhYa_uq6u3y2qDhJE8xLmAm3W&sz=w2000",
+      "featured": true,
+      "youtubeUrl": "https://youtu.be/5uwuvQ3tbpQ",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "Lead feature",
+      "published": true
     },
     {
       "id": "saigon-art-cruise-visual-direction",
+      "title": "Saigon Art Cruise — Visual Direction",
       "group": "curation",
       "category": "curation",
       "parentId": "hat-boi-saigon-art-cruise",
       "level": 2,
-      "title": "Saigon Art Cruise — Visual Direction",
-      "client": "Ngay Xua Asia",
-      "period": "2025 to present",
-      "role": "Visual Editor and Curator",
       "folderId": "1l1Nv-TqQHMfqTwf7-AU7xXLZYeQhatxp",
       "folderUrl": "https://drive.google.com/drive/folders/1l1Nv-TqQHMfqTwf7-AU7xXLZYeQhatxp",
       "cover": "https://drive.google.com/thumbnail?id=1lR7pqz-zhYa_uq6u3y2qDhJE8xLmAm3W&sz=w2000",
+      "image": "https://drive.google.com/thumbnail?id=1lR7pqz-zhYa_uq6u3y2qDhJE8xLmAm3W&sz=w2000",
+      "role": "Visual Editor and Curator",
+      "client": "Ngay Xua Asia",
+      "period": "2025 to present",
       "summary": "A visual record shaping how the performances, artists and river setting of Saigon Art Cruise are seen as one cultural experience.",
       "outcome": "Photography and visual assets were edited into a coherent public facing identity for the programme.",
+      "article": "",
       "tags": [
         "Visual direction",
         "Curation",
         "Photography"
       ],
       "featured": false,
-      "published": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
       "media": [
         {
           "id": "1YmWowYiAGSYX06q-c7WInTtHlg2l_7ml",
@@ -834,30 +844,36 @@
           "previewUrl": "https://drive.google.com/file/d/1F30ykHJBdcozm2jhNQ1tO9IbXjAOTvVM/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1F30ykHJBdcozm2jhNQ1tO9IbXjAOTvVM&sz=w2000"
         }
-      ]
+      ],
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "saigon-art-cruise-script",
+      "title": "Saigon Art Cruise — Scripts",
       "group": "curation",
       "category": "curation",
       "parentId": "hat-boi-saigon-art-cruise",
       "level": 2,
-      "title": "Saigon Art Cruise — Scripts",
-      "client": "Ngay Xua Asia",
-      "period": "2025 to present",
-      "role": "Researcher and Scriptwriter",
       "folderId": "1WZOcAV2FNf4I6vUIZ23ZPLtxGoqjICaa",
       "folderUrl": "https://drive.google.com/drive/folders/1WZOcAV2FNf4I6vUIZ23ZPLtxGoqjICaa",
       "cover": "https://drive.google.com/thumbnail?id=1jfrr0JkeIEMKKKj4lB4ODy2q821i9pCC&sz=w2000",
+      "image": "https://drive.google.com/thumbnail?id=1jfrr0JkeIEMKKKj4lB4ODy2q821i9pCC&sz=w2000",
+      "role": "Researcher and Scriptwriter",
+      "client": "Ngay Xua Asia",
+      "period": "2025 to present",
       "summary": "Performance scripts translating historical material into a live narrative for audiences aboard the Saigon Art Cruise.",
       "outcome": "Two complete script records connect historical research with dramaturgy and stage delivery.",
+      "article": "",
       "tags": [
         "Script",
         "Dramaturgy",
         "Research"
       ],
       "featured": false,
-      "published": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
       "media": [
         {
           "id": "18qm-92Evz0UktwIrYFihbAgBxk0PCD3y",
@@ -877,21 +893,18 @@
           "previewUrl": "https://drive.google.com/file/d/1qDhdk8s7xVVZpgZyibrrckHE8UrscWEX/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1qDhdk8s7xVVZpgZyibrrckHE8UrscWEX&sz=w2000"
         }
-      ]
+      ],
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "khoi-goi-my-cam",
-      "group": "curation",
       "category": "curation",
-      "level": 1,
       "title": "Khơi Gợi Mỹ Cảm",
       "client": "Ngay Xua Asia",
       "period": "2025",
       "role": "Programme Curator and Writer",
-      "folderId": "1Ry0nHta3N_EKjF0S82iod9J0ohCE4Bri",
       "folderUrl": "https://drive.google.com/drive/folders/1Ry0nHta3N_EKjF0S82iod9J0ohCE4Bri",
-      "cover": "https://drive.google.com/thumbnail?id=1_2ZZL3JyW1mi9FEgc7hUNq93eUR3dtJe&sz=w2000",
-      "imageAlt": "Khơi Gợi Mỹ Cảm project collection",
       "summary": "To understand is the beginning of love. Khơi Gợi Mỹ Cảm is a thematic series exploring the aesthetics of Vietnamese art, from the period before the École des Beaux-Arts de l’Indochine to the contemporary era.",
       "outcome": "A research led public programme that turns art history into an accessible, contemporary encounter for younger audiences.",
       "article": "Created for younger audiences, the series builds an approachable path into Vietnamese art history and encourages a more personal sensitivity to the beauty of the country’s visual culture.\n\nResearcher Lý Đợi guides the programme, connecting historical context, close looking and conversation across different periods of Vietnamese art.",
@@ -901,8 +914,8 @@
         "Public programme",
         "Lý Đợi"
       ],
-      "featured": true,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1_2ZZL3JyW1mi9FEgc7hUNq93eUR3dtJe&sz=w2000",
+      "imageAlt": "Khơi Gợi Mỹ Cảm project collection",
       "media": [
         {
           "id": "1mpYtJLax6smyBVjag0_TJJD0xRAdxIut",
@@ -967,21 +980,27 @@
           "previewUrl": "https://drive.google.com/file/d/1j9NJ_kyI5K8-lDIOuMAQT8RtQEPVG1ox/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1j9NJ_kyI5K8-lDIOuMAQT8RtQEPVG1ox&sz=w2000"
         }
-      ]
+      ],
+      "group": "curation",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1Ry0nHta3N_EKjF0S82iod9J0ohCE4Bri",
+      "image": "https://drive.google.com/thumbnail?id=1_2ZZL3JyW1mi9FEgc7hUNq93eUR3dtJe&sz=w2000",
+      "featured": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "don-ca-tai-tu",
-      "group": "curation",
       "category": "curation",
-      "level": 1,
       "title": "Đờn Ca Tài Tử",
       "client": "Ngay Xua Asia",
       "period": "2025",
       "role": "Programme Curator and Writer",
-      "folderId": "1SX0DIhzIgNnOBHO2kwz0AKp0dDktrBdu",
       "folderUrl": "https://drive.google.com/drive/folders/1SX0DIhzIgNnOBHO2kwz0AKp0dDktrBdu",
-      "cover": "https://drive.google.com/thumbnail?id=1jI1tGqjZJSwAjoweWtg60qYhf_p5Oczr&sz=w2000",
-      "imageAlt": "Đờn Ca Tài Tử Culture Class project collection",
       "summary": "A participatory cultural class introducing Đờn Ca Tài Tử through vọng cổ and the development of Southern Vietnamese cải lương.",
       "outcome": "A complete class record connecting musical forms, historical context and an audience centred learning experience.",
       "article": "The class combines listening, musical context and guided discussion to make the relationship between Đờn Ca Tài Tử, vọng cổ and Southern cải lương easier to recognise.\n\nCurriculum, agenda, participant material and event photography preserve both the learning structure and the atmosphere of the programme.",
@@ -991,8 +1010,8 @@
         "Cải lương",
         "Culture class"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1jI1tGqjZJSwAjoweWtg60qYhf_p5Oczr&sz=w2000",
+      "imageAlt": "Đờn Ca Tài Tử Culture Class project collection",
       "media": [
         {
           "id": "11m-A4tbU-iS3uHLc-GTV-kbmckzoT2mS",
@@ -1174,21 +1193,27 @@
           "previewUrl": "https://drive.google.com/file/d/1h7-p3_gLm8KANh-ALzWwTDHaDGbyIMRV/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1h7-p3_gLm8KANh-ALzWwTDHaDGbyIMRV&sz=w2000"
         }
-      ]
+      ],
+      "group": "curation",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1SX0DIhzIgNnOBHO2kwz0AKp0dDktrBdu",
+      "image": "https://drive.google.com/thumbnail?id=1jI1tGqjZJSwAjoweWtg60qYhf_p5Oczr&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "tranh-goi-vai",
-      "group": "curation",
       "category": "curation",
-      "level": 1,
       "title": "Tranh Gói Vải",
       "client": "Ngay Xua Asia",
       "period": "2025",
       "role": "Programme Curator",
-      "folderId": "1Cch97QWezphTO0On2ac-A9l58rQ1CTKu",
       "folderUrl": "https://drive.google.com/drive/folders/1Cch97QWezphTO0On2ac-A9l58rQ1CTKu",
-      "cover": "https://drive.google.com/thumbnail?id=1xDw4bzsKcVEnZwjyeVAZTQGkreUxCpK5&sz=w2000",
-      "imageAlt": "Tranh Gói Vải Culture Class project collection",
       "summary": "A hands on culture class exploring the material language and traditional practice of fabric wrapped pictures.",
       "outcome": "A compact learning format that translates a material tradition into an approachable making experience.",
       "article": "The programme invites participants to learn through making, bringing close attention to fabric, folding, composition and the cultural context of the form.\n\nThe collection preserves the project’s core visual communication and public facing framing.",
@@ -1198,8 +1223,8 @@
         "Craft",
         "Public programme"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1xDw4bzsKcVEnZwjyeVAZTQGkreUxCpK5&sz=w2000",
+      "imageAlt": "Tranh Gói Vải Culture Class project collection",
       "media": [
         {
           "id": "1xDw4bzsKcVEnZwjyeVAZTQGkreUxCpK5",
@@ -1210,21 +1235,27 @@
           "previewUrl": "https://drive.google.com/file/d/1xDw4bzsKcVEnZwjyeVAZTQGkreUxCpK5/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1xDw4bzsKcVEnZwjyeVAZTQGkreUxCpK5&sz=w2000"
         }
-      ]
+      ],
+      "group": "curation",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1Cch97QWezphTO0On2ac-A9l58rQ1CTKu",
+      "image": "https://drive.google.com/thumbnail?id=1xDw4bzsKcVEnZwjyeVAZTQGkreUxCpK5&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "improv-kich-ung-tac",
-      "group": "curation",
       "category": "curation",
-      "level": 1,
       "title": "Improv Kịch Ứng Tác",
       "client": "Cultural programme",
       "period": "2024",
       "role": "Programme Writer and Curator",
-      "folderId": "1hfrb0-uU_sY3RRxDhYBHUaKVKCVlUqs3",
       "folderUrl": "https://drive.google.com/drive/folders/1hfrb0-uU_sY3RRxDhYBHUaKVKCVlUqs3",
-      "cover": "https://drive.google.com/thumbnail?id=1foDRAu5IwCfhKobb5z7ApFggdKEKqIhC&sz=w2000",
-      "imageAlt": "Improv Kịch Ứng Tác project collection",
       "summary": "An audience facing improvised theatre programme built around spontaneity, participation and the shared energy of live performance.",
       "outcome": "Editorial framing and live documentation that present improvisation as an immediate, participatory cultural experience.",
       "article": "Landing page copy and programme framing communicate the open, responsive nature of improvisation without over explaining the experience.\n\nEvent photography records the performers, audience interaction and changing rhythm of the live programme.",
@@ -1234,8 +1265,8 @@
         "Event communication",
         "Audience"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1foDRAu5IwCfhKobb5z7ApFggdKEKqIhC&sz=w2000",
+      "imageAlt": "Improv Kịch Ứng Tác project collection",
       "media": [
         {
           "id": "1o_rSGuUquyYqyPTl32A8rINyRg89z3Xh",
@@ -1327,21 +1358,29 @@
           "previewUrl": "https://drive.google.com/file/d/1EbnmIBzIxt55RKF3n-Mps1fLvTuJgdTZ/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1EbnmIBzIxt55RKF3n-Mps1fLvTuJgdTZ&sz=w2000"
         }
-      ]
+      ],
+      "group": "curation",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1hfrb0-uU_sY3RRxDhYBHUaKVKCVlUqs3",
+      "image": "https://drive.google.com/thumbnail?id=1foDRAu5IwCfhKobb5z7ApFggdKEKqIhC&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "long-buom",
-      "group": "curation",
       "category": "curation",
-      "level": 1,
       "title": "Lọng Bướm",
       "client": "Ngay Xua Asia",
       "period": "2025",
       "role": "Curator and Copywriter",
-      "folderId": "1fZzAVAmbg0NjQibe1LuM88uDO8m1vbGA",
       "folderUrl": "https://drive.google.com/drive/folders/1fZzAVAmbg0NjQibe1LuM88uDO8m1vbGA",
-      "cover": "https://drive.google.com/thumbnail?id=1YINjwcc92ZX2ZzPunX32pbsOom0-GkiD&sz=w2000",
-      "imageAlt": "Lọng Bướm project collection",
+      "recursive": true,
+      "coverId": "1YINjwcc92ZX2ZzPunX32pbsOom0-GkiD",
       "summary": "A project retracing Lọng Bướm, a distinctive decorative parasol once used by the An Nam people, through an interpretive reconstruction based on derivative sources rather than an original artefact or primary record.",
       "outcome": "An interpretive reconstruction that makes a little known decorative object legible while remaining transparent about the limits of the surviving evidence.",
       "article": "The project carefully distinguishes phỏng dựng from phục dựng: it proposes a new physical interpretation from secondary and derivative material, rather than claiming to restore an original object.\n\nResearchers and artists Khoa Phùng, Nghiêu Thiên and Lâm Ơi guided the process. Interviews, exhibition writing, press material, video and installation records document both the research and the public presentation.",
@@ -1351,8 +1390,8 @@
         "Exhibition",
         "Research"
       ],
-      "featured": true,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1YINjwcc92ZX2ZzPunX32pbsOom0-GkiD&sz=w2000",
+      "imageAlt": "Lọng Bướm project collection",
       "media": [
         {
           "id": "1DChjRKNePpd0Dapld9tBw-a221adCRdq",
@@ -1480,30 +1519,45 @@
           "previewUrl": "https://drive.google.com/file/d/1x5o4hfnVafRa6YvwL8R_pEAipRu9_bdH/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1x5o4hfnVafRa6YvwL8R_pEAipRu9_bdH&sz=w1200"
         }
-      ]
+      ],
+      "group": "curation",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1fZzAVAmbg0NjQibe1LuM88uDO8m1vbGA",
+      "image": "https://drive.google.com/thumbnail?id=1YINjwcc92ZX2ZzPunX32pbsOom0-GkiD&sz=w2000",
+      "featured": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "long-buom-interviews",
+      "title": "Lọng Bướm — Artist Interviews",
       "group": "curation",
       "category": "curation",
       "parentId": "long-buom",
       "level": 2,
-      "title": "Lọng Bướm — Artist Interviews",
-      "client": "Ngay Xua Asia",
-      "period": "2025",
-      "role": "Interview Researcher and Writer",
       "folderId": "1GQXm3XJY8ZVTN1Oc9DDDJKYBUZ6XF_0Y",
       "folderUrl": "https://drive.google.com/drive/folders/1GQXm3XJY8ZVTN1Oc9DDDJKYBUZ6XF_0Y",
       "cover": "https://drive.google.com/thumbnail?id=1YINjwcc92ZX2ZzPunX32pbsOom0-GkiD&sz=w2000",
+      "image": "https://drive.google.com/thumbnail?id=1YINjwcc92ZX2ZzPunX32pbsOom0-GkiD&sz=w2000",
+      "role": "Interview Researcher and Writer",
+      "client": "Ngay Xua Asia",
+      "period": "2025",
       "summary": "Interview research with Khoa Phùng, Nghiêu Thiên and Lâm Ơi for the interpretive reconstruction of Lọng Bướm.",
       "outcome": "Questions and expert responses make the research process visible alongside the finished exhibition narrative.",
+      "article": "",
       "tags": [
         "Interview",
         "Material culture",
         "Research"
       ],
       "featured": false,
-      "published": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
       "media": [
         {
           "id": "1xPteJN0XUjTU_yeQ52fvxmx4ZLH2Gxcf",
@@ -1532,21 +1586,18 @@
           "previewUrl": "https://drive.google.com/file/d/1x5o4hfnVafRa6YvwL8R_pEAipRu9_bdH/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1x5o4hfnVafRa6YvwL8R_pEAipRu9_bdH&sz=w2000"
         }
-      ]
+      ],
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "nguoi-dom-hoa-giay",
-      "group": "curation",
       "category": "curation",
-      "level": 1,
       "title": "Người Đơm Hoa Giấy",
       "client": "Toong",
       "period": "2024",
       "role": "Researcher and Exhibition Writer",
-      "folderId": "1eNyoEUfIg8vmXci-D45ZfYOgKnhPyspN",
       "folderUrl": "https://drive.google.com/drive/folders/1eNyoEUfIg8vmXci-D45ZfYOgKnhPyspN",
-      "cover": "https://drive.google.com/thumbnail?id=1CKYAjtlX2xpWjViOBKN5gY0YR5vzfj2R&sz=w2000",
-      "imageAlt": "Người Đơm Hoa Giấy project collection",
       "summary": "A cultural exhibition dedicated to preserving and continuing the paper flower craft of Thanh Tiên village in Huế.",
       "outcome": "An exhibition record that supports the continuity of a Huế craft village by centring its makers, techniques and cultural memory.",
       "article": "The project follows the makers, materials and inherited knowledge behind Thanh Tiên paper flowers, treating the craft as a living practice rather than a nostalgic object.\n\nLanding page material and a full photographic record document the project from narrative development to exhibition and public encounter.",
@@ -1556,8 +1607,8 @@
         "Huế",
         "Craft heritage"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1CKYAjtlX2xpWjViOBKN5gY0YR5vzfj2R&sz=w2000",
+      "imageAlt": "Người Đơm Hoa Giấy project collection",
       "media": [
         {
           "id": "1CKYAjtlX2xpWjViOBKN5gY0YR5vzfj2R",
@@ -1685,21 +1736,28 @@
           "previewUrl": "https://drive.google.com/file/d/1433eb6GOKAoGrU9yN9dDyUg6JcMFM-Qm/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1433eb6GOKAoGrU9yN9dDyUg6JcMFM-Qm&sz=w2000"
         }
-      ]
+      ],
+      "group": "curation",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1eNyoEUfIg8vmXci-D45ZfYOgKnhPyspN",
+      "image": "https://drive.google.com/thumbnail?id=1CKYAjtlX2xpWjViOBKN5gY0YR5vzfj2R&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "vang-son-mot-thuo",
-      "group": "curation",
       "category": "curation",
-      "level": 1,
       "title": "Một Thuở Vàng Son",
       "client": "Toong",
       "period": "2025",
       "role": "Art Event Curator",
-      "folderId": "1Lqjdz3h1u74IxgjZ7MVXznSFQCBus9W0",
       "folderUrl": "https://drive.google.com/drive/folders/1Lqjdz3h1u74IxgjZ7MVXznSFQCBus9W0",
-      "cover": "https://drive.google.com/thumbnail?id=1TUDPT2ST4TOORPFQ7KaHJgqpvE9FkCDC&sz=w2000",
-      "imageAlt": "Vàng Sơn Một Thuở project collection",
+      "coverId": "1TUDPT2ST4TOORPFQ7KaHJgqpvE9FkCDC",
       "summary": "Một Thuở Vàng Son uses the language of sculpture to tell stories from tuồng, also known as Hát Bội.",
       "outcome": "A sculptural interpretation that carries the narrative world of tuồng into a contemporary exhibition setting.",
       "article": "The exhibition translates the figures, gestures and dramatic memory of tuồng into sculptural form. Editorial framing, artist context and spatial planning help audiences move between traditional theatre and contemporary exhibition language.\n\nExhibition visuals, press material, artist documentation and display proposals are preserved together in this collection.",
@@ -1709,8 +1767,8 @@
         "Hát Bội",
         "Exhibition"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1TUDPT2ST4TOORPFQ7KaHJgqpvE9FkCDC&sz=w2000",
+      "imageAlt": "Vàng Sơn Một Thuở project collection",
       "media": [
         {
           "id": "1RWeAdr81c4CCAhJMfG7xFL0B4CefpSkE",
@@ -1838,21 +1896,27 @@
           "previewUrl": "https://drive.google.com/file/d/1KLE0OYAiNWOrrQxwTKddg13FaiLMP89M/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1KLE0OYAiNWOrrQxwTKddg13FaiLMP89M&sz=w1200"
         }
-      ]
+      ],
+      "group": "curation",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1Lqjdz3h1u74IxgjZ7MVXznSFQCBus9W0",
+      "image": "https://drive.google.com/thumbnail?id=1TUDPT2ST4TOORPFQ7KaHJgqpvE9FkCDC&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "hat-boi-cultural-programme",
-      "group": "curation",
       "category": "curation",
-      "level": 1,
       "title": "Hát Bội & Nhã Nhạc Cung Đình Huế",
       "client": "Toong and cultural partners",
       "period": "2024 to 2025",
       "role": "Cultural Programme Curator",
-      "folderId": "13tpf0Akql_2owMfYuxM44G4wbNAUoV3j",
       "folderUrl": "https://drive.google.com/drive/folders/13tpf0Akql_2owMfYuxM44G4wbNAUoV3j",
-      "cover": "https://drive.google.com/thumbnail?id=1DY8oCht4LiiQo_T55mlEsZwA2Bt_zzih&sz=w2000",
-      "imageAlt": "Hát Bội Cultural Programme project collection",
       "summary": "A public programme introducing Hát Bội in relation to the performative and ceremonial world of Huế court music, Nhã nhạc cung đình Huế.",
       "outcome": "A substantial visual record of traditional performance presented as a living, audience facing cultural practice.",
       "article": "The programme creates an accessible point of entry into classical Vietnamese performance through costume, gesture, music and live encounters.\n\nMore than thirty selected photographs document performers, staging, ceremonial detail and audience experience across multiple sessions.",
@@ -1862,8 +1926,8 @@
         "Huế",
         "Performance"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1DY8oCht4LiiQo_T55mlEsZwA2Bt_zzih&sz=w2000",
+      "imageAlt": "Hát Bội Cultural Programme project collection",
       "media": [
         {
           "id": "1DY8oCht4LiiQo_T55mlEsZwA2Bt_zzih",
@@ -2162,22 +2226,27 @@
           "previewUrl": "https://drive.google.com/file/d/1zI08HuHM7l-4LgHwyVd2xIkFk2EBA0R1/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1zI08HuHM7l-4LgHwyVd2xIkFk2EBA0R1&sz=w2000"
         }
-      ]
+      ],
+      "group": "curation",
+      "parentId": null,
+      "level": 1,
+      "folderId": "13tpf0Akql_2owMfYuxM44G4wbNAUoV3j",
+      "image": "https://drive.google.com/thumbnail?id=1DY8oCht4LiiQo_T55mlEsZwA2Bt_zzih&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "toong-launching",
-      "group": "copywriting",
       "category": "copywriting",
-      "level": 1,
       "title": "Toong Launching",
       "client": "Toong",
       "period": "2024 to 2025",
       "role": "Senior Copywriter and Brochure Editor",
-      "folderId": "1cNP29ipil7q--gG7GTDPoDw2xHALUozG",
       "folderUrl": "https://drive.google.com/drive/folders/1cNP29ipil7q--gG7GTDPoDw2xHALUozG",
-      "cover": "https://drive.google.com/thumbnail?id=1gdAQz54y4XAD5F70T_z-OUz0QRncBXRP&sz=w2000",
-      "imageAlt": "Toong Brand Copywriting System project collection",
-      "flipbookUrl": "https://heyzine.com/flip-book/d33693a345.html",
       "summary": "Launch communication for Thi Sách and The Global City across factsheets, campaign copy and the 2025 corporate brochure.",
       "outcome": "I wrote and edited launch materials, and proofread the linked Toong Brochure 2025 before publication.",
       "article": "At Toong, copywriting extended beyond campaign headlines. I worked across social media, internal communication, email marketing, landing pages, factsheets, brochures and launch materials.\n\nThe central task was consistency: each format needed its own pace and level of detail while still sounding like the same brand.",
@@ -2186,8 +2255,8 @@
         "Campaign",
         "Editorial"
       ],
-      "featured": true,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1gdAQz54y4XAD5F70T_z-OUz0QRncBXRP&sz=w2000",
+      "imageAlt": "Toong Brand Copywriting System project collection",
       "media": [
         {
           "id": "1gdAQz54y4XAD5F70T_z-OUz0QRncBXRP",
@@ -2216,30 +2285,45 @@
           "previewUrl": "https://drive.google.com/file/d/1ZdDHt9gf5EV9eGllwHX6NMZ7hZ-hH_Sg/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1ZdDHt9gf5EV9eGllwHX6NMZ7hZ-hH_Sg&sz=w2000"
         }
-      ]
+      ],
+      "group": "copywriting",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1cNP29ipil7q--gG7GTDPoDw2xHALUozG",
+      "image": "https://drive.google.com/thumbnail?id=1gdAQz54y4XAD5F70T_z-OUz0QRncBXRP&sz=w2000",
+      "featured": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "https://heyzine.com/flip-book/d33693a345.html",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "toong-tvc",
+      "title": "Toong TVC",
       "group": "copywriting",
       "category": "copywriting",
+      "parentId": null,
       "level": 1,
-      "title": "Toong TVC",
-      "client": "Toong",
-      "period": "2024 to 2025",
-      "role": "TVC Scriptwriter",
       "folderId": "1i4OLE3SL3eEG4_V5rNcLrhbeBneD27TT",
       "folderUrl": "https://drive.google.com/drive/folders/1i4OLE3SL3eEG4_V5rNcLrhbeBneD27TT",
       "cover": "https://drive.google.com/thumbnail?id=1BhYXc3nupGltMF6aXNhNQ4gswAtAkHJL&sz=w2000",
-      "youtubeUrl": "https://youtu.be/LcNO0ExpAys",
+      "image": "https://drive.google.com/thumbnail?id=1BhYXc3nupGltMF6aXNhNQ4gswAtAkHJL&sz=w2000",
+      "role": "TVC Scriptwriter",
+      "client": "Toong",
+      "period": "2024 to 2025",
       "summary": "Video scripts for the Thi Sách and The Global City launches, developed from place narratives into concise audiovisual storytelling.",
       "outcome": "The project includes teaser and TVC scripts, a final Drive video and the public Thi Sách film.",
+      "article": "",
       "tags": [
         "TVC",
         "Script",
         "Launch"
       ],
       "featured": true,
-      "published": true,
+      "youtubeUrl": "https://youtu.be/LcNO0ExpAys",
+      "flipbookUrl": "",
+      "embedUrl": "",
       "media": [
         {
           "id": "1pP3GTjgAcGjJ8ImMii7oG1vuPYgbvAx6",
@@ -2268,44 +2352,48 @@
           "previewUrl": "https://drive.google.com/file/d/1cCje8GPEW1C9rGBFLM6ZJYw6hoXjYXwX/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1cCje8GPEW1C9rGBFLM6ZJYw6hoXjYXwX&sz=w2000"
         }
-      ]
+      ],
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "toong-clientele-interviews",
+      "title": "Clientele Interviews",
       "group": "copywriting",
       "category": "copywriting",
+      "parentId": null,
       "level": 1,
-      "title": "Clientele Interviews",
-      "client": "Toong",
-      "period": "2024 to 2025",
-      "role": "Interviewer and Copywriter",
       "folderId": "1Ad05nAZ8q_COz7KejpWyrQC2kB6FGcXQ",
       "folderUrl": "https://drive.google.com/drive/folders/1Ad05nAZ8q_COz7KejpWyrQC2kB6FGcXQ",
       "cover": "https://drive.google.com/thumbnail?id=16gEKBvTcpspEEHkKM9wrrBevF4-Aani4&sz=w2000",
+      "image": "https://drive.google.com/thumbnail?id=16gEKBvTcpspEEHkKM9wrrBevF4-Aani4&sz=w2000",
+      "role": "Interviewer and Copywriter",
+      "client": "Toong",
+      "period": "2024 to 2025",
       "summary": "A series of business client stories built from research, interviews and portrait led editorial narratives.",
       "outcome": "The series presents Kengur, Keyrus and ExoTrail as distinct human stories rather than generic corporate testimonials.",
+      "article": "",
       "tags": [
         "B2B interview",
         "Client story",
         "Copywriting"
       ],
       "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "media": [],
+      "editorialLabel": "",
       "published": true
     },
     {
       "id": "kengur-client-story",
-      "group": "copywriting",
       "category": "copywriting",
-      "parentId": "toong-clientele-interviews",
-      "level": 2,
       "title": "Kengur Client Story",
       "client": "Toong x Kengur",
       "period": "2024 to 2025",
       "role": "Interviewer and Copywriter",
-      "folderId": "1ObLKeoyolHP2hcKKsUcCJjYEz7U_2x78",
       "folderUrl": "https://drive.google.com/drive/folders/1ObLKeoyolHP2hcKKsUcCJjYEz7U_2x78",
-      "cover": "https://drive.google.com/thumbnail?id=1if-orSkMyfuluxb8PjJk7RyPMN961R_t&sz=w2000",
-      "imageAlt": "Kengur Client Story project collection",
       "summary": "A client profile translating workplace experience and company culture into a credible brand story.",
       "outcome": "Interview material and portrait photography were shaped into one customer narrative.",
       "article": "The Kengur client story translated workplace experience, operational context and company culture into a clear brand narrative.\n\nThe process combined background research, interview preparation and editorial shaping.",
@@ -2314,8 +2402,8 @@
         "Brand story",
         "B2B"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1if-orSkMyfuluxb8PjJk7RyPMN961R_t&sz=w2000",
+      "imageAlt": "Kengur Client Story project collection",
       "media": [
         {
           "id": "15lb0ommlwNQQ8HE9d5ucc_8iIt7oFXXC",
@@ -2353,22 +2441,27 @@
           "previewUrl": "https://drive.google.com/file/d/1uRt_41EpdZ3MxvOtodrnaYAVVDc4tLvn/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1uRt_41EpdZ3MxvOtodrnaYAVVDc4tLvn&sz=w2000"
         }
-      ]
+      ],
+      "group": "copywriting",
+      "parentId": "toong-clientele-interviews",
+      "level": 2,
+      "folderId": "1ObLKeoyolHP2hcKKsUcCJjYEz7U_2x78",
+      "image": "https://drive.google.com/thumbnail?id=1if-orSkMyfuluxb8PjJk7RyPMN961R_t&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "keyrus-client-story",
-      "group": "copywriting",
       "category": "copywriting",
-      "parentId": "toong-clientele-interviews",
-      "level": 2,
       "title": "Keyrus Client Story",
       "client": "Toong x Keyrus",
       "period": "2024 to 2025",
       "role": "Interviewer and Copywriter",
-      "folderId": "1A5cjom6iYNxQjLO7raMnkh1Nj5tf6qJM",
       "folderUrl": "https://drive.google.com/drive/folders/1A5cjom6iYNxQjLO7raMnkh1Nj5tf6qJM",
-      "cover": "https://drive.google.com/thumbnail?id=16gEKBvTcpspEEHkKM9wrrBevF4-Aani4&sz=w2000",
-      "imageAlt": "Keyrus Client Story project collection",
       "summary": "A business interview shaped into a human account of team culture and the workplace.",
       "outcome": "Interview copy and a complete portrait collection support the published client story.",
       "article": "The Keyrus project combined business interviewing with editorial storytelling.\n\nThe final narrative keeps operational detail credible while foregrounding people, culture and lived workplace experience.",
@@ -2377,8 +2470,8 @@
         "Customer story",
         "Copywriting"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=16gEKBvTcpspEEHkKM9wrrBevF4-Aani4&sz=w2000",
+      "imageAlt": "Keyrus Client Story project collection",
       "media": [
         {
           "id": "1ZobC4kKZ1stcF2GCw-xCcb46WpSPL-G0",
@@ -2434,22 +2527,27 @@
           "previewUrl": "https://drive.google.com/file/d/1r698IGGlCOqU6YpEXGvEVSW4z86hGYbk/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1r698IGGlCOqU6YpEXGvEVSW4z86hGYbk&sz=w2000"
         }
-      ]
+      ],
+      "group": "copywriting",
+      "parentId": "toong-clientele-interviews",
+      "level": 2,
+      "folderId": "1A5cjom6iYNxQjLO7raMnkh1Nj5tf6qJM",
+      "image": "https://drive.google.com/thumbnail?id=16gEKBvTcpspEEHkKM9wrrBevF4-Aani4&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "exotrail-client-story",
-      "group": "copywriting",
       "category": "copywriting",
-      "parentId": "toong-clientele-interviews",
-      "level": 2,
       "title": "ExoTrail Client Story",
       "client": "Toong x ExoTrail",
       "period": "2024 to 2025",
       "role": "Interviewer and Scriptwriter",
-      "folderId": "1UnwB_dJSsmdm8soZjwCcdsL79bVx6TM7",
       "folderUrl": "https://drive.google.com/drive/folders/1UnwB_dJSsmdm8soZjwCcdsL79bVx6TM7",
-      "cover": "media/covers/images.jpg",
-      "imageAlt": "ExoTrail Client Story project collection",
       "summary": "A video led client story developed from a questionnaire, interview structure and edit script.",
       "outcome": "Research, questionnaire, edit script and final Drive video form a complete production record.",
       "article": "The ExoTrail story was developed as a video led customer narrative.\n\nMy contribution covered the questionnaire, interview pathway and edit script, connecting raw conversation with a concise brand story.",
@@ -2458,8 +2556,8 @@
         "Interview",
         "Brand story"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "media/covers/exotrail-logo.jpg",
+      "imageAlt": "ExoTrail Client Story project collection",
       "media": [
         {
           "id": "1T08VYn05ViliTlTVcYrA_niClYJ3iVAZ",
@@ -2488,44 +2586,57 @@
           "previewUrl": "https://drive.google.com/file/d/1vi16lmI0k2pGr-AVrlatuP7CtodnI0vG/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1vi16lmI0k2pGr-AVrlatuP7CtodnI0vG&sz=w1200"
         }
-      ]
+      ],
+      "group": "copywriting",
+      "parentId": "toong-clientele-interviews",
+      "level": 2,
+      "folderId": "1UnwB_dJSsmdm8soZjwCcdsL79bVx6TM7",
+      "image": "media/covers/exotrail-logo.jpg",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "toong-visual-direction",
+      "title": "Visual Direction",
       "group": "copywriting",
       "category": "copywriting",
+      "parentId": null,
       "level": 1,
-      "title": "Visual Direction",
-      "client": "Toong",
-      "period": "2024 to 2025",
-      "role": "Editorial and Visual Direction",
       "folderId": "1KWq8f7LE7Nj-fhSp4finwJxu_E_GSp7V",
       "folderUrl": "https://drive.google.com/drive/folders/1KWq8f7LE7Nj-fhSp4finwJxu_E_GSp7V",
       "cover": "https://drive.google.com/thumbnail?id=1NCr5NvymA0M8x-Ki8jmGymO07TX0a4kW&sz=w2000",
+      "image": "https://drive.google.com/thumbnail?id=1NCr5NvymA0M8x-Ki8jmGymO07TX0a4kW&sz=w2000",
+      "role": "Editorial and Visual Direction",
+      "client": "Toong",
+      "period": "2024 to 2025",
       "summary": "A visual editorial system spanning locations, launches, pop ups and exhibitions across the Toong brand.",
       "outcome": "Eight location and campaign collections are organised as individual visual stories within one brand desk.",
+      "article": "",
       "tags": [
         "Visual direction",
         "Brand",
         "Place"
       ],
       "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "media": [],
+      "editorialLabel": "",
       "published": true
     },
     {
       "id": "toong-cong-hoa",
-      "group": "copywriting",
       "category": "copywriting",
-      "parentId": "toong-visual-direction",
-      "level": 2,
       "title": "Toong Cộng Hòa",
       "client": "Toong",
       "period": "2024 to 2025",
       "role": "Editorial and Visual Direction",
-      "folderId": "1M2FdoVRLYksFR92M0Ks6_Y0muVGW7ygz",
       "folderUrl": "https://drive.google.com/drive/folders/1M2FdoVRLYksFR92M0Ks6_Y0muVGW7ygz",
-      "cover": "https://drive.google.com/thumbnail?id=19GYRsh30sQDw7gvxcMCxbmgQRz1IDvb1&sz=w2000",
-      "imageAlt": "Toong Cộng Hòa project collection",
       "summary": "Place led storytelling and visual direction for the Cộng Hòa location.",
       "outcome": "A focused image collection documenting space, activity and campaign direction.",
       "article": "This collection documents place led storytelling for Toong Cộng Hòa.\n\nVisual selection and editorial framing were used to translate spatial character into customer facing communication.",
@@ -2534,8 +2645,8 @@
         "Visual direction",
         "Brand"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=19GYRsh30sQDw7gvxcMCxbmgQRz1IDvb1&sz=w2000",
+      "imageAlt": "Toong Cộng Hòa project collection",
       "media": [
         {
           "id": "19GYRsh30sQDw7gvxcMCxbmgQRz1IDvb1",
@@ -2573,22 +2684,27 @@
           "previewUrl": "https://drive.google.com/file/d/1M4beX3rrcIERMsw2fvH86aIwUw03l4ez/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1M4beX3rrcIERMsw2fvH86aIwUw03l4ez&sz=w2000"
         }
-      ]
+      ],
+      "group": "copywriting",
+      "parentId": "toong-visual-direction",
+      "level": 2,
+      "folderId": "1M2FdoVRLYksFR92M0Ks6_Y0muVGW7ygz",
+      "image": "https://drive.google.com/thumbnail?id=19GYRsh30sQDw7gvxcMCxbmgQRz1IDvb1&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "toong-ha-noi",
-      "group": "copywriting",
       "category": "copywriting",
-      "parentId": "toong-visual-direction",
-      "level": 2,
       "title": "Toong Hà Nội",
       "client": "Toong",
       "period": "2024 to 2025",
       "role": "Editorial and Visual Direction",
-      "folderId": "1rd3WI1bn5Qe7VBbYVwPrxkwI1TUqusEU",
       "folderUrl": "https://drive.google.com/drive/folders/1rd3WI1bn5Qe7VBbYVwPrxkwI1TUqusEU",
-      "cover": "https://drive.google.com/thumbnail?id=1UlbsA-w9J34jWHrilgFFDuA42OyFdGcM&sz=w2000",
-      "imageAlt": "Toong Hà Nội project collection",
       "summary": "A visual and editorial collection presenting Toong's Hanoi spaces through atmosphere and use.",
       "outcome": "Location photography organised as a coherent place narrative.",
       "article": "The Hanoi collection presents workplace architecture through atmosphere, movement and use.\n\nThe editorial approach treats the space as a lived setting rather than a list of facilities.",
@@ -2597,8 +2713,8 @@
         "Architecture",
         "Editorial"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1UlbsA-w9J34jWHrilgFFDuA42OyFdGcM&sz=w2000",
+      "imageAlt": "Toong Hà Nội project collection",
       "media": [
         {
           "id": "1UlbsA-w9J34jWHrilgFFDuA42OyFdGcM",
@@ -2645,22 +2761,27 @@
           "previewUrl": "https://drive.google.com/file/d/1OAS0_2d9_co4xSS5kPNvl68LIK0j32PP/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1OAS0_2d9_co4xSS5kPNvl68LIK0j32PP&sz=w2000"
         }
-      ]
+      ],
+      "group": "copywriting",
+      "parentId": "toong-visual-direction",
+      "level": 2,
+      "folderId": "1rd3WI1bn5Qe7VBbYVwPrxkwI1TUqusEU",
+      "image": "https://drive.google.com/thumbnail?id=1UlbsA-w9J34jWHrilgFFDuA42OyFdGcM&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "toong-minh-khai",
-      "group": "copywriting",
       "category": "copywriting",
-      "parentId": "toong-visual-direction",
-      "level": 2,
       "title": "Toong Nguyễn Thị Minh Khai",
       "client": "Toong",
       "period": "2024 to 2025",
       "role": "Editorial and Visual Direction",
-      "folderId": "1eDUFkX1R7lAxCaMEakCEQokO1alwbC7R",
       "folderUrl": "https://drive.google.com/drive/folders/1eDUFkX1R7lAxCaMEakCEQokO1alwbC7R",
-      "cover": "https://drive.google.com/thumbnail?id=1B687P4FavRni7HPDEjz2ErTBqFWSHj-C&sz=w2000",
-      "imageAlt": "Toong Nguyễn Thị Minh Khai project collection",
       "summary": "A place narrative and image collection for Toong 126 Nguyễn Thị Minh Khai.",
       "outcome": "Construction, finished space and communication images are preserved as one project record.",
       "article": "This collection follows Toong Nguyễn Thị Minh Khai from spatial detail to finished workplace experience.\n\nThe selected images support a location narrative grounded in design, use and atmosphere.",
@@ -2669,8 +2790,8 @@
         "Place narrative",
         "Visual direction"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1B687P4FavRni7HPDEjz2ErTBqFWSHj-C&sz=w2000",
+      "imageAlt": "Toong Nguyễn Thị Minh Khai project collection",
       "media": [
         {
           "id": "1B687P4FavRni7HPDEjz2ErTBqFWSHj-C",
@@ -2753,22 +2874,27 @@
           "previewUrl": "https://drive.google.com/file/d/18eUGOsyGkaovrmUHNgoWE1kWz-VnHSPK/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=18eUGOsyGkaovrmUHNgoWE1kWz-VnHSPK&sz=w2000"
         }
-      ]
+      ],
+      "group": "copywriting",
+      "parentId": "toong-visual-direction",
+      "level": 2,
+      "folderId": "1eDUFkX1R7lAxCaMEakCEQokO1alwbC7R",
+      "image": "https://drive.google.com/thumbnail?id=1B687P4FavRni7HPDEjz2ErTBqFWSHj-C&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "toong-pham-ngoc-thach",
-      "group": "copywriting",
       "category": "copywriting",
-      "parentId": "toong-visual-direction",
-      "level": 2,
       "title": "Toong Phạm Ngọc Thạch",
       "client": "Toong",
       "period": "2024 to 2025",
       "role": "Editorial and Visual Direction",
-      "folderId": "1JzLklBLQ8zHHMd_zEmfkYxAErd04rNN4",
       "folderUrl": "https://drive.google.com/drive/folders/1JzLklBLQ8zHHMd_zEmfkYxAErd04rNN4",
-      "cover": "https://drive.google.com/thumbnail?id=1lxjMYiSxFRuRAwtt6oa2blyN_gKftBAW&sz=w2000",
-      "imageAlt": "Toong Phạm Ngọc Thạch project collection",
       "summary": "Location storytelling shaped around architecture, daily work and visual identity.",
       "outcome": "Eight selected photographs form a concise visual project record.",
       "article": "The Phạm Ngọc Thạch collection uses architecture and daily activity to communicate the character of the location.\n\nEditorial selection keeps the story grounded in how the workplace is experienced.",
@@ -2777,8 +2903,8 @@
         "Architecture",
         "Brand"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1lxjMYiSxFRuRAwtt6oa2blyN_gKftBAW&sz=w2000",
+      "imageAlt": "Toong Phạm Ngọc Thạch project collection",
       "media": [
         {
           "id": "1lxjMYiSxFRuRAwtt6oa2blyN_gKftBAW",
@@ -2852,23 +2978,27 @@
           "previewUrl": "https://drive.google.com/file/d/1Tcn-uAODXkZmUy0JL7SEfboyCfBFkINg/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1Tcn-uAODXkZmUy0JL7SEfboyCfBFkINg&sz=w2000"
         }
-      ]
+      ],
+      "group": "copywriting",
+      "parentId": "toong-visual-direction",
+      "level": 2,
+      "folderId": "1JzLklBLQ8zHHMd_zEmfkYxAErd04rNN4",
+      "image": "https://drive.google.com/thumbnail?id=1lxjMYiSxFRuRAwtt6oa2blyN_gKftBAW&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "toong-thi-sach-launch",
-      "group": "copywriting",
       "category": "copywriting",
-      "parentId": "toong-visual-direction",
-      "level": 2,
       "title": "Launching — Thi Sách",
       "client": "Toong",
       "period": "2024",
       "role": "Senior Copywriter and Launch Editor",
-      "folderId": "1-oZueCykN7i79Q_ZdsxWHVEq7GUEuGie",
       "folderUrl": "https://drive.google.com/drive/folders/1-oZueCykN7i79Q_ZdsxWHVEq7GUEuGie",
-      "cover": "https://drive.google.com/thumbnail?id=1BhYXc3nupGltMF6aXNhNQ4gswAtAkHJL&sz=w2000",
-      "imageAlt": "Toong Thi Sách Launch project collection",
-      "youtubeUrl": "https://youtu.be/LcNO0ExpAys",
       "summary": "A place led launch narrative developed across teaser scripts, social content, internal communication, email marketing and sales materials.",
       "outcome": "The collection documents launch imagery alongside campaign and sales assets.",
       "article": "The Thi Sách launch connected a new workplace location with a coherent editorial story.\n\nThe work extended across teaser scripts, social content, internal communication, email marketing and sales materials.",
@@ -2877,8 +3007,8 @@
         "Campaign",
         "Copywriting"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1BhYXc3nupGltMF6aXNhNQ4gswAtAkHJL&sz=w2000",
+      "imageAlt": "Toong Thi Sách Launch project collection",
       "media": [
         {
           "id": "1BhYXc3nupGltMF6aXNhNQ4gswAtAkHJL",
@@ -3015,22 +3145,27 @@
           "previewUrl": "https://drive.google.com/file/d/1v0O37U5uJ90DnSck6yugkTd3I9pZ8IVO/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1v0O37U5uJ90DnSck6yugkTd3I9pZ8IVO&sz=w2000"
         }
-      ]
+      ],
+      "group": "copywriting",
+      "parentId": "toong-visual-direction",
+      "level": 2,
+      "folderId": "1-oZueCykN7i79Q_ZdsxWHVEq7GUEuGie",
+      "image": "https://drive.google.com/thumbnail?id=1BhYXc3nupGltMF6aXNhNQ4gswAtAkHJL&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "https://youtu.be/LcNO0ExpAys",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "toong-global-city",
-      "group": "copywriting",
       "category": "copywriting",
-      "parentId": "toong-visual-direction",
-      "level": 2,
       "title": "Launching — The Global City",
       "client": "Toong",
       "period": "2024 to 2025",
       "role": "Senior Copywriter and Visual Editor",
-      "folderId": "1v6Qzn3zIesiFJc0UMCs71bBV09f8B0kW",
       "folderUrl": "https://drive.google.com/drive/folders/1v6Qzn3zIesiFJc0UMCs71bBV09f8B0kW",
-      "cover": "https://drive.google.com/thumbnail?id=1hAAE2ZrLFqGsXRkIHXBARr3yQLzB9STX&sz=w2000",
-      "imageAlt": "Toong The Global City project collection",
       "summary": "Brand storytelling for a new workplace destination across scripts, factsheets and launch communication.",
       "outcome": "A substantial visual archive documents place, art, events and customer experience.",
       "article": "The Global City project shaped a workplace destination through launch copy and a broad visual narrative.\n\nThe collection brings together architecture, art, events and customer experience as connected brand material.",
@@ -3039,8 +3174,8 @@
         "Place branding",
         "Visual editorial"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1hAAE2ZrLFqGsXRkIHXBARr3yQLzB9STX&sz=w2000",
+      "imageAlt": "Toong The Global City project collection",
       "media": [
         {
           "id": "1hAAE2ZrLFqGsXRkIHXBARr3yQLzB9STX",
@@ -3303,30 +3438,45 @@
           "previewUrl": "https://drive.google.com/file/d/1Rdh_54319wYT713xZ-LQElTm5g6tBp8p/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1Rdh_54319wYT713xZ-LQElTm5g6tBp8p&sz=w2000"
         }
-      ]
+      ],
+      "group": "copywriting",
+      "parentId": "toong-visual-direction",
+      "level": 2,
+      "folderId": "1v6Qzn3zIesiFJc0UMCs71bBV09f8B0kW",
+      "image": "https://drive.google.com/thumbnail?id=1hAAE2ZrLFqGsXRkIHXBARr3yQLzB9STX&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "toong-popup",
+      "title": "Toong Pop Up",
       "group": "copywriting",
       "category": "copywriting",
       "parentId": "toong-visual-direction",
       "level": 2,
-      "title": "Toong Pop Up",
-      "client": "Toong",
-      "period": "2024 to 2025",
-      "role": "Editorial and Visual Direction",
       "folderId": "1WJ6fyrb6EY_wnZ8VIHWb-lTrVIqWoezB",
       "folderUrl": "https://drive.google.com/drive/folders/1WJ6fyrb6EY_wnZ8VIHWb-lTrVIqWoezB",
       "cover": "https://drive.google.com/thumbnail?id=1FOU3UpLJGWexk4odm6LPiT5AgUllu7us&sz=w2000",
+      "image": "https://drive.google.com/thumbnail?id=1FOU3UpLJGWexk4odm6LPiT5AgUllu7us&sz=w2000",
+      "role": "Editorial and Visual Direction",
+      "client": "Toong",
+      "period": "2024 to 2025",
       "summary": "Pop up spaces and temporary activations documented through a flexible visual language.",
       "outcome": "A mixed image collection records temporary spaces, people and brand activity without forcing unlike formats into a single crop.",
+      "article": "",
       "tags": [
         "Pop up",
         "Photography",
         "Visual direction"
       ],
       "featured": false,
-      "published": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
       "media": [
         {
           "id": "1FOU3UpLJGWexk4odm6LPiT5AgUllu7us",
@@ -3373,22 +3523,18 @@
           "previewUrl": "https://drive.google.com/file/d/1dJLN6Wv33jkJl-432Kmu26govLaLYS_9/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1dJLN6Wv33jkJl-432Kmu26govLaLYS_9&sz=w2000"
         }
-      ]
+      ],
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "toong-noi-exhibition",
-      "group": "copywriting",
       "category": "copywriting",
-      "parentId": "toong-visual-direction",
-      "level": 2,
       "title": "Triển Lãm Nối",
       "client": "Toong",
       "period": "2025",
       "role": "Editorial and Visual Direction",
-      "folderId": "1lDFMfurOGhKKJ1YqBKSfjfY2JbL1xmAW",
       "folderUrl": "https://drive.google.com/drive/folders/1lDFMfurOGhKKJ1YqBKSfjfY2JbL1xmAW",
-      "cover": "https://drive.google.com/thumbnail?id=1NCr5NvymA0M8x-Ki8jmGymO07TX0a4kW&sz=w2000",
-      "imageAlt": "Triển Lãm Nối project collection",
       "summary": "Editorial framing and visual documentation for the Nối exhibition.",
       "outcome": "Installation and event photography are gathered into a complete visual record.",
       "article": "Nối was documented through installation details, audience encounters and the visual rhythm of the event.\n\nThe collection reflects the relationship between editorial framing and spatial experience.",
@@ -3397,8 +3543,8 @@
         "Visual direction",
         "Editorial"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1NCr5NvymA0M8x-Ki8jmGymO07TX0a4kW&sz=w2000",
+      "imageAlt": "Triển Lãm Nối project collection",
       "media": [
         {
           "id": "1NCr5NvymA0M8x-Ki8jmGymO07TX0a4kW",
@@ -3481,22 +3627,27 @@
           "previewUrl": "https://drive.google.com/file/d/1dr0f7BjCt7hEvlEx6bMPgUeGperyJE1G/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1dr0f7BjCt7hEvlEx6bMPgUeGperyJE1G&sz=w2000"
         }
-      ]
+      ],
+      "group": "copywriting",
+      "parentId": "toong-visual-direction",
+      "level": 2,
+      "folderId": "1lDFMfurOGhKKJ1YqBKSfjfY2JbL1xmAW",
+      "image": "https://drive.google.com/thumbnail?id=1NCr5NvymA0M8x-Ki8jmGymO07TX0a4kW&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "mybest-seo",
-      "group": "copywriting",
       "category": "copywriting",
-      "level": 1,
       "title": "SEO Editorial for Mybest.vn",
-      "editorialLabel": "SEO desk",
       "client": "Mybest.vn",
       "period": "2022",
       "role": "SEO Content Writer",
-      "folderId": "1jjJSMkK6DKbJclTfEj9S7YFliaSJPUEX",
       "folderUrl": "https://drive.google.com/drive/folders/1jjJSMkK6DKbJclTfEj9S7YFliaSJPUEX",
-      "cover": "https://drive.google.com/thumbnail?id=1MAv8q0oxqk97SR_4xM_YtHegPZ1Kpkm-&sz=w2000",
-      "imageAlt": "SEO Editorial for Mybest.vn project collection",
       "summary": "Search led product guides developed from research, comparison frameworks and clear user intent.",
       "outcome": "Search result captures and complete article PDFs document visibility across multiple consumer topics.",
       "article": "These product guides were developed from keyword intent, comparison research and clear reader structure.\n\nThe archive includes live article shortcuts, search result evidence and full PDF records.",
@@ -3505,8 +3656,8 @@
         "Content writing",
         "Research"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1MAv8q0oxqk97SR_4xM_YtHegPZ1Kpkm-&sz=w2000",
+      "imageAlt": "SEO Editorial for Mybest.vn project collection",
       "media": [
         {
           "id": "19DvsAM-BNNjc6nZ3FFjYCMGvcQDpaqeW",
@@ -3643,22 +3794,27 @@
           "previewUrl": "https://drive.google.com/file/d/1aKwHCjct1McSawKLK_qmLEh5jwyA5-WQ/view?usp=drivesdk",
           "thumbnail": "https://drive.google.com/thumbnail?id=1aKwHCjct1McSawKLK_qmLEh5jwyA5-WQ&sz=w1200"
         }
-      ]
+      ],
+      "group": "copywriting",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1jjJSMkK6DKbJclTfEj9S7YFliaSJPUEX",
+      "image": "https://drive.google.com/thumbnail?id=1MAv8q0oxqk97SR_4xM_YtHegPZ1Kpkm-&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "SEO desk",
+      "published": true
     },
     {
       "id": "hormones-ebook",
-      "group": "publishing",
       "category": "publishing",
-      "level": 1,
       "title": "Làm Hòa Với Hormones, Làm Bạn Với Chu Kỳ",
       "client": "Independent publishing project",
       "period": "2026",
       "role": "Ebook Writer",
-      "folderId": "1Q2WWqa8Ei5ETbWW8zGa0FCZhsKWAqvsd",
       "folderUrl": "https://drive.google.com/drive/folders/1Q2WWqa8Ei5ETbWW8zGa0FCZhsKWAqvsd",
-      "cover": "media/covers/hormones-ebook-cover.jpg",
-      "imageAlt": "Làm Hòa Với Hormones, Làm Bạn Với Chu Kỳ project collection",
-      "embedUrl": "https://drive.google.com/file/d/1f_dsNQrAyPh4nxWftTfsR-qZ7jIuzFo4/preview",
       "summary": "A long form ebook project translating menstrual health research into accessible Vietnamese editorial content.",
       "outcome": "The finished digital edition is linked directly from Drive for in page reading.",
       "article": "This ebook translates health research into clear, approachable Vietnamese writing.\n\nThe editorial focus is structure, reader comfort and practical understanding across a sensitive subject.",
@@ -3667,8 +3823,8 @@
         "Health writing",
         "Long form"
       ],
-      "featured": true,
-      "published": true,
+      "cover": "media/covers/hormones-ebook-cover.jpg",
+      "imageAlt": "Làm Hòa Với Hormones, Làm Bạn Với Chu Kỳ project collection",
       "media": [
         {
           "id": "1f_dsNQrAyPh4nxWftTfsR-qZ7jIuzFo4",
@@ -3679,21 +3835,27 @@
           "previewUrl": "https://drive.google.com/file/d/1f_dsNQrAyPh4nxWftTfsR-qZ7jIuzFo4/view?usp=drivesdk",
           "thumbnail": "https://drive.google.com/thumbnail?id=1f_dsNQrAyPh4nxWftTfsR-qZ7jIuzFo4&sz=w1200"
         }
-      ]
+      ],
+      "group": "publishing",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1Q2WWqa8Ei5ETbWW8zGa0FCZhsKWAqvsd",
+      "image": "media/covers/hormones-ebook-cover.jpg",
+      "featured": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "https://drive.google.com/file/d/1f_dsNQrAyPh4nxWftTfsR-qZ7jIuzFo4/preview",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "publishing-proposals",
-      "group": "publishing",
       "category": "publishing",
-      "level": 1,
       "title": "Proposal Writing",
       "client": "Selected clients",
       "period": "2024 to 2025",
       "role": "Proposal Writer",
-      "folderId": "1Bn9UC_dbFyvP2AmEMR2sv2hnhbyic9iP",
       "folderUrl": "https://drive.google.com/drive/folders/1Bn9UC_dbFyvP2AmEMR2sv2hnhbyic9iP",
-      "cover": "https://drive.google.com/thumbnail?id=1XNaC6JCpnbVTN7Rsw_GkpKTuQ1ngKP_a&sz=w1200",
-      "imageAlt": "Editorial and Communication Proposals project collection",
       "summary": "Strategic proposals translating research, communication objectives and programme structures into clear client narratives.",
       "outcome": "Selected proposals are available as full Drive documents.",
       "article": "These proposals translate research, communication objectives and programme structures into clear client narratives.\n\nThe work balances strategic logic with accessible editorial flow.",
@@ -3702,8 +3864,8 @@
         "Strategy",
         "Editorial"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1XNaC6JCpnbVTN7Rsw_GkpKTuQ1ngKP_a&sz=w1200",
+      "imageAlt": "Editorial and Communication Proposals project collection",
       "media": [
         {
           "id": "1XNaC6JCpnbVTN7Rsw_GkpKTuQ1ngKP_a",
@@ -3723,21 +3885,28 @@
           "previewUrl": "https://drive.google.com/file/d/1lCucLUEC0aAsD4xkDL_ynJ6_Kca2lZuV/view?usp=drivesdk",
           "thumbnail": "https://drive.google.com/thumbnail?id=1lCucLUEC0aAsD4xkDL_ynJ6_Kca2lZuV&sz=w1200"
         }
-      ]
+      ],
+      "group": "publishing",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1Bn9UC_dbFyvP2AmEMR2sv2hnhbyic9iP",
+      "image": "https://drive.google.com/thumbnail?id=1XNaC6JCpnbVTN7Rsw_GkpKTuQ1ngKP_a&sz=w1200",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "fiction-editorial",
-      "group": "publishing",
       "category": "publishing",
-      "level": 1,
       "title": "Fictions",
       "client": "NovelToon",
       "period": "2020 to 2022",
       "role": "Novel Editor",
-      "folderId": "1-Fj-YTKKHWb3fhMQDlrZ_x53vM4i-ORt",
       "folderUrl": "https://drive.google.com/drive/folders/1-Fj-YTKKHWb3fhMQDlrZ_x53vM4i-ORt",
-      "cover": "https://drive.google.com/thumbnail?id=1qIamhbvKMR3yoZaZZn5rgmuxJDqUQFai&sz=w2000",
-      "imageAlt": "Fiction Editorial and Adaptation project collection",
+      "recursive": true,
       "summary": "Fiction development, adaptation scripts, editorial assessment and writer training for serial storytelling.",
       "outcome": "Cover art, editorial materials, social planning and adaptation records are collected together.",
       "article": "This role combined fiction editing with author development and community content.\n\nI managed serial narratives, developed assessment frameworks and prepared practical writing curriculum for emerging authors.",
@@ -3746,8 +3915,8 @@
         "Editing",
         "Adaptation"
       ],
-      "featured": true,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1qIamhbvKMR3yoZaZZn5rgmuxJDqUQFai&sz=w2000",
+      "imageAlt": "Fiction Editorial and Adaptation project collection",
       "media": [
         {
           "id": "1qIamhbvKMR3yoZaZZn5rgmuxJDqUQFai",
@@ -4019,30 +4188,45 @@
           "previewUrl": "https://drive.google.com/file/d/1B-mALbSOuNomOG57hOdCLX_vF6FtzSjy/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1B-mALbSOuNomOG57hOdCLX_vF6FtzSjy&sz=w1200"
         }
-      ]
+      ],
+      "group": "publishing",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1-Fj-YTKKHWb3fhMQDlrZ_x53vM4i-ORt",
+      "image": "https://drive.google.com/thumbnail?id=1qIamhbvKMR3yoZaZZn5rgmuxJDqUQFai&sz=w2000",
+      "featured": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "fiction-writing-guides",
+      "title": "Fiction Writing Guides",
       "group": "publishing",
       "category": "publishing",
       "parentId": "fiction-editorial",
       "level": 2,
-      "title": "Fiction Writing Guides",
-      "client": "NovelToon",
-      "period": "2020 to 2022",
-      "role": "Novel Editor and Writing Instructor",
       "folderId": "17RtuGqwpMjZC8TQbx34OQJbJVIEY6jBK",
       "folderUrl": "https://drive.google.com/drive/folders/17RtuGqwpMjZC8TQbx34OQJbJVIEY6jBK",
       "cover": "https://drive.google.com/thumbnail?id=1qIamhbvKMR3yoZaZZn5rgmuxJDqUQFai&sz=w2000",
+      "image": "https://drive.google.com/thumbnail?id=1qIamhbvKMR3yoZaZZn5rgmuxJDqUQFai&sz=w2000",
+      "role": "Novel Editor and Writing Instructor",
+      "client": "NovelToon",
+      "period": "2020 to 2022",
       "summary": "Practical editorial guides on dialogue, genre criteria, story structure and Vietnamese language for serial fiction writers.",
       "outcome": "Nine working documents turn recurring editorial feedback into reusable guidance for writers.",
+      "article": "",
       "tags": [
         "Writing education",
         "Fiction",
         "Editorial"
       ],
       "featured": false,
-      "published": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
       "media": [
         {
           "id": "1ddnpkFiuhMAq9Xq2cmvwhtOpZa14EH-a",
@@ -4089,30 +4273,36 @@
           "previewUrl": "https://drive.google.com/file/d/1y-lkrAsdE5F2_n9eHUYTV9-NY50WlAqW/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1y-lkrAsdE5F2_n9eHUYTV9-NY50WlAqW&sz=w2000"
         }
-      ]
+      ],
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "fiction-social-media",
+      "title": "Fiction Social Media Plan",
       "group": "publishing",
       "category": "publishing",
       "parentId": "fiction-editorial",
       "level": 2,
-      "title": "Fiction Social Media Plan",
-      "client": "NovelToon",
-      "period": "2020 to 2022",
-      "role": "Editorial Planner",
       "folderId": "1OrZbAemmdvioCnHrqAU0zGiSmc0gXyOV",
       "folderUrl": "https://drive.google.com/drive/folders/1OrZbAemmdvioCnHrqAU0zGiSmc0gXyOV",
       "cover": "https://drive.google.com/thumbnail?id=1qIamhbvKMR3yoZaZZn5rgmuxJDqUQFai&sz=w2000",
+      "image": "https://drive.google.com/thumbnail?id=1qIamhbvKMR3yoZaZZn5rgmuxJDqUQFai&sz=w2000",
+      "role": "Editorial Planner",
+      "client": "NovelToon",
+      "period": "2020 to 2022",
       "summary": "Content, promotion and publishing plans connecting fiction discovery with reader communities.",
       "outcome": "Planning sheets document publishing principles, advertising copy and the editorial calendar.",
+      "article": "",
       "tags": [
         "Content planning",
         "Community",
         "Publishing"
       ],
       "featured": false,
-      "published": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
       "media": [
         {
           "id": "1gf_tHDAYKtskjgPLLPaTOderMQQL2AeT",
@@ -4150,30 +4340,36 @@
           "previewUrl": "https://drive.google.com/file/d/1OoaC0L7iKB8S5ZvxCnAi6Oz4fsb-Qr3K/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1OoaC0L7iKB8S5ZvxCnAi6Oz4fsb-Qr3K&sz=w2000"
         }
-      ]
+      ],
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "fiction-adaptation",
+      "title": "Adaptation & Script",
       "group": "publishing",
       "category": "publishing",
       "parentId": "fiction-editorial",
       "level": 2,
-      "title": "Adaptation & Script",
-      "client": "NovelToon",
-      "period": "2020 to 2022",
-      "role": "Adaptation Editor and Scriptwriter",
       "folderId": "1PQRjTfYndPxS4RmPlVda6nhJwiUXgV7w",
       "folderUrl": "https://drive.google.com/drive/folders/1PQRjTfYndPxS4RmPlVda6nhJwiUXgV7w",
       "cover": "https://drive.google.com/thumbnail?id=1qIamhbvKMR3yoZaZZn5rgmuxJDqUQFai&sz=w2000",
+      "image": "https://drive.google.com/thumbnail?id=1qIamhbvKMR3yoZaZZn5rgmuxJDqUQFai&sz=w2000",
+      "role": "Adaptation Editor and Scriptwriter",
+      "client": "NovelToon",
+      "period": "2020 to 2022",
       "summary": "Character dossiers, world building sheets and adaptation scripts for serial fiction.",
       "outcome": "A working production record connects source fiction, adaptation decisions and structured screen ready scripts.",
+      "article": "",
       "tags": [
         "Adaptation",
         "Script",
         "Fiction"
       ],
       "featured": false,
-      "published": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
       "media": [
         {
           "id": "1C-Mg-o3jXDp5ZOE748aMJMMNBRTiRiJ_",
@@ -4211,30 +4407,36 @@
           "previewUrl": "https://drive.google.com/file/d/1D1wRAuiD2y9odcbiVkc5s0cjsX3AkdSL/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1D1wRAuiD2y9odcbiVkc5s0cjsX3AkdSL&sz=w2000"
         }
-      ]
+      ],
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "fiction-assessment",
+      "title": "Fiction Assessment & Criteria",
       "group": "publishing",
       "category": "publishing",
       "parentId": "fiction-adaptation",
       "level": 3,
-      "title": "Fiction Assessment & Criteria",
-      "client": "NovelToon",
-      "period": "2020 to 2022",
-      "role": "Novel Editor and Assessor",
       "folderId": "1ddneoJqOt3-6gY_4KEh3--CRtjCxjeOW",
       "folderUrl": "https://drive.google.com/drive/folders/1ddneoJqOt3-6gY_4KEh3--CRtjCxjeOW",
       "cover": "https://drive.google.com/thumbnail?id=1qIamhbvKMR3yoZaZZn5rgmuxJDqUQFai&sz=w2000",
+      "image": "https://drive.google.com/thumbnail?id=1qIamhbvKMR3yoZaZZn5rgmuxJDqUQFai&sz=w2000",
+      "role": "Novel Editor and Assessor",
+      "client": "NovelToon",
+      "period": "2020 to 2022",
       "summary": "Assessment frameworks for genre, outlines and story quality used to evaluate and develop serial fiction.",
       "outcome": "Scoring samples, criteria and genre definitions made editorial decisions more consistent and teachable.",
+      "article": "",
       "tags": [
         "Assessment",
         "Editorial criteria",
         "Fiction"
       ],
       "featured": false,
-      "published": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
       "media": [
         {
           "id": "1gH96UEjrb9pGx0rBtAXa3ZEtqfloUgVk",
@@ -4272,30 +4474,36 @@
           "previewUrl": "https://drive.google.com/file/d/1_pcOuMNnyW5vY_tE6fkP0vZ5xARQcdzu/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1_pcOuMNnyW5vY_tE6fkP0vZ5xARQcdzu&sz=w2000"
         }
-      ]
+      ],
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "fiction-training-materials",
+      "title": "Training Materials",
       "group": "publishing",
       "category": "publishing",
       "parentId": "fiction-assessment",
       "level": 4,
-      "title": "Training Materials",
-      "client": "NovelToon",
-      "period": "2020 to 2022",
-      "role": "Facilitator and Curriculum Writer",
       "folderId": "1OVuSPNyvMcXnfEjC7FJ46_de742BIUgl",
       "folderUrl": "https://drive.google.com/drive/folders/1OVuSPNyvMcXnfEjC7FJ46_de742BIUgl",
       "cover": "https://drive.google.com/thumbnail?id=1qIamhbvKMR3yoZaZZn5rgmuxJDqUQFai&sz=w2000",
+      "image": "https://drive.google.com/thumbnail?id=1qIamhbvKMR3yoZaZZn5rgmuxJDqUQFai&sz=w2000",
+      "role": "Facilitator and Curriculum Writer",
+      "client": "NovelToon",
+      "period": "2020 to 2022",
       "summary": "Training materials for new and developing authors, spanning curriculum, exercises and quality improvement plans.",
       "outcome": "Six programme documents supported structured author development at different experience levels.",
+      "article": "",
       "tags": [
         "Training",
         "Curriculum",
         "Author development"
       ],
       "featured": false,
-      "published": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
       "media": [
         {
           "id": "1JxnNPveG6dWF0b1dWMEzh0Sof01xvKS7",
@@ -4333,21 +4541,18 @@
           "previewUrl": "https://drive.google.com/file/d/1ZVn8b4tLx-i8Nh7PZL4BDtODhs6HbqaZ/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1ZVn8b4tLx-i8Nh7PZL4BDtODhs6HbqaZ&sz=w2000"
         }
-      ]
+      ],
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "film-criticism",
-      "group": "publishing",
       "category": "publishing",
-      "level": 1,
       "title": "Film Critics",
       "client": "Selected publications",
       "period": "Selected work",
       "role": "Writer and Critic",
-      "folderId": "101SSWOUCq39-01yrzdTwqaBxUyZu-Asd",
       "folderUrl": "https://drive.google.com/drive/folders/101SSWOUCq39-01yrzdTwqaBxUyZu-Asd",
-      "cover": "media/covers/film-criticism-cover.jpg",
-      "imageAlt": "Film Criticism project collection",
       "summary": "Essays examining image, narrative, gender and cultural interpretation in cinema.",
       "outcome": "Six complete essays can be opened and read directly through the Drive viewer.",
       "article": "This selected archive examines image, narrative, gender and cultural interpretation in cinema.\n\nEach piece uses close reading to connect individual films with wider cultural questions.",
@@ -4356,8 +4561,8 @@
         "Criticism",
         "Essay"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "media/covers/film-criticism-cover.jpg",
+      "imageAlt": "Film Criticism project collection",
       "media": [
         {
           "id": "1IxJo-9yQleHVFLDvsTP_pn72y-gAOx64",
@@ -4413,44 +4618,57 @@
           "previewUrl": "https://drive.google.com/file/d/11rHJbWegq-Hc8vK5QNWfQt3sgXmPYYIE/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=11rHJbWegq-Hc8vK5QNWfQt3sgXmPYYIE&sz=w1200"
         }
-      ]
+      ],
+      "group": "publishing",
+      "parentId": null,
+      "level": 1,
+      "folderId": "101SSWOUCq39-01yrzdTwqaBxUyZu-Asd",
+      "image": "media/covers/film-criticism-cover.jpg",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "articles-essays",
+      "title": "Articles & Essays",
       "group": "publishing",
       "category": "publishing",
+      "parentId": null,
       "level": 1,
-      "title": "Articles & Essays",
-      "client": "Lela Journal and Tatler Vietnam",
-      "period": "2023 to present",
-      "role": "Journalist and Contributing Writer",
       "folderId": "1rHoK2XP_xpkZcORFr1GruKi2hy6_VRrl",
       "folderUrl": "https://drive.google.com/drive/folders/1rHoK2XP_xpkZcORFr1GruKi2hy6_VRrl",
-      "cover": "media/covers/tatler-vietnam-cover.jpg",
+      "cover": "media/covers/tatler-vietnam-logo.png",
+      "image": "media/covers/tatler-vietnam-logo.png",
+      "role": "Journalist and Contributing Writer",
+      "client": "Lela Journal and Tatler Vietnam",
+      "period": "2023 to present",
       "summary": "A publishing desk for reported features, profiles, interviews and cultural essays across Lela Journal and Tatler Vietnam.",
       "outcome": "Two publication archives keep long form work readable as complete article records.",
+      "article": "",
       "tags": [
         "Journalism",
         "Cultural writing",
         "Long form"
       ],
       "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "media": [],
+      "editorialLabel": "",
       "published": true
     },
     {
       "id": "lela-journal",
-      "group": "publishing",
       "category": "publishing",
-      "parentId": "articles-essays",
-      "level": 2,
       "title": "Lela Articles",
       "client": "Lela Journal",
       "period": "2023 to 2024",
       "role": "Journalist",
-      "folderId": "1Nyx21aHgIrYO_tcTcLFB2f02chwtT_at",
       "folderUrl": "https://drive.google.com/drive/folders/1Nyx21aHgIrYO_tcTcLFB2f02chwtT_at",
-      "cover": "media/covers/lela-journal-cover.jpg",
-      "imageAlt": "Lela Journal Editorial Archive project collection",
       "summary": "Profiles, interviews and reported features centred on people shaping contemporary culture and city life.",
       "outcome": "The publication archive can be browsed as full documents from the article page.",
       "article": "The archive brings together profiles, interviews, cultural reporting, advertorials and editorial features.\n\nThe work strengthened my ability to move between research, interviewing and publication ready writing while maintaining a clear human angle.",
@@ -4459,8 +4677,8 @@
         "Profile",
         "Culture"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "media/covers/lela-logo.png",
+      "imageAlt": "Lela Journal Editorial Archive project collection",
       "media": [
         {
           "id": "1u6pJi1R5PryZIEcpHae2tcV9eeSUHc0V",
@@ -4615,22 +4833,27 @@
           "previewUrl": "https://drive.google.com/file/d/1WBweLqHOKdm9aIgoIZCog5b6NqgOLipz/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1WBweLqHOKdm9aIgoIZCog5b6NqgOLipz&sz=w1200"
         }
-      ]
+      ],
+      "group": "publishing",
+      "parentId": "articles-essays",
+      "level": 2,
+      "folderId": "1Nyx21aHgIrYO_tcTcLFB2f02chwtT_at",
+      "image": "media/covers/lela-logo.png",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "tatler-vietnam",
-      "group": "publishing",
       "category": "publishing",
-      "parentId": "articles-essays",
-      "level": 2,
       "title": "Tatler Articles",
       "client": "Tatler Vietnam",
       "period": "2024 to present",
       "role": "Contributing Writer",
-      "folderId": "1vLtndaAR3XmDJ7wsLfsT4SEz7s3Dl8fa",
       "folderUrl": "https://drive.google.com/drive/folders/1vLtndaAR3XmDJ7wsLfsT4SEz7s3Dl8fa",
-      "cover": "media/covers/tatler-vietnam-cover.jpg",
-      "imageAlt": "Culture Writing for Tatler Vietnam project collection",
       "summary": "Reported essays and features spanning art, design, culture and contemporary life for digital and print editions.",
       "outcome": "Selected digital and print articles are gathered as a readable Drive collection.",
       "article": "My work for Tatler Vietnam focuses on culture, art, design and contemporary life.\n\nEach feature begins with research and a clear editorial angle, then develops through reporting, interviews and contextual writing.",
@@ -4639,8 +4862,8 @@
         "Feature writing",
         "Tatler"
       ],
-      "featured": true,
-      "published": true,
+      "cover": "media/covers/tatler-vietnam-logo.png",
+      "imageAlt": "Culture Writing for Tatler Vietnam project collection",
       "media": [
         {
           "id": "15Doxzp3ZL5ykFN33vXJOaBcpv5RbZFB-",
@@ -4687,21 +4910,27 @@
           "previewUrl": "https://drive.google.com/file/d/1GRRmGn_G21yyStFpnlCFBcK_49KwgayS/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1GRRmGn_G21yyStFpnlCFBcK_49KwgayS&sz=w1200"
         }
-      ]
+      ],
+      "group": "publishing",
+      "parentId": "articles-essays",
+      "level": 2,
+      "folderId": "1vLtndaAR3XmDJ7wsLfsT4SEz7s3Dl8fa",
+      "image": "media/covers/tatler-vietnam-logo.png",
+      "featured": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "e-magazine",
-      "group": "publishing",
       "category": "publishing",
-      "level": 1,
       "title": "E Magazine",
       "client": "Selected publications",
       "period": "Selected work",
       "role": "Writer and Editor",
-      "folderId": "1Wfv0PpDPJqKO-WvQTGjZ4a05cEQx5-DF",
       "folderUrl": "https://drive.google.com/drive/folders/1Wfv0PpDPJqKO-WvQTGjZ4a05cEQx5-DF",
-      "cover": "media/covers/e-magazine-cover.jpg",
-      "imageAlt": "E Magazine and Branded Editorial project collection",
       "summary": "Digital magazine work spanning travel, gender, communication, business profiles and seasonal culture.",
       "outcome": "Six complete e magazine pieces are available through the embedded Drive viewer.",
       "article": "This archive spans travel, gender, communication, business profiles and seasonal culture.\n\nThe selected work demonstrates range across editorial and branded formats.",
@@ -4710,8 +4939,8 @@
         "Branded editorial",
         "Writing"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "media/covers/e-magazine-cover.jpg",
+      "imageAlt": "E Magazine and Branded Editorial project collection",
       "media": [
         {
           "id": "1fKp2ocpkIkOzGgH_dte2A5exv3NAeQC2",
@@ -4767,21 +4996,27 @@
           "previewUrl": "https://drive.google.com/file/d/1da6TtU_rt2OO6RkiB4aZJf5bYvoUYAlb/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1da6TtU_rt2OO6RkiB4aZJf5bYvoUYAlb&sz=w1200"
         }
-      ]
+      ],
+      "group": "publishing",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1Wfv0PpDPJqKO-WvQTGjZ4a05cEQx5-DF",
+      "image": "media/covers/e-magazine-cover.jpg",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "translated-books",
-      "group": "publishing",
       "category": "publishing",
-      "level": 1,
       "title": "Translated Books",
       "client": "Publishing houses",
       "period": "2018 to 2020",
       "role": "Translator and Editor",
-      "folderId": "1zTPb-WkzsaM97i8dxAFWBaVFWH-bN6Bd",
       "folderUrl": "https://drive.google.com/drive/folders/1zTPb-WkzsaM97i8dxAFWBaVFWH-bN6Bd",
-      "cover": "https://drive.google.com/thumbnail?id=1qLVb-vo2v4sY6YBqS72sTuh3ZqiNJ1C5&sz=w2000",
-      "imageAlt": "Selected Book Translations project collection",
       "summary": "Selected translated titles developed for Vietnamese readers with attention to clarity, tone and publication readiness.",
       "outcome": "A compact cover collection records the published titles.",
       "article": "These selected titles were translated and edited for Vietnamese readers.\n\nThe work required close attention to clarity, tone, terminology and publication readiness.",
@@ -4790,8 +5025,8 @@
         "Books",
         "Editing"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1qLVb-vo2v4sY6YBqS72sTuh3ZqiNJ1C5&sz=w2000",
+      "imageAlt": "Selected Book Translations project collection",
       "media": [
         {
           "id": "1qLVb-vo2v4sY6YBqS72sTuh3ZqiNJ1C5",
@@ -4829,21 +5064,27 @@
           "previewUrl": "https://drive.google.com/file/d/1LWZ7W__NvIhHswsPksqGbfwcVFdMJpAO/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1LWZ7W__NvIhHswsPksqGbfwcVFdMJpAO&sz=w2000"
         }
-      ]
+      ],
+      "group": "publishing",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1zTPb-WkzsaM97i8dxAFWBaVFWH-bN6Bd",
+      "image": "https://drive.google.com/thumbnail?id=1qLVb-vo2v4sY6YBqS72sTuh3ZqiNJ1C5&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "van-lang-books",
-      "group": "publishing",
       "category": "publishing",
-      "level": 1,
       "title": "Books Editing",
       "client": "Van Lang Books",
       "period": "2018 to 2020",
       "role": "Book Editor",
-      "folderId": "1Xb241q-w6uxFJXEGYDrlf2Sn47UAAAiY",
       "folderUrl": "https://drive.google.com/drive/folders/1Xb241q-w6uxFJXEGYDrlf2Sn47UAAAiY",
-      "cover": "https://drive.google.com/thumbnail?id=1672WbNilCBjfxabbPOlnv2HxR1LbsZ6T&sz=w2000",
-      "imageAlt": "Books Editing project collection",
       "summary": "Editorial development and print production across psychology, family, business and general nonfiction.",
       "outcome": "More than forty selected book covers form a browsable publication archive.",
       "article": "This collection represents a wider print portfolio across psychology, family, business and general nonfiction.\n\nMy work covered manuscript editing, translation coordination and publication readiness.",
@@ -4852,8 +5093,8 @@
         "Publishing",
         "Print"
       ],
-      "featured": false,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1672WbNilCBjfxabbPOlnv2HxR1LbsZ6T&sz=w2000",
+      "imageAlt": "Books Editing project collection",
       "media": [
         {
           "id": "1672WbNilCBjfxabbPOlnv2HxR1LbsZ6T",
@@ -5224,21 +5465,27 @@
           "previewUrl": "https://drive.google.com/file/d/1No6RGgUwSFeK9zLZKtbuV8qkjjeV1iI3/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1No6RGgUwSFeK9zLZKtbuV8qkjjeV1iI3&sz=w2000"
         }
-      ]
+      ],
+      "group": "publishing",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1Xb241q-w6uxFJXEGYDrlf2Sn47UAAAiY",
+      "image": "https://drive.google.com/thumbnail?id=1672WbNilCBjfxabbPOlnv2HxR1LbsZ6T&sz=w2000",
+      "featured": false,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "artist-talks",
-      "group": "interviews",
       "category": "interviews",
-      "level": 1,
       "title": "Interviews",
-      "client": "Lela Journal",
+      "client": "Lela Journal, Toong and Ngay Xua Asia",
       "period": "2023 to 2025",
       "role": "Researcher and Interview Writer",
-      "folderId": "1JoRd6-WoxqU9kAPmLnvEqUj2hgdhx9gR",
       "folderUrl": "https://drive.google.com/drive/folders/1JoRd6-WoxqU9kAPmLnvEqUj2hgdhx9gR",
-      "cover": "media/covers/images.png",
-      "imageAlt": "Interviews project collection",
       "summary": "Question frameworks and conversations with artists, cultural figures, entrepreneurs, doctors and specialists.",
       "outcome": "Talk transcripts, interview questions and complete editorial documents are available in the collection.",
       "article": "These interviews were designed to preserve artistic process, professional knowledge and personal histories.\n\nThe collection spans cultural figures, entrepreneurs, doctors, specialists and artists across editorial and brand contexts.",
@@ -5247,8 +5494,8 @@
         "Research",
         "Talk"
       ],
-      "featured": true,
-      "published": true,
+      "cover": "media/covers/lela-logo.png",
+      "imageAlt": "Interviews and Cultural Talks project collection",
       "media": [
         {
           "id": "1bqRE5j9XWMTEtaFttjYCDI4a9c5MMpp6",
@@ -5331,21 +5578,29 @@
           "previewUrl": "https://drive.google.com/file/d/1gBGextuQt71UyC7m361oKJIFvUqwiXXR/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1gBGextuQt71UyC7m361oKJIFvUqwiXXR&sz=w1200"
         }
-      ]
+      ],
+      "group": "interviews",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1JoRd6-WoxqU9kAPmLnvEqUj2hgdhx9gR",
+      "image": "media/covers/lela-logo.png",
+      "featured": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "hidden-champions",
-      "group": "interviews",
       "category": "interviews",
-      "level": 1,
       "title": "YouTube Podcast — Hidden Champions",
       "client": "Hidden Champions TV",
       "period": "2024",
       "role": "Podcast Writer and Editor",
-      "folderId": "16Nu_ZC0oyKB3jV2x9UYrwp5iRQAKNYDA",
       "folderUrl": "https://drive.google.com/drive/folders/16Nu_ZC0oyKB3jV2x9UYrwp5iRQAKNYDA",
-      "cover": "https://drive.google.com/thumbnail?id=1doe0rgf9yXiC-1CN8R_s6h9l-lj892c-&sz=w2000",
-      "imageAlt": "Hidden Champions Show project collection",
+      "recursive": true,
+      "coverId": "1doe0rgf9yXiC-1CN8R_s6h9l-lj892c-",
       "summary": "Research led episode scripts translating founder journeys and business insight into clear, human conversations.",
       "outcome": "Wrote more than ten podcast episodes with over 100,000 total views; Drive videos, scripts and production materials are linked directly.",
       "article": "The podcast writing process combined guest research, episode structure and conversational pacing.\n\nI developed research led questions and narrative pathways for more than ten episodes. Drive videos and production files remain available below; a YouTube URL can also be added in the portfolio editor to display an embedded video preview on this page.",
@@ -5354,8 +5609,8 @@
         "Research",
         "Interview script"
       ],
-      "featured": true,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1doe0rgf9yXiC-1CN8R_s6h9l-lj892c-&sz=w2000",
+      "imageAlt": "Hidden Champions Show project collection",
       "media": [
         {
           "id": "1f73vn6IJ7drG4fWGwwXowI4nStlujmjU",
@@ -5519,31 +5774,46 @@
           "previewUrl": "https://drive.google.com/file/d/1Fz_wKIDbZNzkdsOhnakY_hwqcz0ScG2e/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1Fz_wKIDbZNzkdsOhnakY_hwqcz0ScG2e&sz=w1200"
         }
-      ]
+      ],
+      "youtubeUrl": "",
+      "youtubeThumbnail": "",
+      "group": "interviews",
+      "parentId": null,
+      "level": 1,
+      "folderId": "16Nu_ZC0oyKB3jV2x9UYrwp5iRQAKNYDA",
+      "image": "https://drive.google.com/thumbnail?id=1doe0rgf9yXiC-1CN8R_s6h9l-lj892c-&sz=w2000",
+      "featured": true,
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "podcast-dao-le-na",
+      "title": "TS Đào Lê Na",
       "group": "interviews",
       "category": "interviews",
       "parentId": "hidden-champions",
       "level": 2,
-      "title": "TS Đào Lê Na",
-      "client": "Hidden Champions Show",
-      "period": "2024",
-      "role": "Podcast Writer and Researcher",
       "folderId": "1W3ByCdKunPSmkznpdvfYyinV8ggd0PNT",
       "folderUrl": "https://drive.google.com/drive/folders/1W3ByCdKunPSmkznpdvfYyinV8ggd0PNT",
       "cover": "https://drive.google.com/thumbnail?id=1-iu_hbrePPKeHVWJPEGlnfLp13y2pu_j&sz=w2000",
-      "youtubeUrl": "https://www.youtube.com/watch?v=qfDlsVa0nvM&t=89s",
+      "image": "https://drive.google.com/thumbnail?id=1-iu_hbrePPKeHVWJPEGlnfLp13y2pu_j&sz=w2000",
+      "role": "Podcast Writer and Researcher",
+      "client": "Hidden Champions Show",
+      "period": "2024",
       "summary": "An episode conversation with Dr Đào Lê Na, developed through research and a structured interview script.",
       "outcome": "The public episode is paired with its photographic production record.",
+      "article": "",
       "tags": [
         "Podcast",
         "Research",
         "Interview"
       ],
       "featured": false,
-      "published": true,
+      "youtubeUrl": "https://www.youtube.com/watch?v=qfDlsVa0nvM&t=89s",
+      "flipbookUrl": "",
+      "embedUrl": "",
       "media": [
         {
           "id": "1-iu_hbrePPKeHVWJPEGlnfLp13y2pu_j",
@@ -5572,31 +5842,36 @@
           "previewUrl": "https://drive.google.com/file/d/1mwlncxFPE_qmaMlxUXJ8dFeyiHwR50st/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1mwlncxFPE_qmaMlxUXJ8dFeyiHwR50st&sz=w2000"
         }
-      ]
+      ],
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "podcast-phan-to-ny",
+      "title": "MC Phan Tô Ny",
       "group": "interviews",
       "category": "interviews",
       "parentId": "hidden-champions",
       "level": 2,
-      "title": "MC Phan Tô Ny",
-      "client": "Hidden Champions Show",
-      "period": "2024",
-      "role": "Podcast Writer and Researcher",
       "folderId": "1hg2lleKWV4Ze35vojqr65py_tsDQL6H9",
       "folderUrl": "https://drive.google.com/drive/folders/1hg2lleKWV4Ze35vojqr65py_tsDQL6H9",
       "cover": "https://drive.google.com/thumbnail?id=14qutztOWx3IYAhqPWxdHL_gy9WiYfUa1&sz=w2000",
-      "youtubeUrl": "https://www.youtube.com/watch?v=1fneL_GGvGs",
+      "image": "https://drive.google.com/thumbnail?id=14qutztOWx3IYAhqPWxdHL_gy9WiYfUa1&sz=w2000",
+      "role": "Podcast Writer and Researcher",
+      "client": "Hidden Champions Show",
+      "period": "2024",
       "summary": "A research led episode with MC Phan Tô Ny, shaped around a natural conversational arc.",
       "outcome": "The public video and four production images form a concise episode record.",
+      "article": "",
       "tags": [
         "Podcast",
         "Interview",
         "Script"
       ],
       "featured": false,
-      "published": true,
+      "youtubeUrl": "https://www.youtube.com/watch?v=1fneL_GGvGs",
+      "flipbookUrl": "",
+      "embedUrl": "",
       "media": [
         {
           "id": "14qutztOWx3IYAhqPWxdHL_gy9WiYfUa1",
@@ -5634,31 +5909,36 @@
           "previewUrl": "https://drive.google.com/file/d/1GkoAGEZXBmOxmH272pT3zAsaVwn_GLAX/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1GkoAGEZXBmOxmH272pT3zAsaVwn_GLAX&sz=w2000"
         }
-      ]
+      ],
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "podcast-khuat-nang-vinh",
+      "title": "CD Khuất Năng Vĩnh",
       "group": "interviews",
       "category": "interviews",
       "parentId": "hidden-champions",
       "level": 2,
-      "title": "CD Khuất Năng Vĩnh",
-      "client": "Hidden Champions Show",
-      "period": "2024",
-      "role": "Podcast Writer and Researcher",
       "folderId": "1Uk8219qSas854DvAHGl7VtcJidyarFKP",
       "folderUrl": "https://drive.google.com/drive/folders/1Uk8219qSas854DvAHGl7VtcJidyarFKP",
       "cover": "https://i.ytimg.com/vi/-WMCQMLuef0/hqdefault.jpg",
-      "youtubeUrl": "https://www.youtube.com/watch?v=-WMCQMLuef0",
+      "image": "https://i.ytimg.com/vi/-WMCQMLuef0/hqdefault.jpg",
+      "role": "Podcast Writer and Researcher",
+      "client": "Hidden Champions Show",
+      "period": "2024",
       "summary": "A creative leadership conversation with Creative Director Khuất Năng Vĩnh.",
       "outcome": "The public episode is paired with the original Drive video record.",
+      "article": "",
       "tags": [
         "Podcast",
         "Creative direction",
         "Interview"
       ],
       "featured": false,
-      "published": true,
+      "youtubeUrl": "https://www.youtube.com/watch?v=-WMCQMLuef0",
+      "flipbookUrl": "",
+      "embedUrl": "",
       "media": [
         {
           "id": "13JNSxRHJm9LKgMm6LzWrCBnqy7h36djq",
@@ -5669,30 +5949,36 @@
           "previewUrl": "https://drive.google.com/file/d/13JNSxRHJm9LKgMm6LzWrCBnqy7h36djq/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=13JNSxRHJm9LKgMm6LzWrCBnqy7h36djq&sz=w2000"
         }
-      ]
+      ],
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "podcast-dzung-yoko",
+      "title": "CD Dzũng Yoko",
       "group": "interviews",
       "category": "interviews",
       "parentId": "hidden-champions",
       "level": 2,
-      "title": "CD Dzũng Yoko",
-      "client": "Hidden Champions Show",
-      "period": "2024",
-      "role": "Podcast Writer and Researcher",
       "folderId": "1TZuvBDYtaZEiD77B0fQIiuG4OsRMqp_g",
       "folderUrl": "https://drive.google.com/drive/folders/1TZuvBDYtaZEiD77B0fQIiuG4OsRMqp_g",
       "cover": "https://drive.google.com/thumbnail?id=1doe0rgf9yXiC-1CN8R_s6h9l-lj892c-&sz=w2000",
+      "image": "https://drive.google.com/thumbnail?id=1doe0rgf9yXiC-1CN8R_s6h9l-lj892c-&sz=w2000",
+      "role": "Podcast Writer and Researcher",
+      "client": "Hidden Champions Show",
+      "period": "2024",
       "summary": "A portrait led production collection from the conversation with Creative Director Dzũng Yoko.",
       "outcome": "Six full resolution portraits are presented as a collapsible collection on the Talks landing and as a dedicated project gallery.",
+      "article": "",
       "tags": [
         "Podcast",
         "Portrait",
         "Creative direction"
       ],
       "featured": false,
-      "published": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
       "media": [
         {
           "id": "1doe0rgf9yXiC-1CN8R_s6h9l-lj892c-",
@@ -5748,31 +6034,36 @@
           "previewUrl": "https://drive.google.com/file/d/1qBmFj1kb0EODnh-XGqL4K-KOpyzj1nkd/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1qBmFj1kb0EODnh-XGqL4K-KOpyzj1nkd&sz=w2000"
         }
-      ]
+      ],
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "podcast-nguyen-khang",
+      "title": "MC Nguyên Khang",
       "group": "interviews",
       "category": "interviews",
       "parentId": "hidden-champions",
       "level": 2,
-      "title": "MC Nguyên Khang",
-      "client": "Hidden Champions Show",
-      "period": "2024",
-      "role": "Podcast Writer and Researcher",
       "folderId": "1drMb935rTATZJLcZXcQSkinCfnCZpHJ_",
       "folderUrl": "https://drive.google.com/drive/folders/1drMb935rTATZJLcZXcQSkinCfnCZpHJ_",
       "cover": "https://i.ytimg.com/vi/lZpcG-NGUBA/hqdefault.jpg",
-      "youtubeUrl": "https://www.youtube.com/watch?v=lZpcG-NGUBA",
+      "image": "https://i.ytimg.com/vi/lZpcG-NGUBA/hqdefault.jpg",
+      "role": "Podcast Writer and Researcher",
+      "client": "Hidden Champions Show",
+      "period": "2024",
       "summary": "A research led conversation with MC Nguyên Khang.",
       "outcome": "The public YouTube episode and original Drive video are available from one project record.",
+      "article": "",
       "tags": [
         "Podcast",
         "Interview",
         "Research"
       ],
       "featured": false,
-      "published": true,
+      "youtubeUrl": "https://www.youtube.com/watch?v=lZpcG-NGUBA",
+      "flipbookUrl": "",
+      "embedUrl": "",
       "media": [
         {
           "id": "1Zrz6vOTHz0DdJ7mq6MPFY-mVkFDmXvMh",
@@ -5783,31 +6074,55 @@
           "previewUrl": "https://drive.google.com/file/d/1Zrz6vOTHz0DdJ7mq6MPFY-mVkFDmXvMh/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1Zrz6vOTHz0DdJ7mq6MPFY-mVkFDmXvMh&sz=w2000"
         }
-      ]
+      ],
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "hidden-champions-scripts",
+      "title": "Hidden Champions Scripts",
       "group": "interviews",
       "category": "interviews",
       "parentId": "hidden-champions",
       "level": 2,
-      "title": "Hidden Champions Scripts",
-      "client": "Hidden Champions Show",
-      "period": "2024",
-      "role": "Podcast Writer and Editor",
       "folderId": "1A61wp23uND0b2Y76e9KUZVG_o8Wwr2qU",
       "folderUrl": "https://drive.google.com/drive/folders/1A61wp23uND0b2Y76e9KUZVG_o8Wwr2qU",
-      "cover": "media/covers/Hidden Champions_page-0001.jpg",
+      "cover": "media/covers/hidden-champions-full.jpg",
+      "image": "media/covers/hidden-champions-full.jpg",
+      "role": "Podcast Writer and Editor",
+      "client": "Hidden Champions Show",
+      "period": "2024",
       "summary": "Demo scripts and programme structures used to shape expert interviews into clear episode narratives.",
       "outcome": "Script records make the research and narrative architecture behind the conversations visible.",
+      "article": "",
       "tags": [
         "Podcast script",
         "Research",
         "Editorial"
       ],
       "featured": false,
-      "published": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
       "media": [
+        {
+          "id": "local-hidden-champions-logo",
+          "title": "Hidden Champions logo",
+          "type": "image",
+          "mime": "image/png",
+          "sourceUrl": "media/covers/hidden-champions-logo.png",
+          "previewUrl": "media/covers/hidden-champions-logo.png",
+          "thumbnail": "media/covers/hidden-champions-logo.png"
+        },
+        {
+          "id": "local-hidden-champions-full",
+          "title": "Hidden Champions full format",
+          "type": "image",
+          "mime": "image/jpeg",
+          "sourceUrl": "media/covers/hidden-champions-full.jpg",
+          "previewUrl": "media/covers/hidden-champions-full.jpg",
+          "thumbnail": "media/covers/hidden-champions-full.jpg"
+        },
         {
           "id": "1QPwviOmVCgbTVyN2AUCsHyoH1roQqYJ8",
           "title": "TS Đào Lê Na — demo script",
@@ -5835,21 +6150,19 @@
           "previewUrl": "https://drive.google.com/file/d/1Fz_wKIDbZNzkdsOhnakY_hwqcz0ScG2e/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1Fz_wKIDbZNzkdsOhnakY_hwqcz0ScG2e&sz=w2000"
         }
-      ]
+      ],
+      "editorialLabel": "",
+      "published": true
     },
     {
       "id": "cuoc-dua-dau-thai",
-      "group": "board-game",
       "category": "board-game",
-      "level": 1,
       "title": "Cuộc Đua Đầu Thai",
       "client": "Personal design practice",
       "period": "2025",
       "role": "Co designer",
-      "folderId": "1CUaJgRthAoHyqlT0nr22lqHrc3CYHkCg",
       "folderUrl": "https://drive.google.com/drive/folders/1CUaJgRthAoHyqlT0nr22lqHrc3CYHkCg",
-      "cover": "https://drive.google.com/thumbnail?id=1zwguVQLtYJ5iP8eSVIr-kZX-9eX8NV-4&sz=w2000",
-      "imageAlt": "Cuộc Đua Đầu Thai project collection",
+      "coverId": "1zwguVQLtYJ5iP8eSVIr-kZX-9eX8NV-4",
       "summary": "A folklore inspired board game concept built around a race board, eight supernatural characters and a playful narrative system.",
       "outcome": "Race board, character set and rule document form a complete playable concept archive.",
       "article": "This personal design exercise explores Vietnamese supernatural folklore through a compact race game.\n\nThe project combines character concepts, a shared race board and a playful reincarnation narrative.",
@@ -5858,8 +6171,8 @@
         "Folklore",
         "Narrative system"
       ],
-      "featured": true,
-      "published": true,
+      "cover": "https://drive.google.com/thumbnail?id=1zwguVQLtYJ5iP8eSVIr-kZX-9eX8NV-4&sz=w2000",
+      "imageAlt": "Cuộc Đua Đầu Thai project collection",
       "media": [
         {
           "id": "1L05HpzrVjX5IQMQ3vU-8zQ0FMJ5Ua4yq",
@@ -5978,7 +6291,18 @@
           "previewUrl": "https://drive.google.com/file/d/1Zx47v7y9X3l3sj9Qo5pqELV1FC6xhhhF/preview",
           "thumbnail": "https://drive.google.com/thumbnail?id=1Zx47v7y9X3l3sj9Qo5pqELV1FC6xhhhF&sz=w1200"
         }
-      ]
+      ],
+      "group": "board-game",
+      "parentId": null,
+      "level": 1,
+      "folderId": "1CUaJgRthAoHyqlT0nr22lqHrc3CYHkCg",
+      "image": "https://drive.google.com/thumbnail?id=1zwguVQLtYJ5iP8eSVIr-kZX-9eX8NV-4&sz=w2000",
+      "featured": true,
+      "youtubeUrl": "",
+      "flipbookUrl": "",
+      "embedUrl": "",
+      "editorialLabel": "",
+      "published": true
     }
   ],
   "profileDocuments": [
@@ -6001,7 +6325,7 @@
       "label": "Earlier portfolio",
       "sourceUrl": "https://drive.google.com/file/d/1O0CekzlzF_WsMwN3JOYJ3lZ65Mlv41LF/view",
       "previewUrl": "https://drive.google.com/file/d/1O0CekzlzF_WsMwN3JOYJ3lZ65Mlv41LF/preview",
-      "thumbnail": "media/covers/Screenshot_24-7-2026_172224_.jpeg"
+      "thumbnail": "https://drive.google.com/thumbnail?id=1O0CekzlzF_WsMwN3JOYJ3lZ65Mlv41LF&sz=w2000"
     },
     {
       "title": "Editorial and Translation Rate Card",

@@ -26,6 +26,18 @@ content:
           - { name: linkedin, label: LinkedIn URL, type: string }
           - { name: archiveUrl, label: Google Drive archive URL, type: string }
           - { name: cvUrl, label: CV URL, type: string }
+          - name: portraitPrimary
+            label: Main About portrait
+            type: image
+            options:
+              path: .
+              categories: [image]
+          - name: portraitSecondary
+            label: Secondary About portrait
+            type: image
+            options:
+              path: .
+              categories: [image]
 
   - name: editorial-portfolio
     label: Five project desks — edit here
@@ -69,7 +81,12 @@ content:
               - { name: projectId, label: Linked project ID, type: string }
               - { name: url, label: Embed URL, type: string }
               - { name: fileId, label: Drive file ID, type: string }
-              - { name: cover, label: Cover URL, type: string }
+              - name: cover
+                label: Cover image — upload or choose from Media
+                type: image
+                options:
+                  path: covers
+                  categories: [image]
 
       - name: projects
         label: Project pages and hierarchy
@@ -101,7 +118,12 @@ content:
           - { name: role, label: My role, type: string }
           - { name: folderId, label: Drive folder ID, type: string }
           - { name: folderUrl, label: Drive folder URL, type: string }
-          - { name: cover, label: Cover or thumbnail URL, type: string }
+          - name: cover
+            label: Cover image — upload or choose from Media
+            type: image
+            options:
+              path: covers
+              categories: [image]
           - { name: imageAlt, label: Cover description, type: string }
           - { name: youtubeUrl, label: YouTube URL, type: string }
           - { name: flipbookUrl, label: Flipbook URL, type: string }
@@ -130,7 +152,12 @@ content:
               - { name: mime, label: MIME type, type: string }
               - { name: sourceUrl, label: Open URL, type: string }
               - { name: previewUrl, label: Embedded preview URL, type: string }
-              - { name: thumbnail, label: Thumbnail URL, type: string }
+              - name: thumbnail
+                label: Thumbnail — upload or choose from Media
+                type: image
+                options:
+                  path: covers
+                  categories: [image]
 
       - name: profileDocuments
         label: About me documents
@@ -144,7 +171,12 @@ content:
           - { name: label, label: Short label, type: string }
           - { name: sourceUrl, label: Open in Drive URL, type: string }
           - { name: previewUrl, label: Embedded preview URL, type: string }
-          - { name: thumbnail, label: Cover image URL, type: string }
+          - name: thumbnail
+            label: Cover image — upload or choose from Media
+            type: image
+            options:
+              path: covers
+              categories: [image]
 
 settings:
   content:
