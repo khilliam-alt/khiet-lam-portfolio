@@ -58,9 +58,8 @@ function childrenSection(children) {
   return `
     <section class="project-children">
       <header class="section-intro reveal">
-        <p class="eyebrow mono">Inside this project / Next pyramid level</p>
-        <h2>${children.length} related ${children.length === 1 ? "project" : "projects"}.</h2>
-        <p>Each card opens a separate project record with its own files and media.</p>
+        <p class="eyebrow mono">Related projects</p>
+        <h2>${children.length} related ${children.length === 1 ? "project" : "projects"}</h2>
       </header>
       <div class="project-children__grid">
         ${children.map((child, index) => projectCard(child, { compact: true, index: String(index + 1).padStart(2, "0"), showLevel: true })).join("")}
@@ -74,8 +73,8 @@ function embedSection(project) {
   return `
     <section class="project-embeds">
       <header class="section-intro reveal">
-        <p class="eyebrow mono">Live view / Watch and read</p>
-        <h2>Open the work <em>inside this page.</em></h2>
+        <p class="eyebrow mono">Selected media</p>
+        <h2>Watch or read</h2>
       </header>
       <div class="embed-grid${[youtube, project.flipbookUrl, project.embedUrl].filter(Boolean).length === 1 ? " embed-grid--single" : ""}">
         ${youtube ? `
@@ -90,7 +89,7 @@ function embedSection(project) {
             <div class="embed-card__frame embed-card__frame--document" style="--document-cover:url('${esc(project.cover)}')">
               <iframe src="${esc(project.flipbookUrl)}" title="Interactive flipbook for ${esc(project.title)}" loading="lazy" allowfullscreen></iframe>
             </div>
-            <p class="mono">Interactive flipbook / Editor and proofreader</p>
+            <p class="mono">Interactive flipbook</p>
           </article>` : ""}
         ${project.embedUrl ? `
           <article class="embed-card reveal">
@@ -159,7 +158,7 @@ function setupAdaptiveGallery(images) {
     const spread = ratios.length ? Math.max(...ratios) - Math.min(...ratios) : 0;
     const collage = images.length > 2 && (spread > .55 || (hasPortrait && hasLandscape));
     shell.classList.add(collage ? "is-collage" : "is-slider");
-    modeLabel.textContent = collage ? "Uncropped editorial collage / click to zoom" : "Full frame slider / click to zoom";
+    modeLabel.textContent = collage ? "Collage view / Click to enlarge" : "Slider view / Click to enlarge";
     if (!collage) setIndex(0);
   });
 
@@ -191,7 +190,7 @@ function render(data) {
     <section class="project-hero-v3">
       <div class="project-hero-v3__copy reveal">
         ${breadcrumbs(project, data.projects, group)}
-        <p class="eyebrow mono">${esc(group.title)} / Pyramid level ${project.level}</p>
+        <p class="eyebrow mono">${esc(group.title)} / Level ${project.level}</p>
         <h1>${esc(project.title)}</h1>
         <p class="project-hero-v3__intro">${esc(project.summary)}</p>
         <div class="project-facts">
@@ -211,7 +210,7 @@ function render(data) {
 
     <section class="project-article">
       <header class="project-article__heading reveal">
-        <p class="eyebrow mono">Project article / Context and contribution</p>
+        <p class="eyebrow mono">Context and contribution</p>
         <h2>About the work</h2>
       </header>
       <article class="project-article__copy reveal">
@@ -228,9 +227,8 @@ function render(data) {
 
     <section class="project-media">
       <header class="section-intro reveal">
-        <p class="eyebrow mono">Evidence archive / Original proportions</p>
-        <h2>${images.length ? "Image collection" : "Project documents"}${images.length && files.length ? " and working files" : ""}.</h2>
-        <p>Mixed formats use an uncropped collage. Consistent formats use a full frame slider. Every image opens at a larger size with zoom controls.</p>
+        <p class="eyebrow mono">Project files</p>
+        <h2>${images.length ? "Image collection" : "Project documents"}${images.length && files.length ? " and working files" : ""}</h2>
       </header>
       ${galleryMarkup(images, project.title)}
       ${files.length ? `
@@ -238,7 +236,7 @@ function render(data) {
           <header><h3>PDF, video and working files</h3><span class="mono">${files.length} records</span></header>
           <div class="file-grid-v3">${files.map(fileCard).join("")}</div>
         </div>` : ""}
-      ${!images.length && !files.length ? '<p class="empty-state">This folder is an editorial parent. Open its subproject cards above to view the complete evidence.</p>' : ""}
+      ${!images.length && !files.length ? '<p class="empty-state">Open the related projects above to view their files.</p>' : ""}
     </section>
 
     <nav class="project-pager" aria-label="Related projects">
