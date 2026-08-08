@@ -2,8 +2,8 @@
   "site": {
     "name": "Khiet Lam",
     "eyebrow": "Independent portfolio / Ho Chi Minh City",
-    "headline": "Editorial thinking across culture, brands and publishing.",
-    "intro": "I research, write, edit and curate stories that connect cultural knowledge, contemporary audiences and distinctive brand voices.",
+    "headline": "I shape stories with clarity and cultural depth.",
+    "intro": "I research, write, edit and curate across publishing, brand communication and cultural programmes.",
     "about": "I am an editor, senior copywriter and cultural event curator based in Ho Chi Minh City. My practice moves between editorial research, publishing, brand language, interviews and public programmes. I am especially interested in making cultural knowledge and complex ideas clear, engaging and relevant to contemporary audiences.",
     "location": "Ho Chi Minh City, Vietnam",
     "email": "letankhang@gmail.com",
@@ -13,6 +13,41 @@
     "cvUrl": "https://drive.google.com/file/d/1rh4FjvfOuGQkRgAWedE4XIwVoIaGwSYk/view",
     "portraitPrimary": "media/about-khiet-lam-color.jpg",
     "portraitSecondary": "media/about-khiet-lam-bw.jpg"
+  },
+  "home": {
+    "heroMedia": [
+      {
+        "title": "About Khiet Lam",
+        "label": "Editor / Copywriter / Curator",
+        "image": "media/about-khiet-lam-color.jpg",
+        "href": "about.html",
+        "projectId": ""
+      },
+      {
+        "title": "Tatler Vietnam",
+        "label": "Selected culture writing",
+        "image": "media/covers/tatler-vietnam-cover.jpg",
+        "href": "",
+        "projectId": "tatler-vietnam"
+      },
+      {
+        "title": "Làm Hòa Với Hormones",
+        "label": "Book editing & writing",
+        "image": "media/covers/hormones-ebook-cover.jpg",
+        "href": "",
+        "projectId": "hormones-ebook"
+      }
+    ],
+    "sectionBreaks": [
+      {
+        "position": "archive",
+        "visible": true,
+        "kicker": "Complete archive",
+        "heading": "Browse the full project record",
+        "accent": "by practice",
+        "body": "Use the filters to move between curation, copywriting, publishing, interviews and independent design work."
+      }
+    ]
   },
   "metrics": [
     {
