@@ -38,6 +38,49 @@ content:
             options:
               path: .
               categories: [image]
+      - name: home
+        label: Homepage opening and section breaks
+        type: object
+        fields:
+          - name: heroMedia
+            label: Opening screen images
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title} / {label}"
+            fields:
+              - { name: title, label: Image title, type: string, required: true }
+              - { name: label, label: Short caption, type: string }
+              - name: image
+                label: Image — upload or choose from Media
+                type: image
+                options:
+                  path: .
+                  categories: [image]
+              - { name: projectId, label: Linked project ID, type: string }
+              - { name: href, label: Custom link, type: string }
+          - name: sectionBreaks
+            label: Section breaks — add, edit, hide or delete
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{position} / {heading}"
+            fields:
+              - name: position
+                label: Place before
+                type: select
+                required: true
+                options:
+                  values:
+                    - { name: project-desks, label: Project desks }
+                    - { name: archive, label: Archive }
+              - { name: visible, label: Show this section break, type: boolean, default: true }
+              - { name: kicker, label: Small heading, type: string }
+              - { name: heading, label: Main heading, type: string, required: true }
+              - { name: accent, label: Accent phrase, type: string }
+              - { name: body, label: Supporting text, type: text }
 
   - name: editorial-portfolio
     label: Five project desks — edit here
