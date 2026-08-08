@@ -19,7 +19,12 @@ content:
           - { name: eyebrow, label: Location line, type: string }
           - { name: headline, label: Main headline, type: string }
           - { name: intro, label: Introduction, type: text }
+          - { name: aboutKicker, label: About page label, type: string }
+          - { name: aboutHeadline, label: About page headline, type: string }
           - { name: about, label: About me in first person, type: text }
+          - { name: documentsKicker, label: Documents section label, type: string }
+          - { name: documentsHeadline, label: Documents section headline, type: string }
+          - { name: documentsIntro, label: Documents section introduction, type: text }
           - { name: location, label: Location, type: string }
           - { name: email, label: Email, type: string }
           - { name: phone, label: Phone, type: string }
