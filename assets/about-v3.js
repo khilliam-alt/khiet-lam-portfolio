@@ -24,7 +24,12 @@ function profileDocument(item, index) {
 function render(data) {
   const { profileDocuments, site } = data;
   document.querySelectorAll("[data-site-name]").forEach(node => node.textContent = site.name);
+  document.querySelector("[data-about-kicker]").textContent = site.aboutKicker || "About";
+  document.querySelector("[data-about-headline]").textContent = site.aboutHeadline || "I write, edit and curate with attention to context.";
   document.querySelector("[data-about]").textContent = site.about;
+  document.querySelector("[data-documents-kicker]").textContent = site.documentsKicker || "Documents";
+  document.querySelector("[data-documents-headline]").textContent = site.documentsHeadline || "Background, credentials and selected work";
+  document.querySelector("[data-documents-intro]").textContent = site.documentsIntro || "My degree, CV, earlier portfolio and rate card.";
   document.querySelector("[data-email]").href = `mailto:${site.email}`;
   document.querySelector("[data-email] span:first-child").textContent = site.email;
   document.querySelector("[data-phone]").href = `tel:${site.phone.replace(/\s/g, "")}`;
