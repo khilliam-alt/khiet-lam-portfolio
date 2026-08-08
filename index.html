@@ -9,9 +9,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Noto+Serif:ital,wght@0,400;0,500;1,400&display=swap&subset=vietnamese" rel="stylesheet">
-  <link rel="stylesheet" href="assets/editorial-v3.css?v=20260724">
+  <link rel="stylesheet" href="assets/editorial-v3.css?v=20260808">
 </head>
-<body>
+<body class="home-page">
+  <div class="site-loader" aria-hidden="true">
+    <div class="site-loader__masthead">
+      <span data-loader-name>Khiet Lam</span>
+      <small class="mono">Preparing selected work</small>
+    </div>
+    <div class="site-loader__track"><span></span></div>
+  </div>
+  <noscript><style>.site-loader{display:none}</style></noscript>
+
   <header class="site-header">
     <a class="wordmark" href="#top"><span data-site-name>Khiet Lam</span><small>Editorial portfolio</small></a>
     <nav class="site-nav" aria-label="Primary navigation">
@@ -24,41 +33,33 @@
 
   <main id="top">
     <section class="home-hero">
-      <div class="home-hero__masthead reveal">
-        <p class="eyebrow mono" data-home-kicker>Independent portfolio / Ho Chi Minh City</p>
-        <h1 data-home-headline>Editorial thinking across culture, brands and publishing.</h1>
-      </div>
-      <div class="home-hero__lower">
-        <div class="home-hero__note reveal">
+      <div class="home-hero__grid">
+        <div class="home-hero__copy reveal">
+          <p class="eyebrow mono" data-home-kicker>Independent portfolio / Ho Chi Minh City</p>
+          <h1 data-home-headline>I shape stories with clarity and cultural depth.</h1>
           <p data-home-intro>I research, write, edit and curate stories that connect cultural knowledge, contemporary audiences and distinctive brand voices.</p>
-          <div>
+          <div class="home-hero__actions">
             <a class="button-link" href="#project-desks">Enter the project desks <span>↓</span></a>
             <a class="text-link" data-cv href="#" target="_blank" rel="noreferrer">View CV <span>↗</span></a>
           </div>
         </div>
-        <aside class="desk-index reveal">
-          <header><span class="mono">Five editorial desks</span><small>Every folder has its own project page</small></header>
-          <div id="group-index"></div>
-        </aside>
+        <div class="hero-gallery" id="hero-gallery" aria-label="Selected portfolio highlights">
+          <p class="loading">Preparing selected work…</p>
+        </div>
       </div>
-      <div class="hero-ornament" aria-hidden="true"><span>Research</span><i>✦</i><span>Writing</span><i>✦</i><span>Curation</span><i>✦</i><span>Editing</span></div>
+      <div class="home-hero__footer">
+        <p class="mono">Research · Writing · Curation · Editing</p>
+        <a class="scroll-cue mono" href="#project-desks"><span>Scroll to explore</span><i aria-hidden="true"></i></a>
+      </div>
     </section>
 
     <section class="editions" id="project-desks">
-      <header class="section-intro section-intro--front reveal">
-        <p class="eyebrow mono">Portfolio editions / Five bodies of work</p>
-        <h2>Organised like a publication, <em>not a file tree.</em></h2>
-        <p>Each desk opens a complete overview. Lead stories sit beside columns, while nested folders become related project cards with their own evidence pages.</p>
-      </header>
+      <div class="section-breaks" data-break-slot="project-desks"></div>
       <div id="editions"><p class="loading">Preparing the project desks…</p></div>
     </section>
 
     <section class="archive-section" id="archive">
-      <header class="section-intro reveal">
-        <p class="eyebrow mono">Complete archive / Drive hierarchy translated</p>
-        <h2>Every folder, kept as a <em>project record.</em></h2>
-        <p>The archive preserves the full pyramid. Small thumbnails and level labels make the hierarchy legible without reproducing the Drive interface.</p>
-      </header>
+      <div class="section-breaks" data-break-slot="archive"></div>
       <div class="archive-filters" id="archive-filters" aria-label="Filter archive"></div>
       <div class="archive-list-v3" id="archive-list"></div>
     </section>
@@ -71,7 +72,7 @@
     <a href="#top">Back to top ↑</a>
   </footer>
 
-  <script src="assets/common-v3.js?v=20260724"></script>
-  <script src="assets/home-v3.js?v=20260724"></script>
+  <script src="assets/common-v3.js?v=20260808"></script>
+  <script src="assets/home-v3.js?v=20260808"></script>
 </body>
 </html>
