@@ -101,8 +101,8 @@ function chapter(project, projects, index) {
       ${children.length ? `
         <div class="chapter__desk">
           <header>
-            <p class="mono">Inside this project / Pyramid level ${project.level + 1}</p>
-            <span>${children.length} direct ${children.length === 1 ? "story" : "stories"}</span>
+            <p class="mono">Related projects / Level ${project.level + 1}</p>
+            <span>${children.length} ${children.length === 1 ? "project" : "projects"}</span>
           </header>
           <div class="nested-grid">
             ${children.map(child => nestedMiniCard(child, projects)).join("")}
@@ -117,7 +117,7 @@ function dzungCollection(project) {
     <details class="collapse-collection reveal">
       <summary>
         <span class="mono">Special collection / ${images.length} portraits</span>
-        <strong>Creative Director Dzũng Yoko</strong>
+        <strong>${esc(project.title)}</strong>
         <span class="collapse-action">Expand collection ＋</span>
       </summary>
       <div class="collapse-collection__body">
@@ -128,7 +128,7 @@ function dzungCollection(project) {
               <img src="${esc(item.thumbnail)}" alt="${esc(item.title)}" loading="lazy">
             </button>`).join("")}
         </div>
-        <a class="button-link" href="${projectHref(project.id)}">Open the complete Dzũng Yoko project <span>↗</span></a>
+        <a class="button-link" href="${projectHref(project.id)}">Open project <span>↗</span></a>
       </div>
     </details>`;
 }
@@ -172,9 +172,8 @@ function render(data) {
 
     <section class="showcase-section">
       <header class="section-intro reveal">
-        <p class="eyebrow mono">Showcase / Watch and read here</p>
-        <h2>Selected media, <em>live in the page.</em></h2>
-        <p>Video, PDF and flipbook records open without leaving the portfolio. Drive access rules still apply to view-only files.</p>
+        <p class="eyebrow mono">Selected media</p>
+        <h2>${esc(group.title)} highlights</h2>
       </header>
       <div class="showcase-grid">
         ${group.showcase.map(item => showcaseCard(item, projects)).join("")}
@@ -184,9 +183,8 @@ function render(data) {
 
     <section class="desk-section">
       <header class="section-intro reveal">
-        <p class="eyebrow mono">Project pyramid / Editorial desk</p>
-        <h2>Lead stories with their <em>related editions.</em></h2>
-        <p>Each card represents one Drive folder. Parent projects introduce the body of work; nested projects preserve the evidence at the right depth.</p>
+        <p class="eyebrow mono">Selected projects</p>
+        <h2>${esc(group.title)} projects</h2>
       </header>
       <div class="chapter-list">
         ${topLevel.map((project, index) => chapter(project, projects, index)).join("")}
@@ -195,8 +193,8 @@ function render(data) {
 
     <section class="group-index-section">
       <header class="section-intro reveal">
-        <p class="eyebrow mono">Desk index / Every folder</p>
-        <h2>The complete ${esc(group.short)} archive.</h2>
+        <p class="eyebrow mono">Project index</p>
+        <h2>All ${esc(group.short)} projects</h2>
       </header>
       <div class="group-index-list">
         ${projects.map((project, index) => `

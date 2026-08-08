@@ -90,23 +90,65 @@ function setupArchiveFilters(defaultGroup) {
   applyArchiveFilter(defaultGroup);
 }
 
+function heroMediaCard(item, index) {
+  const href = item.href || (item.projectId ? projectHref(item.projectId) : "#project-desks");
+  return `
+    <a class="hero-work hero-work--${index + 1} media-fallback" href="${esc(href)}" data-fallback-label="${esc(item.title)}">
+      <img src="${esc(item.image)}" alt="${esc(item.title)}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async">
+      <span class="hero-work__number mono">${String(index + 1).padStart(2, "0")}</span>
+      <span class="hero-work__caption">
+        <small class="mono">${esc(item.label)}</small>
+        <strong>${esc(item.title)}</strong>
+        <i aria-hidden="true">↗</i>
+      </span>
+    </a>`;
+}
+
+function sectionBreakMarkup(item) {
+  return `
+    <header class="section-break reveal">
+      <p class="eyebrow mono">${esc(item.kicker)}</p>
+      <h2>${esc(item.heading)}${item.accent ? ` <em>${esc(item.accent)}</em>` : ""}</h2>
+      ${item.body ? `<p>${esc(item.body)}</p>` : ""}
+    </header>`;
+}
+
+function renderSectionBreaks(items = []) {
+  document.querySelectorAll("[data-break-slot]").forEach(slot => {
+    const matches = items.filter(item => item.position === slot.dataset.breakSlot && item.visible !== false);
+    slot.innerHTML = matches.map(sectionBreakMarkup).join("");
+    slot.toggleAttribute("hidden", matches.length === 0);
+  });
+}
+
+function finishEntryTransition() {
+  const loader = document.querySelector(".site-loader");
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  document.body.classList.add("is-loaded");
+  if (!loader) return;
+  if (reducedMotion) {
+    loader.remove();
+    return;
+  }
+
+  setTimeout(() => loader.remove(), 850);
+}
+
 function render(data) {
-  const { groups, projects, site } = data;
+  const { groups, projects, site, home } = data;
   document.querySelectorAll("[data-site-name]").forEach(node => node.textContent = site.name);
+  document.querySelectorAll("[data-loader-name]").forEach(node => node.textContent = site.name);
   document.querySelector("[data-home-kicker]").textContent = site.eyebrow;
   document.querySelector("[data-home-headline]").textContent = site.headline;
   document.querySelector("[data-home-intro]").textContent = site.intro;
   document.querySelector("[data-cv]").href = site.cvUrl;
 
-  document.querySelector("#group-index").innerHTML = groups.map(group => {
-    const count = projects.filter(project => project.group === group.id).length;
-    return `
-      <a class="desk-link" href="${groupHref(group.id)}">
-        <span class="mono">${esc(group.number)}</span>
-        <strong>${esc(group.title)}</strong>
-        <small>${count}</small>
-      </a>`;
-  }).join("");
+  const heroMedia = (home.heroMedia || []).filter(item => item.image).slice(0, 3);
+  document.querySelector("#hero-gallery").innerHTML = heroMedia.length
+    ? heroMedia.map(heroMediaCard).join("")
+    : '<a class="hero-work hero-work--empty" href="#project-desks"><span>Open selected work ↓</span></a>';
+  renderSectionBreaks(home.sectionBreaks);
 
   document.querySelector("#editions").innerHTML = groups.map((group, index) => groupEdition(group, projects, index)).join("");
   const defaultArchiveGroup = groups[0]?.id || "all";
@@ -119,10 +161,12 @@ function render(data) {
   setupArchiveFilters(defaultArchiveGroup);
   setupReveal();
   document.body.classList.add("is-ready");
+  requestAnimationFrame(() => requestAnimationFrame(finishEntryTransition));
 }
 
 setupChrome();
 loadPortfolio().then(render).catch(error => {
   console.error(error);
   document.querySelector("#editions").innerHTML = '<p class="load-error">The portfolio could not be loaded. Please refresh the page.</p>';
+  finishEntryTransition();
 });
