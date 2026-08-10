@@ -8,12 +8,147 @@ const {
   setupReveal
 } = window.PortfolioUI;
 
-function groupEdition(group, projects, index) {
-  const groupProjects = projects.filter(project => project.group === group.id);
-  const lead = groupProjects.find(project => project.id === group.leadProject) || groupProjects[0];
-  const secondary = groupProjects
-    .filter(project => project.level === 1 && project.id !== lead?.id)
-    .slice(0, 3);
+const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const ROTATION_MS = 3000;
+
+function shuffle(items) {
+  const result = [...items];
+  for (let index = result.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [result[index], result[swapIndex]] = [result[swapIndex], result[index]];
+  }
+  return result;
+}
+
+function visualOptions(project) {
+  return [...new Set([
+    project.cover,
+    ...(project.media || []).map(item => item.thumbnail)
+  ].filter(Boolean))];
+}
+
+function selectFeatures(projects, count, previous = []) {
+  const previousIds = new Set(previous.map(item => item.project.id));
+  const previousSignatures = new Set(previous.map(item => `${item.project.id}|${item.visual}`));
+  const prioritized = [
+    ...shuffle(projects.filter(project => !previousIds.has(project.id))),
+    ...shuffle(projects.filter(project => previousIds.has(project.id)))
+  ];
+  const selected = [];
+  const selectedIds = new Set();
+  const selectedVisuals = new Set();
+
+  for (const project of prioritized) {
+    if (selected.length >= count || selectedIds.has(project.id)) continue;
+    const options = shuffle(visualOptions(project));
+    const visual = options.find(item => (
+      !selectedVisuals.has(item) && !previousSignatures.has(`${project.id}|${item}`)
+    )) || options.find(item => !selectedVisuals.has(item));
+    if (!visual) continue;
+    selected.push({ project, visual });
+    selectedIds.add(project.id);
+    selectedVisuals.add(visual);
+  }
+
+  return selected;
+}
+
+function featureLabel(project, groups) {
+  const group = groups.find(item => item.id === project.group);
+  return `${group?.short || project.group} / ${project.editorialLabel || project.role || "Project feature"}`;
+}
+
+function heroFeatureCard(feature, index, groups) {
+  const { project, visual } = feature;
+  return `
+    <a class="hero-work hero-work--${index + 1} media-fallback" href="${projectHref(project.id)}"
+      data-feature-id="${esc(project.id)}" data-feature-visual="${esc(visual)}" data-fallback-label="${esc(project.title)}">
+      <img src="${esc(visual)}" alt="${esc(project.imageAlt || project.title)}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async">
+      <span class="hero-work__number mono">${String(index + 1).padStart(2, "0")}</span>
+      <span class="hero-work__caption">
+        <small class="mono">${esc(featureLabel(project, groups))}</small>
+        <strong>${esc(project.title)}</strong>
+        <i aria-hidden="true">↗</i>
+      </span>
+    </a>`;
+}
+
+function restartCycleMeter(gallery) {
+  gallery.classList.remove("is-cycling");
+  void gallery.offsetWidth;
+  gallery.classList.add("is-cycling");
+}
+
+function setupHeroRotation(projects, groups) {
+  const gallery = document.querySelector("#hero-gallery");
+  const stage = gallery?.querySelector("[data-hero-stage]");
+  const candidates = projects.filter(project => project.published !== false && visualOptions(project).length);
+  if (!gallery || !stage) return;
+
+  if (!candidates.length) {
+    stage.innerHTML = '<a class="hero-work hero-work--empty" href="#project-desks"><span>Open selected work ↓</span></a>';
+    return;
+  }
+
+  let current = [];
+  let changing = false;
+  const draw = () => {
+    current = selectFeatures(candidates, Math.min(3, candidates.length), current);
+    stage.innerHTML = current.map((feature, index) => heroFeatureCard(feature, index, groups)).join("");
+    gallery.classList.remove("is-switching");
+    changing = false;
+    restartCycleMeter(gallery);
+  };
+  const rotate = () => {
+    if (changing || document.hidden) return;
+    changing = true;
+    gallery.classList.add("is-switching");
+    setTimeout(draw, 260);
+  };
+
+  draw();
+  if (!reducedMotion && candidates.length > 1) setInterval(rotate, ROTATION_MS);
+}
+
+function rotatingProjectCard(feature, options) {
+  const project = { ...feature.project, cover: feature.visual };
+  return projectCard(project, options).replace(
+    '<article class="story-card',
+    `<article data-feature-id="${esc(project.id)}" data-feature-visual="${esc(feature.visual)}" class="story-card`
+  );
+}
+
+function editionFrameMarkup(group, features, index) {
+  const [lead, ...secondary] = features;
+  if (!lead) return '<p class="load-error">No published features are available in this desk.</p>';
+
+  const project = lead.project;
+  return `
+    <article class="lead-story" data-feature-id="${esc(project.id)}" data-feature-visual="${esc(lead.visual)}">
+      <a class="lead-story__media media-fallback" href="${projectHref(project.id)}" data-fallback-label="${esc(project.title)}">
+        <img src="${esc(lead.visual)}" alt="${esc(project.imageAlt || project.title)}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async">
+        <span class="lead-story__label mono">Live feature / ${esc(group.short)}</span>
+      </a>
+      <div class="lead-story__copy">
+        <h3><a href="${projectHref(project.id)}">${esc(project.title)}</a></h3>
+        <p>${esc(project.summary)}</p>
+        <a class="text-link" href="${projectHref(project.id)}">Read feature <span>↗</span></a>
+      </div>
+    </article>
+    <div class="edition__columns">
+      ${secondary.map((feature, secondaryIndex) => rotatingProjectCard(feature, {
+        compact: true,
+        index: `${group.number}.${secondaryIndex + 1}`
+      })).join("")}
+      <a class="edition__all" href="${groupHref(group.id)}">
+        <span class="mono">Open the complete desk</span>
+        <strong>${esc(group.title)} <i>↗</i></strong>
+      </a>
+    </div>`;
+}
+
+function groupEdition(group, projects) {
+  const groupProjects = projects.filter(project => project.group === group.id && project.published !== false);
   const descendants = groupProjects.filter(project => project.level > 1).length;
 
   return `
@@ -29,30 +164,48 @@ function groupEdition(group, projects, index) {
           <span class="mono">${groupProjects.length} project pages / ${descendants} nested stories</span>
         </div>
       </header>
-      <div class="edition__grid">
-        <article class="lead-story">
-          <a class="lead-story__media media-fallback" href="${projectHref(lead.id)}" data-fallback-label="${esc(lead.title)}">
-            <img src="${esc(lead.cover)}" alt="${esc(lead.imageAlt || lead.title)}" loading="${index === 0 ? "eager" : "lazy"}">
-            <span class="lead-story__label mono">Lead feature / ${esc(group.short)}</span>
-          </a>
-          <div class="lead-story__copy">
-            <h3><a href="${projectHref(lead.id)}">${esc(lead.title)}</a></h3>
-            <p>${esc(lead.summary)}</p>
-            <a class="text-link" href="${projectHref(lead.id)}">Read feature <span>↗</span></a>
-          </div>
-        </article>
-        <div class="edition__columns">
-          ${secondary.map((project, secondaryIndex) => projectCard(project, {
-            compact: true,
-            index: `${group.number}.${secondaryIndex + 1}`
-          })).join("")}
-          <a class="edition__all" href="${groupHref(group.id)}">
-            <span class="mono">Open the complete desk</span>
-            <strong>${esc(group.title)} <i>↗</i></strong>
-          </a>
-        </div>
-      </div>
+      <div class="edition__grid edition__features" data-edition-features="${esc(group.id)}"></div>
     </section>`;
+}
+
+function setupEditionRotations(groups, projects) {
+  document.querySelectorAll("[data-edition-features]").forEach((stage, index) => {
+    const group = groups.find(item => item.id === stage.dataset.editionFeatures);
+    const candidates = projects.filter(project => (
+      project.group === group?.id && project.published !== false && visualOptions(project).length
+    ));
+    let current = [];
+    let visible = index === 0;
+    let changing = false;
+
+    const draw = () => {
+      current = selectFeatures(candidates, Math.min(4, candidates.length), current);
+      stage.innerHTML = editionFrameMarkup(group, current, index);
+      stage.querySelectorAll(".reveal").forEach(node => node.classList.add("is-visible"));
+      stage.classList.remove("is-switching");
+      changing = false;
+    };
+    const rotate = () => {
+      if (!visible || changing || document.hidden || !current.length) return;
+      changing = true;
+      stage.classList.add("is-switching");
+      setTimeout(draw, 260);
+    };
+
+    draw();
+    if (reducedMotion) return;
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(entries => {
+        visible = entries.some(entry => entry.isIntersecting);
+      }, { rootMargin: "20% 0px 20%", threshold: .04 }).observe(stage);
+    } else {
+      visible = true;
+    }
+    setTimeout(() => {
+      rotate();
+      setInterval(rotate, ROTATION_MS);
+    }, ROTATION_MS + index * 420);
+  });
 }
 
 function archiveRow(project, index, groups) {
@@ -90,26 +243,13 @@ function setupArchiveFilters(defaultGroup) {
   applyArchiveFilter(defaultGroup);
 }
 
-function heroMediaCard(item, index) {
-  const href = item.href || (item.projectId ? projectHref(item.projectId) : "#project-desks");
-  return `
-    <a class="hero-work hero-work--${index + 1} media-fallback" href="${esc(href)}" data-fallback-label="${esc(item.title)}">
-      <img src="${esc(item.image)}" alt="${esc(item.title)}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async">
-      <span class="hero-work__number mono">${String(index + 1).padStart(2, "0")}</span>
-      <span class="hero-work__caption">
-        <small class="mono">${esc(item.label)}</small>
-        <strong>${esc(item.title)}</strong>
-        <i aria-hidden="true">↗</i>
-      </span>
-    </a>`;
-}
-
 function sectionBreakMarkup(item) {
+  const hasBody = Boolean(item.body?.trim());
   return `
-    <header class="section-break reveal">
+    <header class="section-break${hasBody ? "" : " section-break--solo"} reveal">
       <p class="eyebrow mono">${esc(item.kicker)}</p>
       <h2>${esc(item.heading)}${item.accent ? ` <em>${esc(item.accent)}</em>` : ""}</h2>
-      ${item.body ? `<p>${esc(item.body)}</p>` : ""}
+      ${hasBody ? `<p>${esc(item.body)}</p>` : ""}
     </header>`;
 }
 
@@ -121,9 +261,39 @@ function renderSectionBreaks(items = []) {
   });
 }
 
+function renderSubTagline(node, text) {
+  const match = String(text || "").trim().match(/^(.+?\.)\s*(.+)$/);
+  node.innerHTML = match
+    ? `<span>${esc(match[1])}</span> <em>${esc(match[2])}</em>`
+    : esc(text);
+}
+
+function setupManifestoScroll() {
+  const manifesto = document.querySelector("[data-manifesto]");
+  if (!manifesto || reducedMotion) {
+    manifesto?.style.setProperty("--manifesto-progress", "1");
+    return;
+  }
+
+  let ticking = false;
+  const update = () => {
+    const rect = manifesto.getBoundingClientRect();
+    const progress = Math.max(0, Math.min(1, (innerHeight - rect.top) / (innerHeight * .78)));
+    manifesto.style.setProperty("--manifesto-progress", progress.toFixed(3));
+    ticking = false;
+  };
+  const requestUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  };
+  addEventListener("scroll", requestUpdate, { passive: true });
+  addEventListener("resize", requestUpdate);
+  update();
+}
+
 function finishEntryTransition() {
   const loader = document.querySelector(".site-loader");
-  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   document.body.classList.add("is-loaded");
   if (!loader) return;
@@ -136,21 +306,20 @@ function finishEntryTransition() {
 }
 
 function render(data) {
-  const { groups, projects, site, home } = data;
+  const groups = data.groups || [];
+  const projects = (data.projects || []).filter(project => project.published !== false);
+  const { site, home = {} } = data;
   document.querySelectorAll("[data-site-name]").forEach(node => node.textContent = site.name);
   document.querySelectorAll("[data-loader-name]").forEach(node => node.textContent = site.name);
   document.querySelector("[data-home-kicker]").textContent = site.eyebrow;
   document.querySelector("[data-home-headline]").textContent = site.headline;
   document.querySelector("[data-home-intro]").textContent = site.intro;
   document.querySelector("[data-cv]").href = site.cvUrl;
+  renderSubTagline(document.querySelector("[data-home-subtagline]"), home.subTagline);
 
-  const heroMedia = (home.heroMedia || []).filter(item => item.image).slice(0, 3);
-  document.querySelector("#hero-gallery").innerHTML = heroMedia.length
-    ? heroMedia.map(heroMediaCard).join("")
-    : '<a class="hero-work hero-work--empty" href="#project-desks"><span>Open selected work ↓</span></a>';
   renderSectionBreaks(home.sectionBreaks);
+  document.querySelector("#editions").innerHTML = groups.map(group => groupEdition(group, projects)).join("");
 
-  document.querySelector("#editions").innerHTML = groups.map((group, index) => groupEdition(group, projects, index)).join("");
   const defaultArchiveGroup = groups[0]?.id || "all";
   document.querySelector("#archive-filters").innerHTML = [
     `<button type="button" data-archive-filter="all" aria-pressed="false">All / ${projects.length}</button>`,
@@ -158,7 +327,10 @@ function render(data) {
   ].join("");
   document.querySelector("#archive-list").innerHTML = projects.map((project, index) => archiveRow(project, index, groups)).join("");
 
+  setupHeroRotation(projects, groups);
+  setupEditionRotations(groups, projects);
   setupArchiveFilters(defaultArchiveGroup);
+  setupManifestoScroll();
   setupReveal();
   document.body.classList.add("is-ready");
   requestAnimationFrame(() => requestAnimationFrame(finishEntryTransition));
