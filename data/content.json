@@ -3,7 +3,7 @@
     "name": "Khiet Lam",
     "eyebrow": "Independent portfolio / Ho Chi Minh City",
     "headline": "I shape stories with clarity and cultural depth.",
-    "intro": "I research, write, edit and curate across publishing, brand communication and cultural programmes.",
+    "intro": "Gamifying stories from cultural base.",
     "aboutKicker": "About",
     "aboutHeadline": "I write, edit and curate with attention to context.",
     "about": "I am an editor, senior copywriter and cultural event curator based in Ho Chi Minh City. My practice moves between editorial research, publishing, brand language, interviews and public programmes. I am especially interested in making cultural knowledge and complex ideas clear, engaging and relevant to contemporary audiences.",
@@ -20,29 +20,7 @@
     "portraitSecondary": "media/about-khiet-lam-bw.jpg"
   },
   "home": {
-    "heroMedia": [
-      {
-        "title": "About Khiet Lam",
-        "label": "Editor / Copywriter / Curator",
-        "image": "media/about-khiet-lam-color.jpg",
-        "href": "about.html",
-        "projectId": ""
-      },
-      {
-        "title": "Tatler Vietnam",
-        "label": "Selected culture writing",
-        "image": "media/covers/tatler-vietnam-cover.jpg",
-        "href": "",
-        "projectId": "tatler-vietnam"
-      },
-      {
-        "title": "Làm Hòa Với Hormones",
-        "label": "Book editing & writing",
-        "image": "media/covers/hormones-ebook-cover.jpg",
-        "href": "",
-        "projectId": "hormones-ebook"
-      }
-    ],
+    "subTagline": "Observation before speculation. Restraint in articulation, richness in expression.",
     "sectionBreaks": [
       {
         "position": "archive",
@@ -50,7 +28,7 @@
         "kicker": "Complete archive",
         "heading": "Browse the full project record",
         "accent": "by practice",
-        "body": "Use the filters to move between curation, copywriting, publishing, interviews and independent design work."
+        "body": ""
       }
     ]
   },
