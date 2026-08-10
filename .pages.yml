@@ -47,24 +47,7 @@ content:
         label: Homepage opening and section breaks
         type: object
         fields:
-          - name: heroMedia
-            label: Opening screen images
-            type: object
-            list:
-              collapsible:
-                collapsed: true
-                summary: "{title} / {label}"
-            fields:
-              - { name: title, label: Image title, type: string, required: true }
-              - { name: label, label: Short caption, type: string }
-              - name: image
-                label: Image — upload or choose from Media
-                type: image
-                options:
-                  path: .
-                  categories: [image]
-              - { name: projectId, label: Linked project ID, type: string }
-              - { name: href, label: Custom link, type: string }
+          - { name: subTagline, label: Large sub-tagline before project desks, type: text }
           - name: sectionBreaks
             label: Section breaks — add, edit, hide or delete
             type: object
