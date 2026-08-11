@@ -9,7 +9,15 @@ const {
 } = window.PortfolioUI;
 
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-const ROTATION_MS = 3000;
+const SLIDE_MS = 5200;
+const DESK_FEATURE_PROJECTS = {
+  curation: "hat-boi-saigon-art-cruise",
+  copywriting: "toong-global-city",
+  publishing: "hormones-ebook",
+  interviews: "hidden-champions",
+  "board-game": "cuoc-dua-dau-thai"
+};
+const REJECTED_VISUAL_NAMES = /(screen\s*shot|screenshot|screen\s*cap|capture|chụp màn|chup man|cap màn|cap man|proposal|brief|factsheet|fact sheet|mockup|avatar|social copy|mặt trước|mat truoc|mặt sau|mat sau|logo|brochure|\.pdf|\.pptx?|\.docx?)/i;
 
 function shuffle(items) {
   const result = [...items];
@@ -20,131 +28,165 @@ function shuffle(items) {
   return result;
 }
 
-function visualOptions(project) {
-  return [...new Set([
-    project.cover,
-    ...(project.media || []).map(item => item.thumbnail)
-  ].filter(Boolean))];
+function isPhotoMedia(item) {
+  if (item.type !== "image" || !item.thumbnail || REJECTED_VISUAL_NAMES.test(item.title || "")) return false;
+  const mime = item.mime || "";
+  return /^image\/(jpeg|jpg|webp)$/i.test(mime) || /\.(jpe?g|webp)$/i.test(item.title || "");
 }
 
-function selectFeatures(projects, count, previous = []) {
-  const previousIds = new Set(previous.map(item => item.project.id));
-  const previousSignatures = new Set(previous.map(item => `${item.project.id}|${item.visual}`));
-  const prioritized = [
-    ...shuffle(projects.filter(project => !previousIds.has(project.id))),
-    ...shuffle(projects.filter(project => previousIds.has(project.id)))
-  ];
-  const selected = [];
-  const selectedIds = new Set();
-  const selectedVisuals = new Set();
+function curatedVisuals(project, limit = 3) {
+  const photos = [...new Set((project.media || []).filter(isPhotoMedia).map(item => item.thumbnail))];
+  if (photos.length) return shuffle(photos).slice(0, limit);
 
-  for (const project of prioritized) {
-    if (selected.length >= count || selectedIds.has(project.id)) continue;
-    const options = shuffle(visualOptions(project));
-    const visual = options.find(item => (
-      !selectedVisuals.has(item) && !previousSignatures.has(`${project.id}|${item}`)
-    )) || options.find(item => !selectedVisuals.has(item));
-    if (!visual) continue;
-    selected.push({ project, visual });
-    selectedIds.add(project.id);
-    selectedVisuals.add(visual);
-  }
-
-  return selected;
+  const cover = project.cover || "";
+  const safeLocalCover = cover.startsWith("media/") && !/(logo|screenshot|screen)/i.test(cover);
+  const safeBoardImage = project.id === "cuoc-dua-dau-thai" && cover;
+  return safeLocalCover || safeBoardImage ? [cover] : [];
 }
 
-function featureLabel(project, groups) {
-  const group = groups.find(item => item.id === project.group);
-  return `${group?.short || project.group} / ${project.editorialLabel || project.role || "Project feature"}`;
+function featureProject(group, projects) {
+  const preferred = projects.find(project => project.id === DESK_FEATURE_PROJECTS[group.id]);
+  if (preferred && curatedVisuals(preferred).length) return preferred;
+
+  const lead = projects.find(project => project.id === group.leadProject);
+  if (lead && curatedVisuals(lead).length) return lead;
+
+  return projects
+    .filter(project => project.group === group.id && project.published !== false)
+    .map(project => ({ project, score: curatedVisuals(project).length }))
+    .sort((a, b) => b.score - a.score)[0]?.project;
 }
 
-function heroFeatureCard(feature, index, groups) {
-  const { project, visual } = feature;
+function chooseLandingFeatures(groups, projects) {
+  return shuffle(groups)
+    .map(group => ({ group, project: featureProject(group, projects) }))
+    .filter(item => item.project && curatedVisuals(item.project).length)
+    .slice(0, 3);
+}
+
+function slideshowMarkup(project, options = {}) {
+  const { eager = false, label = project.title } = options;
+  const visuals = curatedVisuals(project);
   return `
-    <a class="hero-work hero-work--${index + 1} media-fallback" href="${projectHref(project.id)}"
-      data-feature-id="${esc(project.id)}" data-feature-visual="${esc(visual)}" data-fallback-label="${esc(project.title)}">
-      <img src="${esc(visual)}" alt="${esc(project.imageAlt || project.title)}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async">
+    <span class="media-slideshow" data-media-slideshow data-fallback-label="${esc(label)}" data-slide-count="${visuals.length}">
+      ${visuals.map((visual, index) => `
+        <img class="media-slide${index === 0 ? " is-active" : ""}" src="${esc(visual)}"
+          alt="${esc(project.imageAlt || project.title)}" loading="${eager || index === 0 ? "eager" : "lazy"}" decoding="async">`).join("")}
+      ${visuals.length > 1 ? `<span class="media-slideshow__dots" aria-hidden="true">${visuals.map((_, index) => `<i class="${index === 0 ? "is-active" : ""}"></i>`).join("")}</span>` : ""}
+    </span>`;
+}
+
+function setupMediaSlides() {
+  document.querySelectorAll("[data-media-slideshow]").forEach((stage, stageIndex) => {
+    let current = 0;
+    let paused = false;
+    const host = stage.closest("a, article") || stage;
+
+    const usableSlides = () => [...stage.querySelectorAll(".media-slide")];
+    const show = nextIndex => {
+      const slides = usableSlides();
+      if (!slides.length) {
+        stage.classList.add("is-empty");
+        return;
+      }
+      current = ((nextIndex % slides.length) + slides.length) % slides.length;
+      slides.forEach((slide, index) => slide.classList.toggle("is-active", index === current));
+      stage.querySelectorAll(".media-slideshow__dots i").forEach((dot, index) => dot.classList.toggle("is-active", index === current));
+    };
+
+    usableSlides().forEach(slide => slide.addEventListener("error", () => {
+      const wasActive = slide.classList.contains("is-active");
+      slide.remove();
+      if (wasActive || !usableSlides().some(item => item.classList.contains("is-active"))) show(current);
+    }, { once: true }));
+
+    host.addEventListener("mouseenter", () => { paused = true; });
+    host.addEventListener("mouseleave", () => { paused = false; });
+    host.addEventListener("focusin", () => { paused = true; });
+    host.addEventListener("focusout", () => { paused = false; });
+
+    if (reducedMotion || usableSlides().length < 2) return;
+    setTimeout(() => {
+      show(current + 1);
+      setInterval(() => {
+        if (!paused && !document.hidden) show(current + 1);
+      }, SLIDE_MS);
+    }, SLIDE_MS + (stageIndex % 3) * 520);
+  });
+}
+
+function featureLabel(project, group) {
+  return `${group.short} / ${project.editorialLabel || project.role || "Selected project"}`;
+}
+
+function heroFeatureCard(feature, index) {
+  const { project, group } = feature;
+  return `
+    <a class="hero-work hero-work--${index + 1}" href="${projectHref(project.id)}" data-feature-id="${esc(project.id)}">
+      ${slideshowMarkup(project, { eager: index === 0 })}
       <span class="hero-work__number mono">${String(index + 1).padStart(2, "0")}</span>
       <span class="hero-work__caption">
-        <small class="mono">${esc(featureLabel(project, groups))}</small>
+        <small class="mono">${esc(featureLabel(project, group))}</small>
         <strong>${esc(project.title)}</strong>
         <i aria-hidden="true">↗</i>
       </span>
     </a>`;
 }
 
-function restartCycleMeter(gallery) {
-  gallery.classList.remove("is-cycling");
-  void gallery.offsetWidth;
-  gallery.classList.add("is-cycling");
-}
-
-function setupHeroRotation(projects, groups) {
-  const gallery = document.querySelector("#hero-gallery");
-  const stage = gallery?.querySelector("[data-hero-stage]");
-  const candidates = projects.filter(project => project.published !== false && visualOptions(project).length);
-  if (!gallery || !stage) return;
-
-  if (!candidates.length) {
-    stage.innerHTML = '<a class="hero-work hero-work--empty" href="#project-desks"><span>Open selected work ↓</span></a>';
-    return;
-  }
-
-  let current = [];
-  let changing = false;
-  const draw = () => {
-    current = selectFeatures(candidates, Math.min(3, candidates.length), current);
-    stage.innerHTML = current.map((feature, index) => heroFeatureCard(feature, index, groups)).join("");
-    gallery.classList.remove("is-switching");
-    changing = false;
-    restartCycleMeter(gallery);
-  };
-  const rotate = () => {
-    if (changing || document.hidden) return;
-    changing = true;
-    gallery.classList.add("is-switching");
-    setTimeout(draw, 260);
-  };
-
-  draw();
-  if (!reducedMotion && candidates.length > 1) setInterval(rotate, ROTATION_MS);
-}
-
-function rotatingProjectCard(feature, options) {
-  const project = { ...feature.project, cover: feature.visual };
-  return projectCard(project, options).replace(
-    '<article class="story-card',
-    `<article data-feature-id="${esc(project.id)}" data-feature-visual="${esc(feature.visual)}" class="story-card`
-  );
-}
-
-function editionFrameMarkup(group, features, index) {
-  const [lead, ...secondary] = features;
-  if (!lead) return '<p class="load-error">No published features are available in this desk.</p>';
-
-  const project = lead.project;
+function coverFeatureCard(feature, index) {
+  const { project, group } = feature;
   return `
-    <article class="lead-story" data-feature-id="${esc(project.id)}" data-feature-visual="${esc(lead.visual)}">
-      <a class="lead-story__media media-fallback" href="${projectHref(project.id)}" data-fallback-label="${esc(project.title)}">
-        <img src="${esc(lead.visual)}" alt="${esc(project.imageAlt || project.title)}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async">
-        <span class="lead-story__label mono">Live feature / ${esc(group.short)}</span>
-      </a>
-      <div class="lead-story__copy">
-        <h3><a href="${projectHref(project.id)}">${esc(project.title)}</a></h3>
-        <p>${esc(project.summary)}</p>
-        <a class="text-link" href="${projectHref(project.id)}">Read feature <span>↗</span></a>
-      </div>
-    </article>
-    <div class="edition__columns">
-      ${secondary.map((feature, secondaryIndex) => rotatingProjectCard(feature, {
-        compact: true,
-        index: `${group.number}.${secondaryIndex + 1}`
-      })).join("")}
-      <a class="edition__all" href="${groupHref(group.id)}">
-        <span class="mono">Open the complete desk</span>
-        <strong>${esc(group.title)} <i>↗</i></strong>
-      </a>
-    </div>`;
+    <a class="cover-card cover-card--${index + 1}" href="${projectHref(project.id)}" data-cover-card data-feature-id="${esc(project.id)}">
+      <span class="cover-card__drift">
+        ${slideshowMarkup(project, { eager: true })}
+        <span class="cover-card__caption">
+          <small class="mono">0${index + 1} / ${esc(group.short)}</small>
+          <strong>${esc(project.title)}</strong>
+        </span>
+      </span>
+    </a>`;
+}
+
+function setupCoverMotion() {
+  const cover = document.querySelector(".cover-page");
+  const cards = [...document.querySelectorAll("[data-cover-card]")];
+  if (!cover || !cards.length || reducedMotion) return;
+
+  let pointerX = 0;
+  let pointerY = 0;
+  let ticking = false;
+  const update = () => {
+    const rect = cover.getBoundingClientRect();
+    const progress = Math.max(0, Math.min(1, -rect.top / Math.max(1, rect.height)));
+    cards.forEach((card, index) => {
+      const direction = index % 2 ? -1 : 1;
+      card.style.setProperty("--cover-x", `${pointerX * (10 + index * 4) * direction}px`);
+      card.style.setProperty("--cover-y", `${pointerY * (8 + index * 3) - progress * (48 + index * 34)}px`);
+      card.style.setProperty("--cover-rotate", `${pointerX * (index - 1) * 1.5}deg`);
+    });
+    cover.style.setProperty("--cover-fade", String(Math.max(.22, 1 - progress * 1.12)));
+    ticking = false;
+  };
+  const requestUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  };
+
+  cover.addEventListener("pointermove", event => {
+    const rect = cover.getBoundingClientRect();
+    pointerX = (event.clientX - rect.left) / rect.width - .5;
+    pointerY = (event.clientY - rect.top) / rect.height - .5;
+    requestUpdate();
+  });
+  cover.addEventListener("pointerleave", () => {
+    pointerX = 0;
+    pointerY = 0;
+    requestUpdate();
+  });
+  addEventListener("scroll", requestUpdate, { passive: true });
+  addEventListener("resize", requestUpdate);
+  update();
 }
 
 function groupEdition(group, projects) {
@@ -168,43 +210,44 @@ function groupEdition(group, projects) {
     </section>`;
 }
 
-function setupEditionRotations(groups, projects) {
+function editionFeatureMarkup(group, leadFeature, groupProjects, index) {
+  const secondary = groupProjects
+    .filter(project => project.level === 1 && project.id !== leadFeature.id)
+    .slice(0, 3);
+
+  return `
+    <article class="lead-story" data-feature-id="${esc(leadFeature.id)}">
+      <a class="lead-story__media" href="${projectHref(leadFeature.id)}">
+        ${slideshowMarkup(leadFeature, { eager: index === 0 })}
+        <span class="lead-story__label mono">Featured story / ${esc(group.short)}</span>
+      </a>
+      <div class="lead-story__copy">
+        <h3><a href="${projectHref(leadFeature.id)}">${esc(leadFeature.title)}</a></h3>
+        <p>${esc(leadFeature.summary)}</p>
+        <a class="text-link" href="${projectHref(leadFeature.id)}">Read feature <span>↗</span></a>
+      </div>
+    </article>
+    <div class="edition__columns">
+      ${secondary.map((project, secondaryIndex) => projectCard(project, {
+        compact: true,
+        index: `${group.number}.${secondaryIndex + 1}`
+      })).join("")}
+      <a class="edition__all" href="${groupHref(group.id)}">
+        <span class="mono">Open the complete desk</span>
+        <strong>${esc(group.title)} <i>↗</i></strong>
+      </a>
+    </div>`;
+}
+
+function setupEditionFeatures(groups, projects) {
   document.querySelectorAll("[data-edition-features]").forEach((stage, index) => {
     const group = groups.find(item => item.id === stage.dataset.editionFeatures);
-    const candidates = projects.filter(project => (
-      project.group === group?.id && project.published !== false && visualOptions(project).length
-    ));
-    let current = [];
-    let visible = index === 0;
-    let changing = false;
-
-    const draw = () => {
-      current = selectFeatures(candidates, Math.min(4, candidates.length), current);
-      stage.innerHTML = editionFrameMarkup(group, current, index);
-      stage.querySelectorAll(".reveal").forEach(node => node.classList.add("is-visible"));
-      stage.classList.remove("is-switching");
-      changing = false;
-    };
-    const rotate = () => {
-      if (!visible || changing || document.hidden || !current.length) return;
-      changing = true;
-      stage.classList.add("is-switching");
-      setTimeout(draw, 260);
-    };
-
-    draw();
-    if (reducedMotion) return;
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver(entries => {
-        visible = entries.some(entry => entry.isIntersecting);
-      }, { rootMargin: "20% 0px 20%", threshold: .04 }).observe(stage);
-    } else {
-      visible = true;
-    }
-    setTimeout(() => {
-      rotate();
-      setInterval(rotate, ROTATION_MS);
-    }, ROTATION_MS + index * 420);
+    const groupProjects = projects.filter(project => project.group === group?.id && project.published !== false);
+    const leadFeature = featureProject(group, projects);
+    stage.innerHTML = leadFeature
+      ? editionFeatureMarkup(group, leadFeature, groupProjects, index)
+      : '<p class="load-error">No suitable feature image is available in this desk.</p>';
+    stage.querySelectorAll(".reveal").forEach(node => node.classList.add("is-visible"));
   });
 }
 
@@ -294,14 +337,12 @@ function setupManifestoScroll() {
 
 function finishEntryTransition() {
   const loader = document.querySelector(".site-loader");
-
   document.body.classList.add("is-loaded");
   if (!loader) return;
   if (reducedMotion) {
     loader.remove();
     return;
   }
-
   setTimeout(() => loader.remove(), 850);
 }
 
@@ -317,8 +358,13 @@ function render(data) {
   document.querySelector("[data-cv]").href = site.cvUrl;
   renderSubTagline(document.querySelector("[data-home-subtagline]"), home.subTagline);
 
+  const landingFeatures = chooseLandingFeatures(groups, projects);
+  document.querySelector("#cover-features").innerHTML = landingFeatures.map(coverFeatureCard).join("");
+  document.querySelector("[data-hero-stage]").innerHTML = landingFeatures.map(heroFeatureCard).join("");
+
   renderSectionBreaks(home.sectionBreaks);
   document.querySelector("#editions").innerHTML = groups.map(group => groupEdition(group, projects)).join("");
+  setupEditionFeatures(groups, projects);
 
   const defaultArchiveGroup = groups[0]?.id || "all";
   document.querySelector("#archive-filters").innerHTML = [
@@ -327,8 +373,8 @@ function render(data) {
   ].join("");
   document.querySelector("#archive-list").innerHTML = projects.map((project, index) => archiveRow(project, index, groups)).join("");
 
-  setupHeroRotation(projects, groups);
-  setupEditionRotations(groups, projects);
+  setupMediaSlides();
+  setupCoverMotion();
   setupArchiveFilters(defaultArchiveGroup);
   setupManifestoScroll();
   setupReveal();
