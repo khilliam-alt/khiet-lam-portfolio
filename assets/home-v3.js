@@ -137,12 +137,13 @@ function coverFeatureCard(feature, index) {
   const { project, group } = feature;
   return `
     <a class="cover-card cover-card--${index + 1}" href="${projectHref(project.id)}" data-cover-card data-feature-id="${esc(project.id)}">
-      <span class="cover-card__drift">
+      <span class="cover-card__media">
         ${slideshowMarkup(project, { eager: true })}
-        <span class="cover-card__caption">
-          <small class="mono">0${index + 1} / ${esc(group.short)}</small>
-          <strong>${esc(project.title)}</strong>
-        </span>
+      </span>
+      <span class="cover-card__caption">
+        <small class="mono">0${index + 1} / ${esc(group.short)}</small>
+        <strong>${esc(project.title)}</strong>
+        <i aria-hidden="true">↗</i>
       </span>
     </a>`;
 }
@@ -160,11 +161,12 @@ function setupCoverMotion() {
     const progress = Math.max(0, Math.min(1, -rect.top / Math.max(1, rect.height)));
     cards.forEach((card, index) => {
       const direction = index % 2 ? -1 : 1;
-      card.style.setProperty("--cover-x", `${pointerX * (10 + index * 4) * direction}px`);
-      card.style.setProperty("--cover-y", `${pointerY * (8 + index * 3) - progress * (48 + index * 34)}px`);
-      card.style.setProperty("--cover-rotate", `${pointerX * (index - 1) * 1.5}deg`);
+      card.style.setProperty("--cover-pan-x", `${pointerX * (8 + index * 3) * direction}px`);
+      card.style.setProperty("--cover-pan-y", `${pointerY * (7 + index * 2) - progress * (8 + index * 3)}px`);
     });
-    cover.style.setProperty("--cover-fade", String(Math.max(.22, 1 - progress * 1.12)));
+    cover.style.setProperty("--cover-copy-shift", `${progress * -24}px`);
+    cover.style.setProperty("--cover-gallery-shift", `${progress * -10}px`);
+    cover.style.setProperty("--cover-fade", String(Math.max(.38, 1 - progress * .82)));
     ticking = false;
   };
   const requestUpdate = () => {
