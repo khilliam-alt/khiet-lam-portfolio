@@ -2,7 +2,6 @@
   const { esc, loadPortfolio, projectHref } = window.PortfolioUI;
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const LANDING_PROJECT_MS = 5800;
-  const FEATURE_PROJECT_MS = 7600;
   const REJECTED_VISUAL_NAMES = /(screen\s*shot|screenshot|screen\s*cap|capture|chụp màn|chup man|cap màn|cap man|proposal|brief|factsheet|fact sheet|mockup|avatar|social copy|mặt trước|mat truoc|mặt sau|mat sau|logo|brochure|\.pdf|\.pptx?|\.docx?)/i;
 
   function shuffle(items) {
@@ -163,16 +162,16 @@
     if (!pool.length) return;
 
     let cursor = Math.floor(Math.random() * pool.length);
-    let paused = false;
 
     const show = (nextCursor, animate = true) => {
       cursor = ((nextCursor % pool.length) + pool.length) % pool.length;
-      const existing = stage.querySelector(".lead-story");
-      if (!existing) return;
+      if (!stage.querySelector(".lead-story")) return;
 
       if (animate && !reducedMotion) stage.classList.add("is-feature-switching");
       const render = () => {
-        existing.outerHTML = leadStoryMarkup(pool[cursor], group, pool.length);
+        const current = stage.querySelector(".lead-story");
+        if (!current) return;
+        current.outerHTML = leadStoryMarkup(pool[cursor], group, pool.length);
         stage.classList.remove("is-feature-switching");
       };
       if (animate && !reducedMotion) setTimeout(render, 120);
@@ -185,18 +184,8 @@
       event.preventDefault();
       show(cursor + Number(button.dataset.featureShift || 0));
     });
-    stage.addEventListener("mouseenter", () => { paused = true; });
-    stage.addEventListener("mouseleave", () => { paused = false; });
-    stage.addEventListener("focusin", () => { paused = true; });
-    stage.addEventListener("focusout", () => { paused = false; });
 
     show(cursor, false);
-
-    if (!reducedMotion && pool.length > 1) {
-      setInterval(() => {
-        if (!paused && !document.hidden) show(cursor + 1);
-      }, FEATURE_PROJECT_MS);
-    }
   }
 
   function cleanDeskCopy() {
