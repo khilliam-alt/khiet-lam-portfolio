@@ -129,31 +129,41 @@
     const groupProjects = projects.filter(project => project.group === group.id && project.published !== false);
     const children = groupProjects.filter(project => Number(project.level || 1) > 1 && curatedVisuals(project, 1).length);
     const fallback = groupProjects.filter(project => curatedVisuals(project, 1).length);
-    return shuffle(children.length ? children : fallback);
+    return children.length ? children : fallback;
   }
 
-  function leadStoryMarkup(project, group, poolSize) {
-    const visual = curatedVisuals(project, 1)[0];
-    const disabled = poolSize < 2 ? " disabled" : "";
+  function rootProjectTitle(project, projects, group) {
+    let current = project;
+    while (current?.parentId) {
+      const parent = projects.find(item => item.id === current.parentId);
+      if (!parent) break;
+      current = parent;
+    }
+    return current && current.id !== project.id ? current.title : group.title;
+  }
+
+  function featureEntry(project, projects, group) {
+    return {
+      project,
+      visual: curatedVisuals(project, 1)[0],
+      parentTitle: rootProjectTitle(project, projects, group)
+    };
+  }
+
+  function featureMarkup(entry, canGoBack, canGoForward) {
+    const { project, visual, parentTitle } = entry;
     return `
-      <article class="lead-story" data-feature-id="${esc(project.id)}">
-        <div class="lead-story__media lead-story__media--random">
-          <a class="lead-story__image-link" href="${projectHref(project.id)}">
-            <span class="lead-story__single-image">
-              <img src="${esc(visual)}" alt="${esc(project.imageAlt || project.title)}" loading="eager" decoding="async">
-            </span>
-            <span class="lead-story__label mono">Featured story / ${esc(stripDesk(group.short))}</span>
+      <article class="single-feature" data-feature-id="${esc(project.id)}">
+        <div class="single-feature__media">
+          <a class="single-feature__image" href="${projectHref(project.id)}" aria-label="Open ${esc(project.title)}">
+            <img src="${esc(visual)}" alt="${esc(project.imageAlt || project.title)}" loading="eager" decoding="async">
           </a>
-          <div class="lead-story__switcher" aria-label="Browse featured projects">
-            <button type="button" data-feature-shift="-1" aria-label="Previous featured project"${disabled}>←</button>
-            <button type="button" data-feature-shift="1" aria-label="Next featured project"${disabled}>→</button>
-          </div>
+          <button class="single-feature__arrow single-feature__arrow--prev" type="button" data-feature-history="prev" aria-label="Previous featured project"${canGoBack ? "" : " disabled"}>←</button>
+          <button class="single-feature__arrow single-feature__arrow--next" type="button" data-feature-history="next" aria-label="Next featured project"${canGoForward ? "" : " disabled"}>→</button>
         </div>
-        <div class="lead-story__copy">
-          <h3><a href="${projectHref(project.id)}">${esc(project.title)}</a></h3>
-          <p>${esc(project.summary)}</p>
-          <a class="text-link" href="${projectHref(project.id)}">Read feature <span>↗</span></a>
-        </div>
+        <p class="single-feature__subtext">
+          <span>${esc(parentTitle)}</span><i aria-hidden="true">/</i><strong>${esc(project.title)}</strong>
+        </p>
       </article>`;
   }
 
@@ -161,31 +171,51 @@
     const pool = featurePool(group, projects);
     if (!pool.length) return;
 
-    let cursor = Math.floor(Math.random() * pool.length);
+    const firstProject = pool[Math.floor(Math.random() * pool.length)];
+    let history = [featureEntry(firstProject, projects, group)];
+    let historyIndex = 0;
 
-    const show = (nextCursor, animate = true) => {
-      cursor = ((nextCursor % pool.length) + pool.length) % pool.length;
-      if (!stage.querySelector(".lead-story")) return;
+    stage.classList.add("single-feature-stage");
 
-      if (animate && !reducedMotion) stage.classList.add("is-feature-switching");
-      const render = () => {
-        const current = stage.querySelector(".lead-story");
-        if (!current) return;
-        current.outerHTML = leadStoryMarkup(pool[cursor], group, pool.length);
-        stage.classList.remove("is-feature-switching");
-      };
-      if (animate && !reducedMotion) setTimeout(render, 120);
-      else render();
+    const render = () => {
+      const canGoBack = historyIndex > 0;
+      const canGoForward = historyIndex < history.length - 1 || pool.length > 1;
+      stage.innerHTML = featureMarkup(history[historyIndex], canGoBack, canGoForward);
+    };
+
+    const pickRandomNext = () => {
+      const currentId = history[historyIndex]?.project.id;
+      const candidates = pool.filter(project => project.id !== currentId);
+      if (!candidates.length) return null;
+      return candidates[Math.floor(Math.random() * candidates.length)];
     };
 
     stage.addEventListener("click", event => {
-      const button = event.target.closest("[data-feature-shift]");
+      const button = event.target.closest("[data-feature-history]");
       if (!button || button.disabled) return;
       event.preventDefault();
-      show(cursor + Number(button.dataset.featureShift || 0));
+
+      if (button.dataset.featureHistory === "prev") {
+        if (historyIndex > 0) historyIndex -= 1;
+        render();
+        return;
+      }
+
+      if (historyIndex < history.length - 1) {
+        historyIndex += 1;
+        render();
+        return;
+      }
+
+      const nextProject = pickRandomNext();
+      if (!nextProject) return;
+      history = history.slice(0, historyIndex + 1);
+      history.push(featureEntry(nextProject, projects, group));
+      historyIndex += 1;
+      render();
     });
 
-    show(cursor, false);
+    render();
   }
 
   function cleanDeskCopy() {
